@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@source inline("{hover:,focus:,active:,}{bg,border,border-t,text,ring}-{red,rose,pink,fuchsia,purple,indigo,blue,cyan,teal,green,emerald,lime,yellow,amber,orange,gray}-{50,100,200,300,400,500,600,700,800,900,950}");
+
+/* 苹方-简 极细体 */
+@font-face {
+  font-family: "PingFangSC";
+  src: url("/fonts/PingFangSC-Ultralight.ttf") format("truetype");
+  font-weight: 100;
+}
+/* 苹方-简 纤细体 */
+@font-face {
+  font-family: "PingFangSC";
+  src: url("/fonts/PingFangSC-Thin.ttf") format("truetype");
+  font-weight: 200;
+}
+/* 苹方-简 细体 */
+@font-face {
+  font-family: "PingFangSC";
+  src: url("/fonts/PingFangSC-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+/* 苹方-简 常规体 */
+@font-face {
+  font-family: "PingFangSC";
+  src: url("/fonts/PingFangSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+/* 苹方-简 中黑体 */
+@font-face {
+  font-family: "PingFangSC";
+  src: url("/fonts/PingFangSC-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+/* 苹方-简 中粗体 */
+@font-face {
+  font-family: "PingFangSC";
+  src: url("/fonts/PingFangSC-Semibold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+html,
+body {
+  font-family: "PingFangSC", "Inter", sans-serif;
+}
+
+@keyframes flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100%;
+  }
+}

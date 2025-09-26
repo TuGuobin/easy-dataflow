@@ -1,0 +1,3728 @@
+{
+  "nodes": [
+    {
+      "id": "upload-0m0",
+      "type": "upload",
+      "position": {
+        "x": 460,
+        "y": 180
+      },
+      "data": {
+        "title": "数据上传",
+        "name": "数据上传",
+        "fileName": "test.csv",
+        "fileSize": "40.43 KB",
+        "data": [
+          {
+            "Number": "test-00001",
+            "Translator": "A",
+            "Chinese Sentences": "40平米的房子比较适合一个人住。",
+            "Gloss": "40/平方/米/房/自己/住/合适2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00002",
+            "Translator": "A",
+            "Chinese Sentences": "一年之内这个优惠券都可以用。",
+            "Gloss": "一年/内/这/打折/票/用/可以/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00003",
+            "Translator": "A",
+            "Chinese Sentences": "下雨后空气会变好。",
+            "Gloss": "雨/完了/空气/更2/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00004",
+            "Translator": "A",
+            "Chinese Sentences": "不可以不做吗？",
+            "Gloss": "不/做/不行2/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00005",
+            "Translator": "A",
+            "Chinese Sentences": "不要企图让爸爸理解你。",
+            "Gloss": "让/爸爸/理解/你/希望/不/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00006",
+            "Translator": "A",
+            "Chinese Sentences": "不要想着临时抱佛脚。",
+            "Gloss": "临时/努力/不/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00007",
+            "Translator": "A",
+            "Chinese Sentences": "中国的文化有多少年？",
+            "Gloss": "中国/文化1/多少/年/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00008",
+            "Translator": "A",
+            "Chinese Sentences": "人生最重要的是学习。",
+            "Gloss": "人生/最2/重要/学习1/。",
+            "Note": "人生"
+          },
+          {
+            "Number": "test-00009",
+            "Translator": "A",
+            "Chinese Sentences": "什么人才能称为英雄？",
+            "Gloss": "什么/人/喊/英雄/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00010",
+            "Translator": "A",
+            "Chinese Sentences": "今天你吃了什么蔬菜？",
+            "Gloss": "今天/你/吃/什么/菜/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00011",
+            "Translator": "A",
+            "Chinese Sentences": "今天我吃了香蕉。",
+            "Gloss": "今天/我/吃/香蕉/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00012",
+            "Translator": "A",
+            "Chinese Sentences": "今天早上下雪了。",
+            "Gloss": "今天/早上1/雪/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00013",
+            "Translator": "A",
+            "Chinese Sentences": "今天晚上我可以喝酒，明天不用读书。",
+            "Gloss": "今天/晚上/喝/酒/可以/明天/读书/不/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00014",
+            "Translator": "A",
+            "Chinese Sentences": "今天这个商品有特价。",
+            "Gloss": "今天/这/商品/打折/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00015",
+            "Translator": "A",
+            "Chinese Sentences": "今年的水果很贵。",
+            "Gloss": "今天/年/水果/贵/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00016",
+            "Translator": "A",
+            "Chinese Sentences": "今晚不适合去海边。",
+            "Gloss": "今天/海/边/去/合适2/不/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00017",
+            "Translator": "A",
+            "Chinese Sentences": "他从小就想当律师。",
+            "Gloss": "他/小孩/时间/开始/做/律师/希望/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00018",
+            "Translator": "A",
+            "Chinese Sentences": "他们的快递速度很慢。",
+            "Gloss": "他们/快递/速度/慢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00019",
+            "Translator": "A",
+            "Chinese Sentences": "他们的防守太厉害了。",
+            "Gloss": "他们/防守/厉害/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00020",
+            "Translator": "A",
+            "Chinese Sentences": "他停顿了一会才把花话讲完。",
+            "Gloss": "他/停止/才/说/完/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00021",
+            "Translator": "A",
+            "Chinese Sentences": "他出版的书我很喜欢。",
+            "Gloss": "他/出版/书/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00022",
+            "Translator": "A",
+            "Chinese Sentences": "他喜欢学英语。",
+            "Gloss": "他/英语/喜欢/。",
+            "Note": "英语"
+          },
+          {
+            "Number": "test-00023",
+            "Translator": "A",
+            "Chinese Sentences": "他喜欢违背诺言我很不喜欢他。",
+            "Gloss": "他/承诺/违反2/喜欢/我/不喜欢/他/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00024",
+            "Translator": "A",
+            "Chinese Sentences": "他的弟弟把车开走了。",
+            "Gloss": "他/弟弟/开车/去/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00025",
+            "Translator": "A",
+            "Chinese Sentences": "他的手艺很差，我很不喜欢。",
+            "Gloss": "他/技术/坏/我/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00026",
+            "Translator": "A",
+            "Chinese Sentences": "他的本行是踢足球。",
+            "Gloss": "他/自己/工作/足球/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00027",
+            "Translator": "A",
+            "Chinese Sentences": "他的状态不是很好。",
+            "Gloss": "他/状态/坏/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00028",
+            "Translator": "A",
+            "Chinese Sentences": "他累的说不出话来了。",
+            "Gloss": "他/累/说/不行2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00029",
+            "Translator": "A",
+            "Chinese Sentences": "优惠券能值多少钱？",
+            "Gloss": "打折/票/价值/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00030",
+            "Translator": "A",
+            "Chinese Sentences": "优质的海港有许多海鲜。",
+            "Gloss": "质量/高/海/港口/海/新鲜/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00031",
+            "Translator": "A",
+            "Chinese Sentences": "伸展运动有哪些？",
+            "Gloss": "锻炼1/运动/有/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00032",
+            "Translator": "A",
+            "Chinese Sentences": "你上次购物是什么时候？",
+            "Gloss": "你/上/次/买/什么/时间/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00033",
+            "Translator": "A",
+            "Chinese Sentences": "你下周一可以来上班吗？",
+            "Gloss": "你/下/周一/上班1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00034",
+            "Translator": "A",
+            "Chinese Sentences": "你为什么有时间不去锻炼？",
+            "Gloss": "你/时间/有/不/锻炼2/为什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00035",
+            "Translator": "A",
+            "Chinese Sentences": "你也太耽误时间了吧。",
+            "Gloss": "你/耽误1/时间/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00036",
+            "Translator": "A",
+            "Chinese Sentences": "你什么时候出差？到时我接你。",
+            "Gloss": "你/什么/时间/出差/？/那/时间/我/去/接受/你/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00037",
+            "Translator": "A",
+            "Chinese Sentences": "你什么时候回来？我去接你。",
+            "Gloss": "你/什么/时间/回/？/我/去/接受/你/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00038",
+            "Translator": "A",
+            "Chinese Sentences": "你什么时候才能长大？",
+            "Gloss": "你/什么/时间/成长/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00039",
+            "Translator": "A",
+            "Chinese Sentences": "你什么时候搬进这家公寓？",
+            "Gloss": "你/什么/时间/搬家/这/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00040",
+            "Translator": "A",
+            "Chinese Sentences": "你今天不能吃冰淇淋。",
+            "Gloss": "你/今天/冰淇淋/吃/不行2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00041",
+            "Translator": "A",
+            "Chinese Sentences": "你今天早上的体温是多少？",
+            "Gloss": "你/今天/早上1/身体/温度/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00042",
+            "Translator": "A",
+            "Chinese Sentences": "你们学校有室内羽毛球场吗？",
+            "Gloss": "你们/学校/房/内/羽毛球/广场/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00043",
+            "Translator": "A",
+            "Chinese Sentences": "你们店里有什么特卖品吗？",
+            "Gloss": "你们/房/特别/卖/有/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00044",
+            "Translator": "A",
+            "Chinese Sentences": "你们护肤品在哪里？",
+            "Gloss": "你们/保护2/皮肤/在/哪/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00045",
+            "Translator": "A",
+            "Chinese Sentences": "你们有学习汉字吗？",
+            "Gloss": "你们/学习/汉/字/有/？",
+            "Note": "汉"
+          },
+          {
+            "Number": "test-00046",
+            "Translator": "A",
+            "Chinese Sentences": "你们有谁赶时间吗？",
+            "Gloss": "你们/谁/时间/着急/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00047",
+            "Translator": "A",
+            "Chinese Sentences": "你们酒店看起来好高级。",
+            "Gloss": "你们/酒店/看1/高/级别/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00048",
+            "Translator": "A",
+            "Chinese Sentences": "你六点搞完没问题吧？",
+            "Gloss": "你/六点/做/完/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00049",
+            "Translator": "A",
+            "Chinese Sentences": "你准备去哪里约会？",
+            "Gloss": "你/准备/去/哪/约会/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00050",
+            "Translator": "A",
+            "Chinese Sentences": "你几点的火车？",
+            "Gloss": "你/火车/时间/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00051",
+            "Translator": "A",
+            "Chinese Sentences": "你几点的飞机？",
+            "Gloss": "你/飞机/时间/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00052",
+            "Translator": "A",
+            "Chinese Sentences": "你出去玩花了多少钱？",
+            "Gloss": "你/去/玩1/消费1/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00053",
+            "Translator": "A",
+            "Chinese Sentences": "你到时给我说声，我去接你。",
+            "Gloss": "你/到/时间/告诉（我）/我/去/接收/你/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00054",
+            "Translator": "A",
+            "Chinese Sentences": "你可以凭借这个收据享受打折优惠。",
+            "Gloss": "你/用/这/收据/打折/可以/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00055",
+            "Translator": "A",
+            "Chinese Sentences": "你可以分享一下你的购物经验吗？",
+            "Gloss": "你/买/经验/分享/可以/？",
+            "Note": "分享"
+          },
+          {
+            "Number": "test-00056",
+            "Translator": "B",
+            "Chinese Sentences": "你可以去买点水果吗？",
+            "Gloss": "你/去/买/水果/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00057",
+            "Translator": "B",
+            "Chinese Sentences": "你可以帮我找一下我的橡皮吗？",
+            "Gloss": "你/帮助（我）/找/橡皮/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00058",
+            "Translator": "B",
+            "Chinese Sentences": "你可以拿着优惠券去超市购物，便宜一点。",
+            "Gloss": "你/拿/便宜/票/去/超市/买/东西2/便宜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00059",
+            "Translator": "B",
+            "Chinese Sentences": "你可以教我怎么开车吗？",
+            "Gloss": "你/教育/我/驾驶/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00060",
+            "Translator": "B",
+            "Chinese Sentences": "你喜欢喝哪款啤酒？",
+            "Gloss": "啤酒/你/喜欢/哪些1/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00061",
+            "Translator": "B",
+            "Chinese Sentences": "你喜欢这件背心吗？",
+            "Gloss": "这里/背心/你/喜欢/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00062",
+            "Translator": "B",
+            "Chinese Sentences": "你坐的是几点的地铁？",
+            "Gloss": "你/坐/时间/多少/地铁/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00063",
+            "Translator": "B",
+            "Chinese Sentences": "你太让我失望了。",
+            "Gloss": "你/让/我/失望/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00064",
+            "Translator": "B",
+            "Chinese Sentences": "你妈妈同意你去海边吗？",
+            "Gloss": "你/去/海/边/你/妈妈/同意1/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00065",
+            "Translator": "B",
+            "Chinese Sentences": "你对价值有要求吗？",
+            "Gloss": "你/对待/价值/要求/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00066",
+            "Translator": "B",
+            "Chinese Sentences": "你对身材有什么需求？",
+            "Gloss": "你/对待/身体/样子/要求/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00067",
+            "Translator": "B",
+            "Chinese Sentences": "你怎么有这么多铅笔？",
+            "Gloss": "你/铅笔/为什么/多/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00068",
+            "Translator": "B",
+            "Chinese Sentences": "你挑的这件裤子没有你的尺码了。",
+            "Gloss": "你/选择/这里/裤子/大/小/适合/你/没有2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00069",
+            "Translator": "B",
+            "Chinese Sentences": "你擅长做什么菜呢？",
+            "Gloss": "你/擅长/烹饪/菜/是/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00070",
+            "Translator": "B",
+            "Chinese Sentences": "你是个有爱心的人。",
+            "Gloss": "你/爱/心/有/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00071",
+            "Translator": "B",
+            "Chinese Sentences": "你是他的影迷吗？",
+            "Gloss": "你/是/他/电影/迷/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00072",
+            "Translator": "B",
+            "Chinese Sentences": "你是我见过最美的伴娘。",
+            "Gloss": "我/见面/经过/伴娘/里/你/最2/美丽/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00073",
+            "Translator": "B",
+            "Chinese Sentences": "你最近好忙呀。",
+            "Gloss": "你/最近/忙/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00074",
+            "Translator": "B",
+            "Chinese Sentences": "你有什么好的解压方法吗？",
+            "Gloss": "压力/缓解/好/方法/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00075",
+            "Translator": "B",
+            "Chinese Sentences": "你有什么推荐的运动吗？",
+            "Gloss": "推荐/锻炼2/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00076",
+            "Translator": "B",
+            "Chinese Sentences": "你有什么爱好呢？",
+            "Gloss": "你/爱/好/有/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00077",
+            "Translator": "B",
+            "Chinese Sentences": "你有带材料过来吗？",
+            "Gloss": "材料/你/带领/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00078",
+            "Translator": "B",
+            "Chinese Sentences": "你有我们餐厅的VIP吗？",
+            "Gloss": "我们/餐厅/V/I/P/卡1/你/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00079",
+            "Translator": "B",
+            "Chinese Sentences": "你有拿小票吗？",
+            "Gloss": "票/你/拿/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00080",
+            "Translator": "B",
+            "Chinese Sentences": "你有汉语菜单吗？我很需要。",
+            "Gloss": "汗/语言/菜单2/你/有/？/我/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00081",
+            "Translator": "B",
+            "Chinese Sentences": "你有看到我的登记手续吗？",
+            "Gloss": "我/登记/手续/你/看1/到/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00082",
+            "Translator": "B",
+            "Chinese Sentences": "你有经过你妈妈的同意吗？",
+            "Gloss": "你/妈妈/同意1/完了/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00083",
+            "Translator": "B",
+            "Chinese Sentences": "你现在冷吗？",
+            "Gloss": "你/现在/冷/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00084",
+            "Translator": "B",
+            "Chinese Sentences": "你的申请手续，我马上去办理。",
+            "Gloss": "你/申请/手续/我/快/办/。",
+            "Note": "办"
+          },
+          {
+            "Number": "test-00085",
+            "Translator": "B",
+            "Chinese Sentences": "你的笔在哪里买的？",
+            "Gloss": "你/笔/在/哪里/买/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00086",
+            "Translator": "B",
+            "Chinese Sentences": "你的衣服尺码能告诉我吗？",
+            "Gloss": "你/衣服/多少/大/告诉（我）/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00087",
+            "Translator": "B",
+            "Chinese Sentences": "你的证明文件我已经帮你准备好了。",
+            "Gloss": "你/证明/文件1/我/帮助/准备/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00088",
+            "Translator": "B",
+            "Chinese Sentences": "你的身体很不健康。",
+            "Gloss": "你/身体/不/健康/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00089",
+            "Translator": "B",
+            "Chinese Sentences": "你的身体很健康，请继续保持。",
+            "Gloss": "你/身体/健康/请/保持/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00090",
+            "Translator": "B",
+            "Chinese Sentences": "你真是个乐观的女孩。",
+            "Gloss": "你/乐观/女/孩子/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00091",
+            "Translator": "B",
+            "Chinese Sentences": "你知道哪里有修理厂吗？",
+            "Gloss": "修理/房/哪里/有/你/知道/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00092",
+            "Translator": "B",
+            "Chinese Sentences": "你能不抽烟吗？",
+            "Gloss": "你/不/抽烟/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00093",
+            "Translator": "B",
+            "Chinese Sentences": "你能先付钱吗？",
+            "Gloss": "你/首先/消费1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00094",
+            "Translator": "B",
+            "Chinese Sentences": "你能和我共度时光吗？",
+            "Gloss": "你/和/我/一起/生活/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00095",
+            "Translator": "B",
+            "Chinese Sentences": "你能带去去买衣服吗？",
+            "Gloss": "你/带领/去/买/衣服/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00096",
+            "Translator": "B",
+            "Chinese Sentences": "你能帮我出具一份证明文件吗？",
+            "Gloss": "你/帮助（我）/写字/1/证明/文件1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00097",
+            "Translator": "B",
+            "Chinese Sentences": "你能帮我把书还回去吗？",
+            "Gloss": "你/帮助（我）/书/还/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00098",
+            "Translator": "B",
+            "Chinese Sentences": "你能帮我把蔬菜洗了吗？",
+            "Gloss": "你/帮助（我）/菜/洗/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00099",
+            "Translator": "B",
+            "Chinese Sentences": "你能帮我把这个裙子包起来吗？",
+            "Gloss": "你/帮助（我）/这里/裙子/包装/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00100",
+            "Translator": "B",
+            "Chinese Sentences": "你能帮我拿下书架上的书吗？",
+            "Gloss": "你/帮助（我）/书柜/书/拿/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00101",
+            "Translator": "B",
+            "Chinese Sentences": "你能帮我订一间房间吗？",
+            "Gloss": "你/帮助（我）/订/1/房间/可以/？",
+            "Note": "订"
+          },
+          {
+            "Number": "test-00102",
+            "Translator": "B",
+            "Chinese Sentences": "你能找个医生帮我看看吗？",
+            "Gloss": "你/找/1/医生/帮助（我）/看1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00103",
+            "Translator": "B",
+            "Chinese Sentences": "你能给我推荐一套晚会礼服吗？",
+            "Gloss": "你/帮助（我）/推荐/1/晚会/衣服/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00104",
+            "Translator": "B",
+            "Chinese Sentences": "你能给我来一份土豆汤吗？",
+            "Gloss": "你/（你）给（我）/1/土豆/汤/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00105",
+            "Translator": "B",
+            "Chinese Sentences": "你能送我这些礼品吗？",
+            "Gloss": "这里/一些/礼物/（你）给（我）/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00106",
+            "Translator": "B",
+            "Chinese Sentences": "你要在今天下午之前完成讲稿得撰写。",
+            "Gloss": "演讲/文章/你/必须1/今天/下午/提前1/写字/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00107",
+            "Translator": "B",
+            "Chinese Sentences": "你要花费很多时间去完成。",
+            "Gloss": "你/要/用/多/时间/完成/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00108",
+            "Translator": "B",
+            "Chinese Sentences": "你帮我买张被子可以吗？",
+            "Gloss": "你/帮助（我）/买/被子/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00109",
+            "Translator": "B",
+            "Chinese Sentences": "你说话可以大点声吗？",
+            "Gloss": "你/说话/声音/大/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00110",
+            "Translator": "B",
+            "Chinese Sentences": "你跟我说话的时候好温和。",
+            "Gloss": "你/和/我/说话/时候/温柔/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00111",
+            "Translator": "B",
+            "Chinese Sentences": "你运动的时候有热身吗？",
+            "Gloss": "你/锻炼2/时候/热/身体/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00112",
+            "Translator": "B",
+            "Chinese Sentences": "你这东西买来多少钱？",
+            "Gloss": "你/这里/东西2/买/多少钱/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00113",
+            "Translator": "C",
+            "Chinese Sentences": "你这个石膏打了多久了？",
+            "Gloss": "你/石膏/时间/多少/？",
+            "Note": "石膏"
+          },
+          {
+            "Number": "test-00114",
+            "Translator": "C",
+            "Chinese Sentences": "你这么说我要流口水了。",
+            "Gloss": "你/如果/这样/说/我/流口水/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00115",
+            "Translator": "C",
+            "Chinese Sentences": "你这得蔬菜价格贵吗？",
+            "Gloss": "你/觉得/菜/价格/贵/有/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00116",
+            "Translator": "C",
+            "Chinese Sentences": "你这次需要多少的货物呢？",
+            "Gloss": "你/这次/东西/需要/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00117",
+            "Translator": "C",
+            "Chinese Sentences": "你送我的裙子我很喜欢。",
+            "Gloss": "你/送（我）/裙子/我/喜欢/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00118",
+            "Translator": "C",
+            "Chinese Sentences": "你需要减肥了。",
+            "Gloss": "你/减肥/要/。",
+            "Note": "减肥"
+          },
+          {
+            "Number": "test-00119",
+            "Translator": "C",
+            "Chinese Sentences": "你需要通过锻炼来减肥。",
+            "Gloss": "你/减肥/通过2/锻炼/要/。",
+            "Note": "减肥"
+          },
+          {
+            "Number": "test-00120",
+            "Translator": "C",
+            "Chinese Sentences": "做一个让自己骄傲和自豪的人。",
+            "Gloss": "做/人/自己/骄傲2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00121",
+            "Translator": "C",
+            "Chinese Sentences": "健康饮食，美好生活。",
+            "Gloss": "饮食/健康/生活/美好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00122",
+            "Translator": "C",
+            "Chinese Sentences": "减肥是没有捷径的。",
+            "Gloss": "减肥/简单/方法/没有/。",
+            "Note": "减肥"
+          },
+          {
+            "Number": "test-00123",
+            "Translator": "C",
+            "Chinese Sentences": "到了晚上我就基本不喝牛奶了。",
+            "Gloss": "到/晚上/我/喝/牛奶/不/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00124",
+            "Translator": "C",
+            "Chinese Sentences": "到达山顶需要多久啊？",
+            "Gloss": "到/山顶/时间/要/多少/？",
+            "Note": "山顶"
+          },
+          {
+            "Number": "test-00125",
+            "Translator": "C",
+            "Chinese Sentences": "去运动对身体有好处。",
+            "Gloss": "运动/对/身体/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00126",
+            "Translator": "C",
+            "Chinese Sentences": "可以帮我的车加满油吗？",
+            "Gloss": "帮助（我）/车/加/油/满/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00127",
+            "Translator": "C",
+            "Chinese Sentences": "可以帮我签个名吗？",
+            "Gloss": "帮助（我）/签名/可以/？",
+            "Note": "签名"
+          },
+          {
+            "Number": "test-00128",
+            "Translator": "C",
+            "Chinese Sentences": "可以给我开个收据吗？",
+            "Gloss": "给我/开/收据/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00129",
+            "Translator": "C",
+            "Chinese Sentences": "吃完晚饭后就开始写作业。",
+            "Gloss": "晚/饭/吃/完/写字/作业/开始/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00130",
+            "Translator": "C",
+            "Chinese Sentences": "吃蔬菜对身体有好处。",
+            "Gloss": "吃/菜/对/身体/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00131",
+            "Translator": "C",
+            "Chinese Sentences": "吸烟的习惯很不好。",
+            "Gloss": "吸烟/习惯/不好/。",
+            "Note": "不好"
+          },
+          {
+            "Number": "test-00132",
+            "Translator": "C",
+            "Chinese Sentences": "周六我们去购物。",
+            "Gloss": "周六/我们/去/买/东西/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00133",
+            "Translator": "C",
+            "Chinese Sentences": "我买了一个可爱的裙子送给我朋友。",
+            "Gloss": "我/买/裙子/可爱/一个/给/我/朋友/。",
+            "Note": "可爱"
+          },
+          {
+            "Number": "test-00134",
+            "Translator": "C",
+            "Chinese Sentences": "回来的时候帮我带份水果。",
+            "Gloss": "帮助（我）/带/水果/一份/回来/时候/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00135",
+            "Translator": "C",
+            "Chinese Sentences": "土豆可以用来炸味道很好。",
+            "Gloss": "土豆/炸/可以/吃/好/很/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00136",
+            "Translator": "C",
+            "Chinese Sentences": "在这家店消费了很多。",
+            "Gloss": "消费1/多/在/这/家/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00137",
+            "Translator": "C",
+            "Chinese Sentences": "多少钱才能买到这个东西？",
+            "Gloss": "买/这个/东西/钱/要/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00138",
+            "Translator": "C",
+            "Chinese Sentences": "天气变冷了，要多穿点衣服。",
+            "Gloss": "天气/冷/衣服/穿/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00139",
+            "Translator": "C",
+            "Chinese Sentences": "奶奶比以前更老了。",
+            "Gloss": "奶奶/老/比/之前/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00140",
+            "Translator": "C",
+            "Chinese Sentences": "奶茶简直就是我的最爱。",
+            "Gloss": "奶茶/我/最2/爱/是/。",
+            "Note": "奶茶"
+          },
+          {
+            "Number": "test-00141",
+            "Translator": "C",
+            "Chinese Sentences": "好久不见你又漂亮了。",
+            "Gloss": "时间/长/见/没有/你/漂亮/又/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00142",
+            "Translator": "C",
+            "Chinese Sentences": "妈妈今天早上没送我去上学。",
+            "Gloss": "妈妈/今天/早上/送/我/上学/没有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00143",
+            "Translator": "C",
+            "Chinese Sentences": "妈妈今天来学校给我送伞了。",
+            "Gloss": "妈妈/今天/来/学校/送/伞/给/我/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00144",
+            "Translator": "C",
+            "Chinese Sentences": "客厅堆满了灰尘。",
+            "Gloss": "客厅/灰尘/满/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00145",
+            "Translator": "C",
+            "Chinese Sentences": "对于减肥，我觉得很难做到。",
+            "Gloss": "对/减肥/我/感觉/做/难/。",
+            "Note": "减肥"
+          },
+          {
+            "Number": "test-00146",
+            "Translator": "C",
+            "Chinese Sentences": "对于宽松的衣服，我更喜欢紧身的。",
+            "Gloss": "对/衣服/宽松/紧/衣服/我/喜欢/更2/。",
+            "Note": "宽松"
+          },
+          {
+            "Number": "test-00147",
+            "Translator": "C",
+            "Chinese Sentences": "对于牛仔裤，我喜欢穿黑色的。",
+            "Gloss": "对/牛仔裤/穿/黑色/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00148",
+            "Translator": "C",
+            "Chinese Sentences": "对待他人以诚相待。",
+            "Gloss": "对/他人/真2/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00149",
+            "Translator": "C",
+            "Chinese Sentences": "巴黎得香水又贵又不好。",
+            "Gloss": "巴黎/香/水/贵/不好/全部/不好/。",
+            "Note": "不好"
+          },
+          {
+            "Number": "test-00150",
+            "Translator": "C",
+            "Chinese Sentences": "年轻时有个网恋对象。",
+            "Gloss": "年轻/时候/网/恋爱/对象/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00151",
+            "Translator": "C",
+            "Chinese Sentences": "开车不要开太快。",
+            "Gloss": "开车/快/不行/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00152",
+            "Translator": "C",
+            "Chinese Sentences": "很高兴我能遇见你。",
+            "Gloss": "相遇/你/我/开心/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00153",
+            "Translator": "C",
+            "Chinese Sentences": "很高兴能为你服务。",
+            "Gloss": "为/你/服务/我/开心/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00154",
+            "Translator": "C",
+            "Chinese Sentences": "怎么才能保持一个好的身材呢？",
+            "Gloss": "保持/身/好/怎么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00155",
+            "Translator": "D",
+            "Chinese Sentences": "意大利得蔬菜我也是很喜欢。",
+            "Gloss": "意大利/菜/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00156",
+            "Translator": "D",
+            "Chinese Sentences": "我不喜欢参加人多的活动。",
+            "Gloss": "我/不/喜欢/参加/多/人/活动/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00157",
+            "Translator": "D",
+            "Chinese Sentences": "我不喜欢喝咖啡，我喜欢喝茶。",
+            "Gloss": "我/不/喜欢/喝咖啡/我/喜欢/喝茶/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00158",
+            "Translator": "D",
+            "Chinese Sentences": "我不喜欢我弟弟。",
+            "Gloss": "我/不/喜欢/我/弟弟/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00159",
+            "Translator": "D",
+            "Chinese Sentences": "我不喜欢这个品牌的护肤品。",
+            "Gloss": "我/不/喜欢/这/品牌/护肤品/。",
+            "Note": "护肤品、品牌"
+          },
+          {
+            "Number": "test-00160",
+            "Translator": "D",
+            "Chinese Sentences": "我不喜欢这款沙发套。",
+            "Gloss": "我/不/喜欢/这/沙发/套/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00161",
+            "Translator": "D",
+            "Chinese Sentences": "我不想错过这个机会。",
+            "Gloss": "我/不/想/错过/这/机会/。",
+            "Note": "错过"
+          },
+          {
+            "Number": "test-00162",
+            "Translator": "D",
+            "Chinese Sentences": "我个人很不喜欢穿牛仔裤。",
+            "Gloss": "我/自己/不/喜欢/穿/牛仔裤/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00163",
+            "Translator": "D",
+            "Chinese Sentences": "我个人比较喜欢穿纯棉得背心。",
+            "Gloss": "我/自己/喜欢/穿/纯棉/背心/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00164",
+            "Translator": "D",
+            "Chinese Sentences": "我今天不想去学校。",
+            "Gloss": "我/今天/不想/去/学校/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00165",
+            "Translator": "D",
+            "Chinese Sentences": "我今天工作了一天很累了。",
+            "Gloss": "我/今天/工作/一天/累/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00166",
+            "Translator": "D",
+            "Chinese Sentences": "我今天想在家里玩游戏。",
+            "Gloss": "我/今天/想/在家/游戏/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00167",
+            "Translator": "D",
+            "Chinese Sentences": "我今天晚上要去踢球。",
+            "Gloss": "我/今天/晚上/去/踢球/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00168",
+            "Translator": "D",
+            "Chinese Sentences": "我从来没有买过奢侈品。",
+            "Gloss": "我/从来/没有/买/奢侈品/。",
+            "Note": "奢侈品"
+          },
+          {
+            "Number": "test-00169",
+            "Translator": "D",
+            "Chinese Sentences": "我们一起努力读书吧。",
+            "Gloss": "我们/一起/努力/读书/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00170",
+            "Translator": "D",
+            "Chinese Sentences": "我们2个没有什么差别。",
+            "Gloss": "我们/2个/差别/没有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00171",
+            "Translator": "D",
+            "Chinese Sentences": "我们什么时候去聚会？",
+            "Gloss": "我们/什么/时候/去/聚会/？",
+            "Note": "聚会"
+          },
+          {
+            "Number": "test-00172",
+            "Translator": "D",
+            "Chinese Sentences": "我们以后要花更多时间练习。",
+            "Gloss": "我们/以后/会/练习/时间/更1/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00173",
+            "Translator": "D",
+            "Chinese Sentences": "我们公司没有午休时间。",
+            "Gloss": "我们/公司/没有/中午/休息/时间/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00174",
+            "Translator": "D",
+            "Chinese Sentences": "我们去看大海吧。",
+            "Gloss": "我们/去/看/大/海/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00175",
+            "Translator": "D",
+            "Chinese Sentences": "我们可以取得胜利的。",
+            "Gloss": "我们/可以/取得/胜利1/。",
+            "Note": "取得"
+          },
+          {
+            "Number": "test-00176",
+            "Translator": "D",
+            "Chinese Sentences": "我们周末能一起看电影吗？",
+            "Gloss": "我们/周末/可以/一起/看/电影/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00177",
+            "Translator": "D",
+            "Chinese Sentences": "我们在比赛中应保持冷静。",
+            "Gloss": "我们/在/比赛/中/应该/保持/冷静/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00178",
+            "Translator": "D",
+            "Chinese Sentences": "我们家卧室很多。",
+            "Gloss": "我们/家/卧室/很1多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00179",
+            "Translator": "D",
+            "Chinese Sentences": "我们家有好多房子。",
+            "Gloss": "我们/家/房子/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00180",
+            "Translator": "D",
+            "Chinese Sentences": "我们应该改一下商品的买点。",
+            "Gloss": "我们/应该/改/商品/买/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00181",
+            "Translator": "D",
+            "Chinese Sentences": "我们得再等一会。",
+            "Gloss": "我们/要/再/等/一会/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00182",
+            "Translator": "D",
+            "Chinese Sentences": "我们明天再出发吧。",
+            "Gloss": "我们/明天/再/出发/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00183",
+            "Translator": "D",
+            "Chinese Sentences": "我们有四个人，车可以坐下吗？",
+            "Gloss": "我们/四/人/车/坐/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00184",
+            "Translator": "D",
+            "Chinese Sentences": "我们要寻找方法来解决这个问题。",
+            "Gloss": "我们/要/寻找/方法/解决/这/问题/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00185",
+            "Translator": "D",
+            "Chinese Sentences": "我们要练一下配合。",
+            "Gloss": "我们/练习/配合/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00186",
+            "Translator": "D",
+            "Chinese Sentences": "我们防守太差了。",
+            "Gloss": "我们/防守/差/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00187",
+            "Translator": "D",
+            "Chinese Sentences": "我会注意一下时间的。",
+            "Gloss": "我/会/注意/时间/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00188",
+            "Translator": "D",
+            "Chinese Sentences": "我借你的书已经还给你了。",
+            "Gloss": "我/借（你）/书/给你/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00189",
+            "Translator": "D",
+            "Chinese Sentences": "我儿子很喜欢我朋友买的玩具。",
+            "Gloss": "我/儿子2/很1/喜欢/我/朋友/买/玩具/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00190",
+            "Translator": "D",
+            "Chinese Sentences": "我先制作手工礼品送给他。",
+            "Gloss": "我/先/做/手工/礼物/送/他/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00191",
+            "Translator": "D",
+            "Chinese Sentences": "我出生在中国。",
+            "Gloss": "我/出生/在/中国/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00192",
+            "Translator": "D",
+            "Chinese Sentences": "我十分感兴趣生物学。",
+            "Gloss": "生物2/学/我/兴趣/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00193",
+            "Translator": "D",
+            "Chinese Sentences": "我去查一下这个东西多少钱？",
+            "Gloss": "我/去/检查/这/东西/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00194",
+            "Translator": "D",
+            "Chinese Sentences": "我只会投篮。",
+            "Gloss": "我/会/投篮/。",
+            "Note": "投篮"
+          },
+          {
+            "Number": "test-00195",
+            "Translator": "D",
+            "Chinese Sentences": "我只能用现金支付。",
+            "Gloss": "我/用/现金/支付/。",
+            "Note": "支付"
+          },
+          {
+            "Number": "test-00196",
+            "Translator": "D",
+            "Chinese Sentences": "我可以在早上洗澡吗？",
+            "Gloss": "我/可以/在/早上/洗澡/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00197",
+            "Translator": "D",
+            "Chinese Sentences": "我可以支持你去运动。",
+            "Gloss": "我/可以/支持/你/去/运动/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00198",
+            "Translator": "D",
+            "Chinese Sentences": "我可以独立完成这项任务。",
+            "Gloss": "我/可以/独立/完成/这/任务/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00199",
+            "Translator": "D",
+            "Chinese Sentences": "我可以知道他的一切吗？",
+            "Gloss": "我/可以/知道/他/全部/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00200",
+            "Translator": "D",
+            "Chinese Sentences": "我吃完早饭再去睡觉。",
+            "Gloss": "我/早上1/饭/完了/再/去/睡觉/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00201",
+            "Translator": "D",
+            "Chinese Sentences": "我唱歌不好听。",
+            "Gloss": "我/唱歌/不/好/听/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00202",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢享受大自然。",
+            "Gloss": "我/喜欢/享受/大/自然/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00203",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢去电影院看电影。",
+            "Gloss": "我/喜欢/去/电影院/看/电影/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00204",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢吃土豆馅的饺子。",
+            "Gloss": "我/土豆/饺子/喜欢/吃/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00205",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢吃新鲜的蔬菜。",
+            "Gloss": "我/新鲜/蔬菜/喜欢/吃/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00206",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢和土豆例汤。",
+            "Gloss": "我/土豆/汤/喜欢/喝/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00207",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢在家看电视。",
+            "Gloss": "我/喜欢/在家/看/电视/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00208",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢在早上看报纸。",
+            "Gloss": "我/喜欢/早上/报纸/看/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00209",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢在晚上刷微博。",
+            "Gloss": "我/喜欢/晚上/微博/看/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00210",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢在晚上喝果汁看电视。",
+            "Gloss": "我/喜欢/晚上/喝/水果/水/看/电视/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00211",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢在晚上的时候看小说。",
+            "Gloss": "我/喜欢/晚上/看/小说/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00212",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢在晚上看报纸。",
+            "Gloss": "我/喜欢/晚上/看/报纸/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00213",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢尝试不一样的东西。",
+            "Gloss": "我/喜欢/尝试/新鲜/东西/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00214",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢蓝色的裙子。",
+            "Gloss": "我/喜欢/裙子/蓝色/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00215",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢这双鞋子。",
+            "Gloss": "我/这个/鞋子/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00216",
+            "Translator": "E",
+            "Chinese Sentences": "我喜欢长直发的女生。",
+            "Gloss": "我/这个/女生/头发/长/直/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00217",
+            "Translator": "E",
+            "Chinese Sentences": "我国的大豆消费量很大。",
+            "Gloss": "我/国/大豆/交易/数量/大/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00218",
+            "Translator": "E",
+            "Chinese Sentences": "我国的生态环境十分脆弱。",
+            "Gloss": "我/国/生态/环境/破/弱/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00219",
+            "Translator": "E",
+            "Chinese Sentences": "我国高铁的速度很快。",
+            "Gloss": "我/国/高铁2/速度/快/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00220",
+            "Translator": "E",
+            "Chinese Sentences": "我坐公交车上班。",
+            "Gloss": "我/去/工作/公交车/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00221",
+            "Translator": "E",
+            "Chinese Sentences": "我太太的预产期快到了。",
+            "Gloss": "我/妻子/提前/生产/日期/快/到/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00222",
+            "Translator": "E",
+            "Chinese Sentences": "我妈妈不同意我出去玩。",
+            "Gloss": "我/妈妈/不/同意/我/出去/玩/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00223",
+            "Translator": "E",
+            "Chinese Sentences": "我妈妈很注重护肤保养。",
+            "Gloss": "我/妈妈/皮肤/护理/注意1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00224",
+            "Translator": "E",
+            "Chinese Sentences": "我家刚买了空调。",
+            "Gloss": "我/家/空调/刚/买/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00225",
+            "Translator": "E",
+            "Chinese Sentences": "我家的房子装修的很好。",
+            "Gloss": "我/家/房子/装修/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00226",
+            "Translator": "E",
+            "Chinese Sentences": "我家的水龙头漏水了。",
+            "Gloss": "我/家/水龙头/漏/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00227",
+            "Translator": "E",
+            "Chinese Sentences": "我家门口栽了一棵树。",
+            "Gloss": "我/家/门口/树/种/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00228",
+            "Translator": "E",
+            "Chinese Sentences": "我小时候有很多漫画故事。",
+            "Gloss": "我/小孩/漫画/故事/有/很多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00229",
+            "Translator": "E",
+            "Chinese Sentences": "我已经做出了很多努力了。",
+            "Gloss": "我/做/能力/很多/完/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00230",
+            "Translator": "E",
+            "Chinese Sentences": "我已经没有出路了。",
+            "Gloss": "我/出/路/没有/完/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00231",
+            "Translator": "E",
+            "Chinese Sentences": "我已经身无分文了。",
+            "Gloss": "我/钱/没有/完/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00232",
+            "Translator": "E",
+            "Chinese Sentences": "我平时不喜欢锻炼。",
+            "Gloss": "我/平时/锻炼/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00233",
+            "Translator": "E",
+            "Chinese Sentences": "我平时在外面都是说英语的。",
+            "Gloss": "我/平时/在/外面/说/英语/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00234",
+            "Translator": "E",
+            "Chinese Sentences": "我年轻时很喜欢打游戏。",
+            "Gloss": "我/年轻/时/喜欢/游戏/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00235",
+            "Translator": "E",
+            "Chinese Sentences": "我开车慢。",
+            "Gloss": "我/开车/慢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00236",
+            "Translator": "E",
+            "Chinese Sentences": "我很不喜欢价格贵的东西。",
+            "Gloss": "我/东西/贵/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00237",
+            "Translator": "E",
+            "Chinese Sentences": "我很不喜欢我的新发型。",
+            "Gloss": "我/新/发型/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00238",
+            "Translator": "E",
+            "Chinese Sentences": "我很不喜欢泡温泉。",
+            "Gloss": "我/泡温泉/不喜欢/。",
+            "Note": "泡温泉"
+          },
+          {
+            "Number": "test-00239",
+            "Translator": "E",
+            "Chinese Sentences": "我很不喜欢这款图案，我觉得很不好。",
+            "Gloss": "我/图案/不喜欢/我/看/不行/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00240",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢去度假。",
+            "Gloss": "我/喜欢/去/度假/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00241",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢吃西红柿。",
+            "Gloss": "我/喜欢/吃/西红柿/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00242",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢吃这道菜。",
+            "Gloss": "我/喜欢/吃/这个/菜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00243",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢吃零食。",
+            "Gloss": "我/喜欢/吃/零食/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00244",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢在中午喝牛奶。",
+            "Gloss": "我/喜欢/中午/喝/牛奶/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00245",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢在早上喝着牛奶看着电视。",
+            "Gloss": "我/喜欢/早上/喝/牛奶/看/电视/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00246",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢在早上看杂志。",
+            "Gloss": "我/喜欢/早上/看/杂志/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00247",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢在晚上读科幻小说。",
+            "Gloss": "我/喜欢/晚上/看/科学/回忆/小说/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00248",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢搭积木。",
+            "Gloss": "我/喜欢/搭/积木/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00249",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢番茄味的饼干。",
+            "Gloss": "我/喜欢/饼干/西红柿/品尝/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00250",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢花生配酒。",
+            "Gloss": "我/喜欢/花/加/酒/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00251",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢这个老师。",
+            "Gloss": "我/喜欢/这个/老师/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00252",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢这个风格的公寓。",
+            "Gloss": "我/喜欢/这个/风格/房子/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00253",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢这个黑色的裙子。",
+            "Gloss": "我/喜欢/这个/裙子/黑色/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00254",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢这件黑色的夹克。",
+            "Gloss": "我/喜欢/这个/夹克/黑色/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00255",
+            "Translator": "E",
+            "Chinese Sentences": "我很喜欢这款果汁味鸡尾酒。",
+            "Gloss": "我/喜欢/这个/水果/水/鸡尾酒/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00256",
+            "Translator": "F",
+            "Chinese Sentences": "我很喜欢这款洗衣机的设计。",
+            "Gloss": "这/洗衣机/设计/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00257",
+            "Translator": "F",
+            "Chinese Sentences": "我很喜欢黑色的背心特别是纯棉的话。",
+            "Gloss": "背心/黑色/我/喜欢/纯棉/特别/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00258",
+            "Translator": "F",
+            "Chinese Sentences": "我很开心你能给我这个礼物。",
+            "Gloss": "你/给（我）/礼物/我/开心/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00259",
+            "Translator": "F",
+            "Chinese Sentences": "我很愉快的度过了早上。",
+            "Gloss": "早上1/我/开心/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00260",
+            "Translator": "F",
+            "Chinese Sentences": "我很爱吃烤肉。",
+            "Gloss": "烤串/肉/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00261",
+            "Translator": "F",
+            "Chinese Sentences": "我很爱我的奶奶。",
+            "Gloss": "我/奶奶/我/爱/她/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00262",
+            "Translator": "F",
+            "Chinese Sentences": "我想买一些体育用品。",
+            "Gloss": "我/买/体育/东西2/一些2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00263",
+            "Translator": "F",
+            "Chinese Sentences": "我想买一条长裤。",
+            "Gloss": "我/买/裤子/长/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00264",
+            "Translator": "F",
+            "Chinese Sentences": "我想从事自己的专业相关的事情。",
+            "Gloss": "我/工作/希望/专业/联系/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00265",
+            "Translator": "F",
+            "Chinese Sentences": "我想做自己喜欢的作业。",
+            "Gloss": "我/作业/挑选/喜欢/做/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00266",
+            "Translator": "F",
+            "Chinese Sentences": "我想回我的故乡。",
+            "Gloss": "我/想/回/我/家乡/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00267",
+            "Translator": "F",
+            "Chinese Sentences": "我想当一个裁缝师。",
+            "Gloss": "希望/我/裁缝/工作/以后/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00268",
+            "Translator": "F",
+            "Chinese Sentences": "我想成为一个木匠。",
+            "Gloss": "希望/我/木2/工作/以后/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00269",
+            "Translator": "F",
+            "Chinese Sentences": "我想要一个安静的房间。",
+            "Gloss": "房间/安静/我/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00270",
+            "Translator": "F",
+            "Chinese Sentences": "我想要我妈妈来接我回家。",
+            "Gloss": "希望/我/妈妈/接/我/去/家/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00271",
+            "Translator": "F",
+            "Chinese Sentences": "我早上烘烤了饼干。",
+            "Gloss": "早上/我/饼干/焙/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00272",
+            "Translator": "F",
+            "Chinese Sentences": "我早晨都会看一会书。",
+            "Gloss": "平时/早上/我/书/看/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00273",
+            "Translator": "F",
+            "Chinese Sentences": "我昨天才买的裤子。",
+            "Gloss": "昨天/我/买/裤子/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00274",
+            "Translator": "F",
+            "Chinese Sentences": "我昨天晚上睡觉做梦了。",
+            "Gloss": "昨天/晚上/我/睡觉/梦/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00275",
+            "Translator": "F",
+            "Chinese Sentences": "我是他的好朋友。",
+            "Gloss": "他/好/朋友/我/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00276",
+            "Translator": "F",
+            "Chinese Sentences": "我曾经去过乡村。",
+            "Gloss": "农村/我/以前/去/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00277",
+            "Translator": "F",
+            "Chinese Sentences": "我最喜欢吃汉堡。",
+            "Gloss": "汉堡/我/喜欢/最/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00278",
+            "Translator": "F",
+            "Chinese Sentences": "我最喜欢的书已经看完了。",
+            "Gloss": "书/我/喜欢/最/看/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00279",
+            "Translator": "F",
+            "Chinese Sentences": "我最擅长打篮球。",
+            "Gloss": "篮球/我/擅长/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00280",
+            "Translator": "F",
+            "Chinese Sentences": "我最近没有好好训练。",
+            "Gloss": "我/训练/少/最近/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00281",
+            "Translator": "F",
+            "Chinese Sentences": "我有五本作业本。",
+            "Gloss": "作业/书/我/五/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00282",
+            "Translator": "F",
+            "Chinese Sentences": "我期待你的到来。",
+            "Gloss": "你/来/我/期待/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00283",
+            "Translator": "F",
+            "Chinese Sentences": "我来的正是时。",
+            "Gloss": "我/到/时间/正好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00284",
+            "Translator": "F",
+            "Chinese Sentences": "我每天都要喝一杯奶茶。",
+            "Gloss": "牛奶/茶/我/喜欢/每天/喝/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00285",
+            "Translator": "F",
+            "Chinese Sentences": "我比较喜欢我朋友家房子的设计。",
+            "Gloss": "我/朋友/房子/设计/我/喜欢/比较/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00286",
+            "Translator": "F",
+            "Chinese Sentences": "我没有抽烟。",
+            "Gloss": "我/香烟/没有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00287",
+            "Translator": "F",
+            "Chinese Sentences": "我现在想吃冰淇淋。",
+            "Gloss": "冰淇淋/我/想/吃/现在/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00288",
+            "Translator": "F",
+            "Chinese Sentences": "我用微信付款吧。",
+            "Gloss": "我/支付1/微信/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00289",
+            "Translator": "F",
+            "Chinese Sentences": "我的太太是一名老师。",
+            "Gloss": "我/妻子/老师/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00290",
+            "Translator": "F",
+            "Chinese Sentences": "我的好朋友这国外。",
+            "Gloss": "我/朋友/在/中国/外/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00291",
+            "Translator": "F",
+            "Chinese Sentences": "我的妈妈代表中国队参加了比赛。",
+            "Gloss": "我/妈妈/比赛/参加/代表/中国/队伍/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00292",
+            "Translator": "F",
+            "Chinese Sentences": "我的妈妈喜欢穿宽松的衣服。",
+            "Gloss": "衣服/宽/我/妈妈/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00293",
+            "Translator": "F",
+            "Chinese Sentences": "我的妈妈很喜欢吃土豆汤。",
+            "Gloss": "土豆/汤/我/妈妈/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00294",
+            "Translator": "F",
+            "Chinese Sentences": "我的妈妈是一个很棒的球员。",
+            "Gloss": "我/妈妈/球/员/棒/很/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00295",
+            "Translator": "F",
+            "Chinese Sentences": "我的房间有许多狗狗的照片。",
+            "Gloss": "我/房子/里面/狗2/照片/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00296",
+            "Translator": "F",
+            "Chinese Sentences": "我的早餐一般只喝牛奶。",
+            "Gloss": "我/一般/早上/喝/牛奶/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00297",
+            "Translator": "F",
+            "Chinese Sentences": "我的朋友很不喜欢穿紧身牛仔裤。",
+            "Gloss": "牛仔裤/紧/我/朋友/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00298",
+            "Translator": "F",
+            "Chinese Sentences": "我的身体有点不舒服。",
+            "Gloss": "我/不/舒服/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00299",
+            "Translator": "F",
+            "Chinese Sentences": "我的钱信用卡刷爆了。",
+            "Gloss": "我/信用卡/钱/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00300",
+            "Translator": "F",
+            "Chinese Sentences": "我真的很喜欢吃水果。",
+            "Gloss": "水果/我/喜欢/很/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00301",
+            "Translator": "F",
+            "Chinese Sentences": "我真的很喜欢这个牛仔裤，我想买它。",
+            "Gloss": "这/牛仔裤/我/喜欢/很/我/想/买/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00302",
+            "Translator": "F",
+            "Chinese Sentences": "我真的很想去海边。",
+            "Gloss": "海/边/我/想/去/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00303",
+            "Translator": "F",
+            "Chinese Sentences": "我真难以想象那个男人。",
+            "Gloss": "那/男/人/我/想象/难/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00304",
+            "Translator": "F",
+            "Chinese Sentences": "我经常出入健身馆。",
+            "Gloss": "健身房/我/去/常常/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00305",
+            "Translator": "F",
+            "Chinese Sentences": "我经常给我的车保养。",
+            "Gloss": "我/汽车1/保养/常常/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00306",
+            "Translator": "F",
+            "Chinese Sentences": "我给朋友得小孩送了礼物。",
+            "Gloss": "我/朋友/小孩/我/给/礼物/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00307",
+            "Translator": "F",
+            "Chinese Sentences": "我能买下这个沙发套吗？我很喜欢。",
+            "Gloss": "这/沙发/套/我/买/可以/？/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00308",
+            "Translator": "F",
+            "Chinese Sentences": "我能出去外面透透气吗？",
+            "Gloss": "我/去/外/呼吸/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00309",
+            "Translator": "F",
+            "Chinese Sentences": "我能刷信用卡吗？",
+            "Gloss": "我/信用卡/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00310",
+            "Translator": "F",
+            "Chinese Sentences": "我能在这本笔记本上写字吗？",
+            "Gloss": "这/笔记本/我/写字/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00311",
+            "Translator": "F",
+            "Chinese Sentences": "我能将剩菜打包带走吗？",
+            "Gloss": "剩余/菜/我/打/包1/带1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00312",
+            "Translator": "F",
+            "Chinese Sentences": "我能申请经理吗？",
+            "Gloss": "我/申请/经理/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00313",
+            "Translator": "F",
+            "Chinese Sentences": "我能试穿这件宽松的背心吗？",
+            "Gloss": "这/背心/我/试/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00314",
+            "Translator": "G",
+            "Chinese Sentences": "我很喜欢吸烟。",
+            "Gloss": "吸烟/我/喜欢/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00315",
+            "Translator": "G",
+            "Chinese Sentences": "我要学习新的知识。",
+            "Gloss": "新1/知识/学习1/我/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00316",
+            "Translator": "G",
+            "Chinese Sentences": "我要怎么查找商品信息？",
+            "Gloss": "商品/信息/怎么/找/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00317",
+            "Translator": "G",
+            "Chinese Sentences": "我要调整一下自己的心态。",
+            "Gloss": "我/心/状态/调整/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00318",
+            "Translator": "G",
+            "Chinese Sentences": "我觉得我身体有些不舒服。",
+            "Gloss": "我/感觉/身体/难受/有/少/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00319",
+            "Translator": "G",
+            "Chinese Sentences": "我觉得网上购物很方便。",
+            "Gloss": "我/感觉/东西2/网购/方便/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00320",
+            "Translator": "G",
+            "Chinese Sentences": "我觉得这件衣服和我不搭。",
+            "Gloss": "感觉/这/衣服/我/不符合/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00321",
+            "Translator": "G",
+            "Chinese Sentences": "我还不会倒车。",
+            "Gloss": "倒车/我/不会/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00322",
+            "Translator": "G",
+            "Chinese Sentences": "我喝了咖啡就睡不着。",
+            "Gloss": "咖啡/我/喝/完了/睡/不行2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00323",
+            "Translator": "G",
+            "Chinese Sentences": "我这几天生病了。",
+            "Gloss": "我/最近/病/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00324",
+            "Translator": "G",
+            "Chinese Sentences": "我迷路了你可以带我走出去吗？",
+            "Gloss": "我/路/迷惑/你/带（我）/出/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00325",
+            "Translator": "G",
+            "Chinese Sentences": "我送了他一个玩具。",
+            "Gloss": "我/玩具/一/送/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00326",
+            "Translator": "G",
+            "Chinese Sentences": "我长大了想当老师。",
+            "Gloss": "等/我/成长/想/做/老师/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00327",
+            "Translator": "G",
+            "Chinese Sentences": "我需要一个计划。",
+            "Gloss": "我/需要1/计划/一/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00328",
+            "Translator": "G",
+            "Chinese Sentences": "我写作业需要一些帮助。",
+            "Gloss": "我/写字/作业/帮助（我）/需要2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00329",
+            "Translator": "G",
+            "Chinese Sentences": "我需要一点果汁。",
+            "Gloss": "水果/喝/我/要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00330",
+            "Translator": "G",
+            "Chinese Sentences": "我需要把名字签在哪里？",
+            "Gloss": "我/姓名/签字/哪里/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00331",
+            "Translator": "G",
+            "Chinese Sentences": "房间里禁止吸烟。",
+            "Gloss": "房子/内/吸烟/禁止1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00332",
+            "Translator": "G",
+            "Chinese Sentences": "找到一个喜欢的事业，用心付出。",
+            "Gloss": "找/自己/喜欢/事业/心/贡献/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00333",
+            "Translator": "G",
+            "Chinese Sentences": "接受自己的不足，寻找改进的方法。",
+            "Gloss": "自己/缺点/接受/改善/方法/寻找/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00334",
+            "Translator": "G",
+            "Chinese Sentences": "操场上有许许多多的小朋友。",
+            "Gloss": "操场/小孩/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00335",
+            "Translator": "G",
+            "Chinese Sentences": "收银台在你的左边。",
+            "Gloss": "你/左/是/结账/台2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00336",
+            "Translator": "G",
+            "Chinese Sentences": "明天我就要参加演讲比赛了。",
+            "Gloss": "我/明天/参加/演讲/比赛/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00337",
+            "Translator": "G",
+            "Chinese Sentences": "明天是我朋友的生日。",
+            "Gloss": "我/朋友/明天/生日2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00338",
+            "Translator": "G",
+            "Chinese Sentences": "明天要下雨运动会不能举行了。",
+            "Gloss": "明天/雨/运动/开会/举行/不能1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00339",
+            "Translator": "G",
+            "Chinese Sentences": "明年我就出国学习了。",
+            "Gloss": "明天/年/我/去/国/外/学习1/。",
+            "Note": "国"
+          },
+          {
+            "Number": "test-00340",
+            "Translator": "G",
+            "Chinese Sentences": "晕船怎么样才会好一点？",
+            "Gloss": "船/晕/解决/方法/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00341",
+            "Translator": "G",
+            "Chinese Sentences": "有一款香皂，我真的很喜欢。",
+            "Gloss": "有/一/香皂/我/喜欢/很/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00342",
+            "Translator": "G",
+            "Chinese Sentences": "有好都汉字我都不会。",
+            "Gloss": "中国/字/看/多/我/不会/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00343",
+            "Translator": "G",
+            "Chinese Sentences": "有很多植物我都不认识。",
+            "Gloss": "植物/多/我/不懂/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00344",
+            "Translator": "G",
+            "Chinese Sentences": "如果有钱你可以买很多东西。",
+            "Gloss": "如果/富/东西2/买/买/多/可以/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00345",
+            "Translator": "G",
+            "Chinese Sentences": "未成年人禁止抽烟。",
+            "Gloss": "成年人/不是/吸烟/禁止1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00346",
+            "Translator": "G",
+            "Chinese Sentences": "树叶从树上掉下来了。",
+            "Gloss": "树1/叶2/落下/。",
+            "Note": "落下"
+          },
+          {
+            "Number": "test-00347",
+            "Translator": "G",
+            "Chinese Sentences": "桌子下有一支笔。",
+            "Gloss": "桌子/下/有/笔/一/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00348",
+            "Translator": "G",
+            "Chinese Sentences": "每家都有空调。",
+            "Gloss": "每/家/空调/全部/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00349",
+            "Translator": "G",
+            "Chinese Sentences": "比起甜食我更喜欢吃咸食。",
+            "Gloss": "甜/咸/食物/比较/我/喜欢/这/咸/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00350",
+            "Translator": "G",
+            "Chinese Sentences": "沙尘暴的影响很大。",
+            "Gloss": "沙尘暴/影响/大/很1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00351",
+            "Translator": "G",
+            "Chinese Sentences": "没有比脚踏实地更可靠的方法了。",
+            "Gloss": "最2/可靠2/方法/什么/认真/踏实/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00352",
+            "Translator": "G",
+            "Chinese Sentences": "游泳是一项运动。",
+            "Gloss": "游泳/属于3/运动/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00353",
+            "Translator": "G",
+            "Chinese Sentences": "炸土豆是我很喜欢的菜。",
+            "Gloss": "土豆/炸/我/最2/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00354",
+            "Translator": "G",
+            "Chinese Sentences": "煮面条是我最擅长的。",
+            "Gloss": "做/面条/我/最2/擅长/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00355",
+            "Translator": "G",
+            "Chinese Sentences": "爬梯子的时候小心点。",
+            "Gloss": "梯子/爬/小心/。",
+            "Note": "梯子、爬"
+          },
+          {
+            "Number": "test-00356",
+            "Translator": "G",
+            "Chinese Sentences": "现在是我们共同拼搏的时刻。",
+            "Gloss": "现在/时间/我们/共同/拼搏/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00357",
+            "Translator": "G",
+            "Chinese Sentences": "生吃蔬菜不是一个好习惯。",
+            "Gloss": "蔬菜/生/吃/这/习惯/坏/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00358",
+            "Translator": "G",
+            "Chinese Sentences": "用更积极的态度面对未来。",
+            "Gloss": "用/更/积极/态度/对待/将来/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00359",
+            "Translator": "G",
+            "Chinese Sentences": "目前就只有这个黑色的裤子。",
+            "Gloss": "现在/剩余/这/黑/裤子/一/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00360",
+            "Translator": "G",
+            "Chinese Sentences": "看一下医生需要多少钱？",
+            "Gloss": "看1/病/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00361",
+            "Translator": "G",
+            "Chinese Sentences": "真正的英雄不是战胜别人，而是战胜自己。",
+            "Gloss": "真1/英雄/战斗/胜利2/别人/不是/重要/是/战斗/胜利2/自己/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00362",
+            "Translator": "G",
+            "Chinese Sentences": "等一下，我们一起吃午饭。",
+            "Gloss": "等/我们/一起/吃饭/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00363",
+            "Translator": "G",
+            "Chinese Sentences": "等我回来请你们吃饭。",
+            "Gloss": "等/我/回来/请/你们/吃饭/。",
+            "Note": "回来"
+          },
+          {
+            "Number": "test-00364",
+            "Translator": "G",
+            "Chinese Sentences": "给我来一杯咖啡。",
+            "Gloss": "给（我）/咖啡/一/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00365",
+            "Translator": "G",
+            "Chinese Sentences": "能给我一个塑料袋吗？",
+            "Gloss": "给（我）/塑料袋/一/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00366",
+            "Translator": "G",
+            "Chinese Sentences": "虽然这个品牌得东西贵，但质量很好。",
+            "Gloss": "这个/牌子/东西2/贵/但是2/质量/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00367",
+            "Translator": "G",
+            "Chinese Sentences": "衬衣和牛仔裤我都喜欢。",
+            "Gloss": "衬衣/牛仔裤/我/都/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00368",
+            "Translator": "G",
+            "Chinese Sentences": "让生命中更多的人看到你温暖的一面。",
+            "Gloss": "让/人生/相遇/相遇/人/看/你/温暖/样子/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00369",
+            "Translator": "G",
+            "Chinese Sentences": "请你写上你的姓名和电话。",
+            "Gloss": "你/姓名/电话/号码/写字/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00370",
+            "Translator": "H",
+            "Chinese Sentences": "请你收好你的VIP。",
+            "Gloss": "V/I/P/卡/放/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00371",
+            "Translator": "H",
+            "Chinese Sentences": "请到收银台结账。",
+            "Gloss": "结账/指/桌子/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00372",
+            "Translator": "H",
+            "Chinese Sentences": "请把你的收据收好。",
+            "Gloss": "收据/放/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00373",
+            "Translator": "H",
+            "Chinese Sentences": "请问一下咨询台在哪？",
+            "Gloss": "咨询/桌子/哪/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00374",
+            "Translator": "H",
+            "Chinese Sentences": "谢谢你的书我很喜欢。",
+            "Gloss": "书/我/喜欢/谢谢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00375",
+            "Translator": "H",
+            "Chinese Sentences": "谢谢你的帮忙我很开心。",
+            "Gloss": "帮助（我）/谢谢/开心/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00376",
+            "Translator": "H",
+            "Chinese Sentences": "谢谢你的礼物我很喜欢。",
+            "Gloss": "礼物（我）/喜欢/谢谢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00377",
+            "Translator": "H",
+            "Chinese Sentences": "越来越多的青年热衷于整容。",
+            "Gloss": "青年/整容/越来越2/。",
+            "Note": "整容"
+          },
+          {
+            "Number": "test-00378",
+            "Translator": "H",
+            "Chinese Sentences": "身体不适的话需要看医生。",
+            "Gloss": "不/舒服/去/医生/病/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00379",
+            "Translator": "I",
+            "Chinese Sentences": "这一瓶酒多少钱？",
+            "Gloss": "这/酒/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00380",
+            "Translator": "I",
+            "Chinese Sentences": "这东西贵。",
+            "Gloss": "这/贵/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00381",
+            "Translator": "I",
+            "Chinese Sentences": "这东西对我来说太重要了。",
+            "Gloss": "这/东西1/重要/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00382",
+            "Translator": "I",
+            "Chinese Sentences": "这个东西今天打折吗？",
+            "Gloss": "这/东西1/打折/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00383",
+            "Translator": "I",
+            "Chinese Sentences": "这个东西安全吗？",
+            "Gloss": "这/东西1/安全/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00384",
+            "Translator": "I",
+            "Chinese Sentences": "这个书架能放杂志吗？",
+            "Gloss": "这/书柜/杂志/放进去/可以/？",
+            "Note": "放进去"
+          },
+          {
+            "Number": "test-00385",
+            "Translator": "I",
+            "Chinese Sentences": "这个产品是我们生产的。",
+            "Gloss": "这/产品/我/生产1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00386",
+            "Translator": "I",
+            "Chinese Sentences": "这个人情你要怎么还？",
+            "Gloss": "这/人情/怎么/还/？",
+            "Note": "人情"
+          },
+          {
+            "Number": "test-00387",
+            "Translator": "I",
+            "Chinese Sentences": "这个优惠券还有多久实效期？",
+            "Gloss": "这/优惠券/剩/时间/多少/？",
+            "Note": "优惠券"
+          },
+          {
+            "Number": "test-00388",
+            "Translator": "J",
+            "Chinese Sentences": "这个传统是历史悠久的。",
+            "Gloss": "这里/传统/历史/悠久/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00389",
+            "Translator": "J",
+            "Chinese Sentences": "这个伴娘是我现在的老婆。",
+            "Gloss": "这里/伴娘/现在/我/妻子/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00390",
+            "Translator": "J",
+            "Chinese Sentences": "这个发票可以帮你打折。",
+            "Gloss": "你/发票/帮助/打折/可以/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00391",
+            "Translator": "J",
+            "Chinese Sentences": "这个品牌的东西比较贵。",
+            "Gloss": "这里/牌子/东西1/差点儿2/贵/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00392",
+            "Translator": "J",
+            "Chinese Sentences": "这个商品已经在降价了。",
+            "Gloss": "这里/商品/降价/仍然/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00393",
+            "Translator": "J",
+            "Chinese Sentences": "这个商品没什么卖点。",
+            "Gloss": "这里/商品/卖/核心/什么/没有2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00394",
+            "Translator": "J",
+            "Chinese Sentences": "这个商品现在不多了。",
+            "Gloss": "这里/商品/现在/多/不/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00395",
+            "Translator": "J",
+            "Chinese Sentences": "这个地方很凉快，我很喜欢。",
+            "Gloss": "这里/地方/舒服/凉/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00396",
+            "Translator": "J",
+            "Chinese Sentences": "这个塑胶袋怎么卖呢？",
+            "Gloss": "这里/塑料袋/什么/卖/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00397",
+            "Translator": "J",
+            "Chinese Sentences": "这个塑胶袋我很喜欢。",
+            "Gloss": "这里/塑料袋/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00398",
+            "Translator": "J",
+            "Chinese Sentences": "这个女生我很喜欢。",
+            "Gloss": "这里/女/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00399",
+            "Translator": "J",
+            "Chinese Sentences": "这个季节产什么蔬菜？",
+            "Gloss": "这里/季节/蔬菜/有/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00400",
+            "Translator": "J",
+            "Chinese Sentences": "这个季节有什么水果？",
+            "Gloss": "这里/季节/水果/有/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00401",
+            "Translator": "J",
+            "Chinese Sentences": "这个孩子是你的吗？",
+            "Gloss": "这里/小孩/你/是/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00402",
+            "Translator": "J",
+            "Chinese Sentences": "这个山顶有多高。",
+            "Gloss": "这里/山/顶/高/多少/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00403",
+            "Translator": "J",
+            "Chinese Sentences": "这个工作你还满意吗？",
+            "Gloss": "这里/工作/你/满意/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00404",
+            "Translator": "J",
+            "Chinese Sentences": "这个工作对我很有挑战性。",
+            "Gloss": "这里/工作/我/感觉/挑战/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00405",
+            "Translator": "J",
+            "Chinese Sentences": "这个工作真的很辛苦。",
+            "Gloss": "这里/工作/辛苦/真2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00406",
+            "Translator": "J",
+            "Chinese Sentences": "这个想法简直太棒了。",
+            "Gloss": "这里/思想/棒/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00407",
+            "Translator": "J",
+            "Chinese Sentences": "这个护肤品效果不好。",
+            "Gloss": "这里/化妆/东西1/效果/不行2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00408",
+            "Translator": "J",
+            "Chinese Sentences": "这个护肤品效果怎么样？",
+            "Gloss": "这里/化妆/东西1/怎么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00409",
+            "Translator": "J",
+            "Chinese Sentences": "这个播放机我送给朋友了。",
+            "Gloss": "这里/广播/机器/朋友/我/给/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00410",
+            "Translator": "J",
+            "Chinese Sentences": "这个是我送你的贺卡。",
+            "Gloss": "这里/贺卡/我/给/你/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00411",
+            "Translator": "J",
+            "Chinese Sentences": "这个月的支出透支了。",
+            "Gloss": "这里/一个月/支出2/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00412",
+            "Translator": "J",
+            "Chinese Sentences": "这个月的水电费很少。",
+            "Gloss": "这里/一个月/水1/电/费/少/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00413",
+            "Translator": "J",
+            "Chinese Sentences": "这个款冰淇淋我很喜欢。",
+            "Gloss": "这里/冰淇淋/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00414",
+            "Translator": "J",
+            "Chinese Sentences": "这个款颜色的牛仔裤是今年得爆品。",
+            "Gloss": "这里/牛仔裤/颜色/现在/年/火/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00415",
+            "Translator": "J",
+            "Chinese Sentences": "这个水果我很喜欢。",
+            "Gloss": "这里/水果/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00416",
+            "Translator": "J",
+            "Chinese Sentences": "这个汉堡我很不喜欢。",
+            "Gloss": "这里/汉堡包/我/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00417",
+            "Translator": "J",
+            "Chinese Sentences": "这个牌子的塑胶袋质量很差。",
+            "Gloss": "这里/塑料袋/牌子/质量/不行2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00418",
+            "Translator": "J",
+            "Chinese Sentences": "这个玩具很适合我儿子。",
+            "Gloss": "这里/玩具/我/男孩/合适1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00419",
+            "Translator": "J",
+            "Chinese Sentences": "这个玩具我儿子很不喜欢。",
+            "Gloss": "这里/玩具/我/男孩/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00420",
+            "Translator": "J",
+            "Chinese Sentences": "这个电视剧最后的结局我很不喜欢。",
+            "Gloss": "这里/电视机/结束/最后/我/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00421",
+            "Translator": "J",
+            "Chinese Sentences": "这个老师很讨厌。",
+            "Gloss": "这里/老师/讨厌/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00422",
+            "Translator": "J",
+            "Chinese Sentences": "这个职位有什么要求吗？",
+            "Gloss": "这里/职位/要求/有/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00423",
+            "Translator": "J",
+            "Chinese Sentences": "这个葡萄真新鲜。",
+            "Gloss": "这里/葡萄/新鲜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00424",
+            "Translator": "J",
+            "Chinese Sentences": "这个袋子是用来打包的。",
+            "Gloss": "这里/提/用/包1/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00425",
+            "Translator": "J",
+            "Chinese Sentences": "这个门下午能安装好吗？",
+            "Gloss": "这里/门/安装/完成/下午2/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00426",
+            "Translator": "K",
+            "Chinese Sentences": "这个问题我帮你解决好了。",
+            "Gloss": "这里/问题/帮助/解决/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00427",
+            "Translator": "K",
+            "Chinese Sentences": "这个项目是今年的热门。",
+            "Gloss": "今年/这里/项目/吸引/人/多/。",
+            "Note": "今年"
+          },
+          {
+            "Number": "test-00428",
+            "Translator": "K",
+            "Chinese Sentences": "这个颜色十分吉祥。",
+            "Gloss": "这里/颜色/看1/吉祥/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00429",
+            "Translator": "K",
+            "Chinese Sentences": "这个颜色是今年比较流行的。",
+            "Gloss": "今年/这里/颜色/流行/。",
+            "Note": "今年"
+          },
+          {
+            "Number": "test-00430",
+            "Translator": "K",
+            "Chinese Sentences": "这个风扇多少钱？",
+            "Gloss": "这里/电风扇/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00431",
+            "Translator": "K",
+            "Chinese Sentences": "这些杂志你能便宜卖给我。",
+            "Gloss": "这里/一些1/杂志/便宜/卖/我/可以/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00432",
+            "Translator": "K",
+            "Chinese Sentences": "这些牛肉很新鲜。",
+            "Gloss": "这里/牛/肉/新鲜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00433",
+            "Translator": "K",
+            "Chinese Sentences": "这件事我已经知道了。",
+            "Gloss": "这里/事情2/知道/了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00434",
+            "Translator": "K",
+            "Chinese Sentences": "这件夹克怎么样？",
+            "Gloss": "这里/夹克/好不好/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00435",
+            "Translator": "K",
+            "Chinese Sentences": "这件宽松的裤子卖光了。",
+            "Gloss": "这里/裤子/宽/卖/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00436",
+            "Translator": "K",
+            "Chinese Sentences": "这件衣服我能试穿吗？",
+            "Gloss": "这里/衣服/穿/试一试/可以/？",
+            "Note": "试一试"
+          },
+          {
+            "Number": "test-00437",
+            "Translator": "K",
+            "Chinese Sentences": "这件衬衫质量不错。",
+            "Gloss": "这里/衬衣/质量/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00438",
+            "Translator": "K",
+            "Chinese Sentences": "这件裙子的尺码还需要等到明天才有。",
+            "Gloss": "等/明天/这里/裙子/有/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00439",
+            "Translator": "K",
+            "Chinese Sentences": "这件裤子是纯棉的吗？",
+            "Gloss": "这里/裙子/纯棉/是不是/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00440",
+            "Translator": "K",
+            "Chinese Sentences": "这件西裤多少钱？我很喜欢。",
+            "Gloss": "这里/裤子/钱/多少/？/我/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00441",
+            "Translator": "K",
+            "Chinese Sentences": "这件黑色的背心我很不喜欢。",
+            "Gloss": "这里/黑/背心/不喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00442",
+            "Translator": "K",
+            "Chinese Sentences": "这台洗衣机能退款吗？",
+            "Gloss": "这里/洗衣机/钱/退1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00443",
+            "Translator": "K",
+            "Chinese Sentences": "这周我打算和我太太去度蜜月。",
+            "Gloss": "这里/一周/计划/和/妻子/2/蜜月/度假/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00444",
+            "Translator": "K",
+            "Chinese Sentences": "这周的作业你们要尽快完成。",
+            "Gloss": "这里/一周/你们/作业/完成/时间/抓紧/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00445",
+            "Translator": "K",
+            "Chinese Sentences": "这品牌是我很喜欢的品牌。",
+            "Gloss": "这里/品牌/很2/喜欢/。",
+            "Note": "品牌"
+          },
+          {
+            "Number": "test-00446",
+            "Translator": "K",
+            "Chinese Sentences": "这场球赛看的很过瘾。",
+            "Gloss": "这里/篮球/比赛/看1/完了/舒服/爽/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00447",
+            "Translator": "K",
+            "Chinese Sentences": "这天气越来越凉了。",
+            "Gloss": "这里/天气/温度/降/越来越2/冷/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00448",
+            "Translator": "K",
+            "Chinese Sentences": "这套公寓不对外出租。",
+            "Gloss": "这里/楼房/租/不行1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00449",
+            "Translator": "K",
+            "Chinese Sentences": "这套公寓的房子需要多少押金？",
+            "Gloss": "这里/房子/押金/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00450",
+            "Translator": "K",
+            "Chinese Sentences": "这套晚会礼服多少钱呢？",
+            "Gloss": "这里/晚会/衣服/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00451",
+            "Translator": "K",
+            "Chinese Sentences": "这家中式餐厅的味道我很喜欢。",
+            "Gloss": "这里/中国/餐厅/很2/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00452",
+            "Translator": "K",
+            "Chinese Sentences": "这家外贸公司我很喜欢。",
+            "Gloss": "这里/家/外/贸易/公司/很2/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00453",
+            "Translator": "K",
+            "Chinese Sentences": "这家店得小吃很好吃。",
+            "Gloss": "这里/家/小/吃/很2/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00454",
+            "Translator": "K",
+            "Chinese Sentences": "这家店的咖啡不好喝还贵。",
+            "Gloss": "这里/家/咖啡/喝/坏/贵/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00455",
+            "Translator": "K",
+            "Chinese Sentences": "这家店的咖啡很不好喝。",
+            "Gloss": "这里/家/咖啡/喝/差劲/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00456",
+            "Translator": "K",
+            "Chinese Sentences": "这家电影院的电影票价格很便宜。",
+            "Gloss": "这里/家/电影/票/价格/很2/便宜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00457",
+            "Translator": "K",
+            "Chinese Sentences": "这家电影院的设计很好。",
+            "Gloss": "这里/电影院/设计/很2/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00458",
+            "Translator": "K",
+            "Chinese Sentences": "这家的房屋的装修很特别。",
+            "Gloss": "这里/房子/装修/很2/特别/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00459",
+            "Translator": "K",
+            "Chinese Sentences": "这家餐厅味道不好价格还贵。",
+            "Gloss": "这里/餐厅/品尝/坏/价格/贵/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00460",
+            "Translator": "K",
+            "Chinese Sentences": "这张发票请你收好。",
+            "Gloss": "这里/发票/你/保留/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00461",
+            "Translator": "K",
+            "Chinese Sentences": "这所学校有很多英语老师。",
+            "Gloss": "这里/学校/英国/语言/老师/多/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00462",
+            "Translator": "K",
+            "Chinese Sentences": "这支笔能送给我吗？",
+            "Gloss": "这里/笔/送（我）/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00463",
+            "Translator": "K",
+            "Chinese Sentences": "这是你的小费请你拿好。",
+            "Gloss": "这里/小/费/送（你）/装/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00464",
+            "Translator": "K",
+            "Chinese Sentences": "这是收据请你保管好。",
+            "Gloss": "这里/收据/你/保管/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00465",
+            "Translator": "K",
+            "Chinese Sentences": "这本书可以借我吗？",
+            "Gloss": "这里/书/借1/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00466",
+            "Translator": "K",
+            "Chinese Sentences": "这本书的内容我很喜欢。",
+            "Gloss": "这里/书/内容/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00467",
+            "Translator": "K",
+            "Chinese Sentences": "这本书能写字吗？",
+            "Gloss": "这里/书/写字/可以/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00468",
+            "Translator": "K",
+            "Chinese Sentences": "这款加工机是用来做什么的？",
+            "Gloss": "这里/加工/机器/作用/什么/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00469",
+            "Translator": "K",
+            "Chinese Sentences": "这款发型的设计很到位。",
+            "Gloss": "这里/头发/设计/很2/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00470",
+            "Translator": "K",
+            "Chinese Sentences": "这款图案设计的很好。",
+            "Gloss": "这里/图案/设计/很2/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00471",
+            "Translator": "K",
+            "Chinese Sentences": "这款沙发得设计和材料都很好。",
+            "Gloss": "这里/沙发/设计/材料2/都/很2/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00472",
+            "Translator": "L",
+            "Chinese Sentences": "这款玩具今天卖完了。",
+            "Gloss": "这/玩具/今天/卖/完了/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00473",
+            "Translator": "L",
+            "Chinese Sentences": "这款电视很好也不贵。",
+            "Gloss": "这/电视/好/钱/便宜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00474",
+            "Translator": "L",
+            "Chinese Sentences": "这款电视比较便宜但质量不是很好。",
+            "Gloss": "这/电视/便宜/少/少/但是/质量/一般/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00475",
+            "Translator": "L",
+            "Chinese Sentences": "这款笔记本得设计很棒。",
+            "Gloss": "这/笔记本/设计/称赞2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00476",
+            "Translator": "L",
+            "Chinese Sentences": "这款裙子很适合我妹妹。",
+            "Gloss": "这/裙子/我/妹妹/合适1/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00477",
+            "Translator": "L",
+            "Chinese Sentences": "这款裤子会褪色。",
+            "Gloss": "这/裤子/颜色/丢/会/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00478",
+            "Translator": "L",
+            "Chinese Sentences": "这款设计的样品很给力。",
+            "Gloss": "这/样品/设计/称赞2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00479",
+            "Translator": "L",
+            "Chinese Sentences": "这款香水的味道很好闻。",
+            "Gloss": "这/香水/闻/舒服/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00480",
+            "Translator": "L",
+            "Chinese Sentences": "这款鸡尾酒又贵又不好喝。",
+            "Gloss": "这/鸡尾酒/不好喝/钱/贵/。",
+            "Note": "不好喝"
+          },
+          {
+            "Number": "test-00481",
+            "Translator": "L",
+            "Chinese Sentences": "这款鸡尾酒我很喜欢。",
+            "Gloss": "这/鸡尾酒/我/喜欢/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00482",
+            "Translator": "L",
+            "Chinese Sentences": "这真的太好了。",
+            "Gloss": "这/称赞2/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00483",
+            "Translator": "L",
+            "Chinese Sentences": "这种场合你该穿什么你应该知道的。",
+            "Gloss": "场合/衣服/什么/合适1/你/应该/知道/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00484",
+            "Translator": "L",
+            "Chinese Sentences": "这种环境不适合人居住。",
+            "Gloss": "这/环境/人/居住/不符合/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00485",
+            "Translator": "L",
+            "Chinese Sentences": "这道菜是谁做的？",
+            "Gloss": "菜/这/谁/做/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00486",
+            "Translator": "L",
+            "Chinese Sentences": "这里最受欢迎的是哪个菜？",
+            "Gloss": "这/好吃/好吃/菜/什么/？",
+            "Note": "好吃"
+          },
+          {
+            "Number": "test-00487",
+            "Translator": "L",
+            "Chinese Sentences": "这里的东西质量很好。",
+            "Gloss": "这/东西2/质量/好/好/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00488",
+            "Translator": "L",
+            "Chinese Sentences": "这里的景色真漂亮。",
+            "Gloss": "这/风景/漂亮/漂亮/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00489",
+            "Translator": "L",
+            "Chinese Sentences": "这里的衣服全部打九折。",
+            "Gloss": "大家/衣服/打折/九/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00490",
+            "Translator": "L",
+            "Chinese Sentences": "这里的衣服很便宜。",
+            "Gloss": "这/衣服/钱/便宜/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00491",
+            "Translator": "L",
+            "Chinese Sentences": "这里的衣服真是物美价廉。",
+            "Gloss": "这/衣服/钱/便宜/值/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00492",
+            "Translator": "L",
+            "Chinese Sentences": "这钢笔才卖20元。",
+            "Gloss": "钢笔/卖/钱/20/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00493",
+            "Translator": "L",
+            "Chinese Sentences": "这间房子装修花了多少钱？",
+            "Gloss": "这/房子/装修/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00494",
+            "Translator": "L",
+            "Chinese Sentences": "这项运动你喜欢吗？",
+            "Gloss": "运动/这/你/喜欢/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00495",
+            "Translator": "L",
+            "Chinese Sentences": "这首古典音乐我爸爸很喜欢。",
+            "Gloss": "这/古典2/音乐/我/爸爸/喜欢/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00496",
+            "Translator": "L",
+            "Chinese Sentences": "这首歌是我妈妈唱的。",
+            "Gloss": "这/我/妈妈/唱歌/是/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00497",
+            "Translator": "L",
+            "Chinese Sentences": "这首音乐我很喜欢。",
+            "Gloss": "音乐/这/我/喜欢/喜欢/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00498",
+            "Translator": "L",
+            "Chinese Sentences": "雇佣他花了多少钱？",
+            "Gloss": "邀请/他/钱/多少/？",
+            "Note": null
+          },
+          {
+            "Number": "test-00499",
+            "Translator": "L",
+            "Chinese Sentences": "高收的人很少。",
+            "Gloss": "收入/高/人/少/少/。",
+            "Note": null
+          },
+          {
+            "Number": "test-00500",
+            "Translator": "L",
+            "Chinese Sentences": "鼓励别人，给别人带来动力。",
+            "Gloss": "鼓励/别人/给/力量/。",
+            "Note": null
+          }
+        ]
+      },
+      "selected": false
+    },
+    {
+      "id": "aggregate-2w1",
+      "type": "aggregate",
+      "position": {
+        "x": 446,
+        "y": 353.851301645003
+      },
+      "data": {
+        "title": "数据聚合",
+        "name": "数据聚合",
+        "data": [
+          {
+            "Translator": "A",
+            "手语人数": 55
+          },
+          {
+            "Translator": "B",
+            "手语人数": 57
+          },
+          {
+            "Translator": "C",
+            "手语人数": 42
+          },
+          {
+            "Translator": "D",
+            "手语人数": 47
+          },
+          {
+            "Translator": "E",
+            "手语人数": 54
+          },
+          {
+            "Translator": "F",
+            "手语人数": 58
+          },
+          {
+            "Translator": "G",
+            "手语人数": 56
+          },
+          {
+            "Translator": "H",
+            "手语人数": 9
+          },
+          {
+            "Translator": "I",
+            "手语人数": 9
+          },
+          {
+            "Translator": "J",
+            "手语人数": 38
+          },
+          {
+            "Translator": "K",
+            "手语人数": 46
+          },
+          {
+            "Translator": "L",
+            "手语人数": 29
+          }
+        ],
+        "aggregations": [
+          {
+            "column": "Translator",
+            "operation": "count",
+            "alias": "手语人数"
+          }
+        ],
+        "groupBy": "Translator"
+      },
+      "selected": false
+    },
+    {
+      "id": "visualize-hr3",
+      "type": "visualize",
+      "position": {
+        "x": 462,
+        "y": 600
+      },
+      "data": {
+        "title": "数据可视化",
+        "name": "数据可视化",
+        "data": [
+          {
+            "Translator": "A",
+            "手语人数": 55
+          },
+          {
+            "Translator": "B",
+            "手语人数": 57
+          },
+          {
+            "Translator": "C",
+            "手语人数": 42
+          },
+          {
+            "Translator": "D",
+            "手语人数": 47
+          },
+          {
+            "Translator": "E",
+            "手语人数": 54
+          },
+          {
+            "Translator": "F",
+            "手语人数": 58
+          },
+          {
+            "Translator": "G",
+            "手语人数": 56
+          },
+          {
+            "Translator": "H",
+            "手语人数": 9
+          },
+          {
+            "Translator": "I",
+            "手语人数": 9
+          },
+          {
+            "Translator": "J",
+            "手语人数": 38
+          },
+          {
+            "Translator": "K",
+            "手语人数": 46
+          },
+          {
+            "Translator": "L",
+            "手语人数": 29
+          }
+        ],
+        "chartConfig": {
+          "type": "bar",
+          "xAxis": "Translator",
+          "yAxis": "手语人数"
+        },
+        "chartData": {
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L"
+          ],
+          "datasets": [
+            {
+              "label": "手语人数",
+              "data": [
+                55,
+                57,
+                42,
+                47,
+                54,
+                58,
+                56,
+                9,
+                9,
+                38,
+                46,
+                29
+              ],
+              "backgroundColor": "#FFCE56",
+              "borderColor": "#4BC0C0",
+              "borderWidth": 1
+            }
+          ]
+        }
+      },
+      "selected": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "upload-0m0",
+      "sourceHandle": null,
+      "target": "aggregate-2w1",
+      "targetHandle": null,
+      "id": "upload-aggregate-o42",
+      "type": "custom",
+      "animated": false,
+      "style": {
+        "stroke": "#94a3b8",
+        "strokeWidth": 2,
+        "strokeDasharray": "5, 5"
+      }
+    },
+    {
+      "source": "aggregate-2w1",
+      "sourceHandle": null,
+      "target": "visualize-hr3",
+      "targetHandle": null,
+      "id": "aggregate-visualize-ez4",
+      "type": "custom",
+      "animated": false,
+      "style": {
+        "stroke": "#94a3b8",
+        "strokeWidth": 2,
+        "strokeDasharray": "5, 5"
+      }
+    }
+  ]
+}
