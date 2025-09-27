@@ -57,11 +57,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 flex flex-col max-h-[80vh] overflow-hidden">
         {/* 头部 */}
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold mb-2">📖 使用帮助</h2>
-              <p className="text-blue-100">了解如何使用 Easy DataFlow 进行数据处理</p>
+              <h2 className="text-2xl font-bold">📖 使用帮助</h2>
             </div>
             <button onClick={onClose} className="text-white hover:text-blue-200 transition-colors">
               <i className="fas fa-times text-xl"></i>
@@ -72,15 +71,15 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         {/* 标签页 */}
         <div className="border-b border-gray-200">
           <div className="flex">
-            <button className={`px-6 py-3 font-medium transition-colors ${activeTab === "quickstart" ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50" : "text-gray-600 hover:text-gray-800"}`} onClick={() => setActiveTab("quickstart")}>
+            <button className={`px-4 py-3 font-medium transition-colors ${activeTab === "quickstart" ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50" : "text-gray-600 hover:text-gray-800"}`} onClick={() => setActiveTab("quickstart")}>
               <i className="fas fa-rocket mr-2"></i>
               快速开始
             </button>
-            <button className={`px-6 py-3 font-medium transition-colors ${activeTab === "nodes" ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50" : "text-gray-600 hover:text-gray-800"}`} onClick={() => setActiveTab("nodes")}>
+            <button className={`px-4 py-3 font-medium transition-colors ${activeTab === "nodes" ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50" : "text-gray-600 hover:text-gray-800"}`} onClick={() => setActiveTab("nodes")}>
               <i className="fas fa-sitemap mr-2"></i>
               节点类型
             </button>
-            <button className={`px-6 py-3 font-medium transition-colors ${activeTab === "tips" ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50" : "text-gray-600 hover:text-gray-800"}`} onClick={() => setActiveTab("tips")}>
+            <button className={`px-4 py-3 font-medium transition-colors ${activeTab === "tips" ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50" : "text-gray-600 hover:text-gray-800"}`} onClick={() => setActiveTab("tips")}>
               <i className="fas fa-lightbulb mr-2"></i>
               使用技巧
             </button>
@@ -88,14 +87,14 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* 内容 */}
-        <div className="p-6 flex-1 overflow-y-auto max-h-[60vh]">
+        <div className="p-4 flex-1 overflow-y-auto max-h-[60vh]">
           {activeTab === "quickstart" && (
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="text-center mb-8">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">🎯 四步完成数据处理</h3>
                 <p className="text-gray-600">按照以下步骤，轻松完成数据处理任务</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {quickStartSteps.map((step, index) => (
                   <div key={index} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
                     <div className={`flex-shrink-0 w-12 h-12 rounded-full bg-${step.color}-100 flex items-center justify-center`}>
@@ -119,7 +118,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           )}
 
           {activeTab === "nodes" && (
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="text-center mb-8">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">🔧 节点类型详解</h3>
                 <p className="text-gray-600">了解每个节点的功能和使用场景</p>
@@ -128,14 +127,14 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 {Object.values(nodeConfigs)
                   .filter((node) => node.type !== "default")
                   .map((node) => (
-                    <div key={node.type} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                      <div className="flex items-center mb-3">
-                        <div className={`w-8 h-8 rounded-md flex items-center justify-center mr-3 ${node.theme.bg}`}>
-                          <i className={`${node.theme.text} ${getNodeIconClass(node.type)}`}></i>
-                        </div>
+                    <div key={node.type} className="border flex items-center border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex-1 flex flex-col">
                         <h4 className="font-semibold text-gray-800">{node.name}</h4>
+                        <p className="text-sm text-gray-600">{node.description}</p>
                       </div>
-                      <p className="text-sm text-gray-600">{node.description}</p>
+                      <div className={`w-8 h-8 ml-3 rounded-md flex items-center justify-center ${node.theme.bg}`}>
+                        <i className={`${node.theme.text} ${getNodeIconClass(node.type)}`}></i>
+                      </div>
                     </div>
                   ))}
               </div>
@@ -143,12 +142,12 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           )}
 
           {activeTab === "tips" && (
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="text-center mb-8">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">🚀 使用技巧</h3>
                 <p className="text-gray-600">掌握这些技巧，让您的工作更高效</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {tips.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
                     <div className={`flex-shrink-0 w-10 h-10 rounded-full bg-${tip.color}-100 flex items-center justify-center`}>
@@ -166,8 +165,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* 底部 */}
-        <div className="bg-gray-50 px-6 py-4 flex justify-between items-center">
-          <div className="text-sm text-gray-500">需要帮助？查看示例工作流或联系技术支持</div>
+        <div className="bg-gray-50 px-6 py-4 flex justify-end items-center">
           <button onClick={onClose} className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
             开始使用
           </button>

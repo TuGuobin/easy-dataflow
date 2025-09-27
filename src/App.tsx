@@ -349,7 +349,6 @@ function App() {
               <span>
                 <i className="fa-solid fa-code-branch text-blue-500"></i> Easy DataFlow
               </span>
-              <span className="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">v1.0.0</span>
             </div>
             <div className="ml-6 px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100" onClick={handleHelpClick}>
               <span>

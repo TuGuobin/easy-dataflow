@@ -27,11 +27,10 @@ export const DemoImportModal: React.FC<DemoImportModalProps> = ({ isOpen, onClos
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 flex flex-col max-h-[80vh] overflow-hidden">
         {/* 头部 */}
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold mb-2">🚀 快速开始</h2>
-              <p className="text-blue-100">选择一个示例工作流，快速体验 Easy DataFlow 的强大功能</p>
+              <h2 className="text-2xl font-bold">🚀 快速开始</h2>
             </div>
             <button onClick={onClose} className="text-white hover:text-blue-200 transition-colors">
               <i className="fas fa-times text-xl"></i>
@@ -40,8 +39,8 @@ export const DemoImportModal: React.FC<DemoImportModalProps> = ({ isOpen, onClos
         </div>
 
         {/* 内容 */}
-        <div className="p-6 flex-1 overflow-y-auto">
-          <div className="mb-6">
+        <div className="p-4 flex-1 overflow-y-auto">
+          <div className="mb-4">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">示例工作流</h3>
             <div className="border rounded-lg p-4 bg-blue-50 border-blue-200 shadow-sm">
               <div className="flex items-start">
@@ -66,7 +65,7 @@ export const DemoImportModal: React.FC<DemoImportModalProps> = ({ isOpen, onClos
           </div>
 
           {/* 功能介绍 */}
-          <div className="bg-gray-50 rounded-lg p-4 mb-6">
+          <div className="bg-gray-50 rounded-lg p-4">
             <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
               <i className="fas fa-lightbulb text-yellow-500 mr-2"></i>
               功能亮点
@@ -93,7 +92,7 @@ export const DemoImportModal: React.FC<DemoImportModalProps> = ({ isOpen, onClos
         </div>
 
         {/* 底部按钮 */}
-        <div className="bg-gray-50 px-6 py-4 flex justify-between items-center">
+        <div className="bg-gray-50 p-4 flex justify-between items-center">
           <button onClick={handleSkipDemo} className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors">
             跳过，自己创建
           </button>
