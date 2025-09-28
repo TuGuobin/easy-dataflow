@@ -119,8 +119,19 @@ function App() {
       const sourceNode = nodes.find((node) => node.id === params.source)
       const targetNode = nodes.find((node) => node.id === params.target)
       if (!sourceNode || !targetNode) return
+
+      if (sourceNode.id === targetNode.id) {
+        showError(`[${sourceNode.data.name}] 节点不能连接到其自身`)
+        return
+      }
+
+      if (getAllChildNodes(params.target, nodes, edges).find((node) => node.id === params.source)) {
+        showError(`[${sourceNode.data.name}] 节点不能连接到其父节点或形成环`)
+        return
+      }
+
       if (!canConnect(sourceNode.type as NodeType, targetNode.type as NodeType)) {
-        showError(`不能从 [${sourceNode.type}] 节点连接到 [${targetNode.type}] 节点`)
+        showError(`不能从 [${sourceNode.data.name}] 节点连接到 [${targetNode.data.name}] 节点`)
         return
       }
 
@@ -130,12 +141,12 @@ function App() {
       if (targetNode.type === "join") {
         const parentCount = getParentNodeCount(params.target, edges)
         if (parentCount >= 2) {
-          showError(`[${targetNode.type}] 节点最多只能有 2 个父节点`)
+          showError(`[${targetNode.data.name}] 节点最多只能有 2 个父节点`)
           return
         }
       } else {
         if (hasParentNode(params.target, edges)) {
-          showError(`[${targetNode.type}] 节点只能有 1 个父节点`)
+          showError(`[${targetNode.data.name}] 节点只能有 1 个父节点`)
           return
         }
       }
