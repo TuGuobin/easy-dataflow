@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@eslint/js": "^9.35.0",
     "@tailwindcss/postcss": "^4.1.13",
+    "@tauri-apps/cli": "^2.8.4",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.2",
