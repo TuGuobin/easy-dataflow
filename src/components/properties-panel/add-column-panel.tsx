@@ -101,7 +101,7 @@ export const AddColumnPanel = ({ node, onUpdateColumns }: AddColumnPanelProps) =
               themeConfig={themeConfig}
               confirmDisabled={!newColumn.name.trim()}
             >
-              <Input label={t("ui.columnName")} themeConfig={themeConfig} type="text" value={newColumn.name} onChange={(e) => setNewColumn((prev) => ({ ...prev, name: e.target.value }))} className="flex-1" />
+              <Input label={t("ui.columnName")} themeConfig={themeConfig} type="text" value={newColumn.name} onChange={(val) => setNewColumn((prev) => ({ ...prev, name: val }))} className="flex-1" />
               <Select
                 label={t("ui.dataType")}
                 themeConfig={themeConfig}
@@ -112,7 +112,7 @@ export const AddColumnPanel = ({ node, onUpdateColumns }: AddColumnPanelProps) =
                 options={Object.entries(COL_TYPES).map(([key, value]) => ({ value: key, label: t(value) }))}
                 className="flex-1"
               />
-              <Input label={t("ui.defaultValue")} themeConfig={themeConfig} type="text" value={String(newColumn.defaultValue)} onChange={(e) => handleDefaultValueChange(e.target.value)} className="flex-1" />
+              <Input label={t("ui.defaultValue")} themeConfig={themeConfig} type="text" value={String(newColumn.defaultValue)} onChange={handleDefaultValueChange} className="flex-1" />
             </EditForm>
           )}
         </div>

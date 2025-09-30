@@ -189,9 +189,9 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ selectedNode, 
   const updateNodeData = useNodeUpdater(selectedNode?.id || "", nodeType!, parents, onNodeUpdate)
 
   const handleTitleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (value: string) => {
       if (selectedNode) {
-        onNodeUpdate(selectedNode.id, { ...selectedNode.data, title: e.target.value })
+        onNodeUpdate(selectedNode.id, { ...selectedNode.data, title: value })
       }
     },
     [selectedNode, onNodeUpdate]

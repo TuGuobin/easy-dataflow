@@ -151,7 +151,7 @@ export const RemoveRowPanel = ({ node, columns, onUpdateRules }: RemoveRowPanelP
                   />
                   {!newRule.operator ||
                     (!withoutInputList.includes(newRule.operator) && (
-                      <Input label={t("common.value")} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={String(newRule.value)} onChange={(e) => setNewRule((prev) => ({ ...prev, value: e.target.value }))} className="flex-1" />
+                      <Input label={t("common.value")} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={String(newRule.value)} onChange={(val) => setNewRule((prev) => ({ ...prev, value: val }))} className="flex-1" />
                     ))}
                 </div>
               </EditForm>

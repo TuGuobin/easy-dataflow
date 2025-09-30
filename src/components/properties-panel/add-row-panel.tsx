@@ -98,7 +98,7 @@ export const AddRowPanel = ({ node, columns, onUpdateRows }: AddRowPanelProps) =
               >
                 <div className="mb-3">
                   {columns.map((column, index) => (
-                    <Input key={`${column}-${index}`} label={column} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={String(newRow[column] || "")} onChange={(e) => handleCellChange(column, e.target.value)} className="flex-1" />
+                    <Input key={`${column}-${index}`} label={column} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={String(newRow[column] || "")} onChange={(val) => handleCellChange(column, val)} className="flex-1" />
                   ))}
                 </div>
               </EditForm>

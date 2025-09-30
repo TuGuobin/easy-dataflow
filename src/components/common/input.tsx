@@ -11,23 +11,26 @@ const isValidValue = <T extends string | number>(value: unknown): value is T => 
   return value !== undefined && value !== ""
 }
 
-interface BaseInputProps {
+interface BaseInputProps<T extends string | number = string> {
   themeConfig: ThemeConfig
   label?: string
   error?: string
   className?: string
   labelClassName?: string
-}
-
-interface InputProps extends BaseInputProps, React.InputHTMLAttributes<HTMLInputElement> {
-  type?: "text" | "number" | "password" | "email" | "tel" | "url"
-}
-
-interface SelectProps<T extends string | number = string> extends BaseInputProps {
-  value: T
-  options: Array<{ value: T; label: string }>
+  clearable?: boolean
   disabled?: boolean
+  value?: T
   onChange?: (value: T) => void
+}
+
+interface InputProps<T extends string | number = string> extends BaseInputProps<T> {
+  type?: "text" | "number" | "password" | "email" | "tel" | "url"
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+}
+
+interface SelectProps<T extends string | number = string> extends BaseInputProps<T> {
+  options: Array<{ value: T; label: string }>
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
 }
@@ -38,10 +41,18 @@ const getBaseClassName = (themeConfig: ThemeConfig, hasError: boolean = false): 
   } hover:border-gray-400`
 }
 
-export const Input: React.FC<InputProps> = ({ themeConfig, label, error, className = "", value, labelClassName, disabled, ...props }) => {
+export const Input: React.FC<InputProps> = ({ themeConfig, label, error, className = "", value, labelClassName, disabled, clearable = true, onChange, ...props }) => {
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const hasValue: boolean = isValidValue<string>(value)
   const shouldFloat: boolean = isFocused || hasValue
+
+  const handleClear = useCallback(() => {
+    if (onChange) {
+      onChange("")
+    }
+  }, [onChange])
+
+  const showClearButton = clearable && hasValue && !disabled
 
   return (
     <div className={`mt-4 ${className}`}>
@@ -50,7 +61,8 @@ export const Input: React.FC<InputProps> = ({ themeConfig, label, error, classNa
           {...props}
           value={value}
           disabled={disabled}
-          className={`${getBaseClassName(themeConfig, !!error)} ${disabled ? "cursor-not-allowed" : "initial:cursor-text"}`}
+          onChange={(e) => onChange?.(e.target.value)}
+          className={`${getBaseClassName(themeConfig, !!error)} ${disabled ? "cursor-not-allowed" : "initial:cursor-text"} ${showClearButton ? "pr-8" : ""}`}
           onFocus={(e) => {
             setIsFocused(true)
             props.onFocus?.(e)
@@ -60,6 +72,11 @@ export const Input: React.FC<InputProps> = ({ themeConfig, label, error, classNa
             props.onBlur?.(e)
           }}
         />
+        {showClearButton && (
+          <button type="button" onClick={handleClear} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+            <i className="fas fa-times text-xs"></i>
+          </button>
+        )}
         {label && (
           <label
             className={`absolute left-2 transition-all truncate max-w-[80%] duration-200 pointer-events-none bg-white px-1 ${shouldFloat ? "-top-2 text-xs text-gray-400" : "top-[50%] translate-y-[-50%] text-sm text-gray-500"} ${
@@ -75,7 +92,7 @@ export const Input: React.FC<InputProps> = ({ themeConfig, label, error, classNa
   )
 }
 
-export const Select = <T extends string | number>({ themeConfig, label, error, value, onChange, options, className = "", disabled, labelClassName, ...props }: SelectProps<T>) => {
+export const Select = <T extends string | number>({ themeConfig, label, error, value, onChange, options, className = "", disabled, labelClassName, clearable = true, ...props }: SelectProps<T>) => {
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const hasValue: boolean = isValidValue<T>(value)
   const shouldFloat: boolean = isFocused || hasValue
@@ -91,6 +108,14 @@ export const Select = <T extends string | number>({ themeConfig, label, error, v
     },
     [onChange]
   )
+
+  const handleClear = useCallback(() => {
+    if (onChange) {
+      onChange(undefined as unknown as T)
+    }
+  }, [onChange])
+
+  const showClearButton = clearable && hasValue && !disabled
 
   const dropdownItems = options.map(
     (option) =>
@@ -130,7 +155,12 @@ export const Select = <T extends string | number>({ themeConfig, label, error, v
             />
           }
         />
-        <i className="fas fa-chevron-down text-gray-400 text-xs absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
+        {!hasValue && <i className="fas fa-chevron-down text-gray-400 text-xs absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>}
+        {showClearButton && (
+          <button type="button" onClick={handleClear} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200 z-10">
+            <i className="fas fa-times text-xs"></i>
+          </button>
+        )}
         {label && (
           <label
             className={`absolute left-2 transition-all duration-200 pointer-events-none bg-white px-1 ${shouldFloat ? "-top-2 text-xs text-gray-400" : "top-[50%] translate-y-[-50%] text-sm text-gray-500"} ${error ? "text-red-500" : ""} ${
@@ -146,10 +176,23 @@ export const Select = <T extends string | number>({ themeConfig, label, error, v
   )
 }
 
-export const TextArea: React.FC<BaseInputProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ themeConfig, label, error, className = "", value, labelClassName, disabled, ...props }) => {
+interface TextAreaProps extends BaseInputProps {
+  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
+}
+
+export const TextArea: React.FC<TextAreaProps> = ({ themeConfig, label, error, className = "", value, labelClassName, disabled, clearable = true, onChange, ...props }) => {
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const hasValue: boolean = isValidValue<string>(value)
   const shouldFloat: boolean = isFocused || hasValue
+
+  const handleClear = useCallback(() => {
+    if (onChange) {
+      onChange("")
+    }
+  }, [onChange])
+
+  const showClearButton = clearable && hasValue && !disabled
 
   return (
     <div className={`mt-4 ${className}`}>
@@ -158,8 +201,9 @@ export const TextArea: React.FC<BaseInputProps & React.TextareaHTMLAttributes<HT
           {...props}
           value={value}
           placeholder=""
+          onChange={(e) => onChange?.(e.target.value)}
           disabled={disabled}
-          className={`${getBaseClassName(themeConfig, !!error)} resize-none pt-5 pb-1 ${disabled ? "cursor-not-allowed" : "initial:cursor-text"}`}
+          className={`${getBaseClassName(themeConfig, !!error)} resize-none pt-5 pb-1 ${disabled ? "cursor-not-allowed" : "initial:cursor-text"} ${showClearButton ? "pr-8" : ""}`}
           onFocus={(e) => {
             setIsFocused(true)
             props.onFocus?.(e)
@@ -169,6 +213,11 @@ export const TextArea: React.FC<BaseInputProps & React.TextareaHTMLAttributes<HT
             props.onBlur?.(e)
           }}
         />
+        {showClearButton && (
+          <button type="button" onClick={handleClear} className="absolute right-2 top-5 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+            <i className="fas fa-times text-xs"></i>
+          </button>
+        )}
         {label && (
           <label className={`absolute left-2 transition-all duration-200 pointer-events-none bg-white px-1 ${shouldFloat ? "-top-2 text-xs text-gray-400" : "top-3.5 text-sm text-gray-500"} ${error ? "text-red-500" : ""} ${labelClassName || ""}`}>
             {label}
@@ -188,5 +237,5 @@ const InputComponents = {
 
 export default InputComponents
 
-export type { BaseInputProps, InputProps, SelectProps }
+export type { BaseInputProps, InputProps, SelectProps, TextAreaProps }
 export type { DropdownItem }

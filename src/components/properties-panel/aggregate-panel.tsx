@@ -147,7 +147,7 @@ export const AggregatePanel = ({ node, columns, onUpdateAggregations, onUpdateGr
                     </div>
 
                     <div>
-                      <Input label={t("ui.alias")} labelClassName="bg-gray-50!" themeConfig={themeConfig} value={newAggregation.alias} onChange={(e) => setNewAggregation(prev => ({ ...prev, alias: e.target.value }))} />
+                      <Input label={t("ui.alias")} labelClassName="bg-gray-50!" themeConfig={themeConfig} value={newAggregation.alias} onChange={(val) => setNewAggregation(prev => ({ ...prev, alias: val }))} />
                     </div>
                   </div>
                 </EditForm>

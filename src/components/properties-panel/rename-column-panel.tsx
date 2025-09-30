@@ -91,7 +91,7 @@ export const RenameColumnPanel = ({ node, columns, onUpdateRenames }: RenameColu
                 options={availableColumns.map((column) => ({ value: column, label: column }))}
                 className="flex-1"
               />
-              <Input label={t("ui.newName")} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={newRename.newName} onChange={(e) => setNewRename((prev) => ({ ...prev, newName: e.target.value }))} className="flex-1" />
+              <Input label={t("ui.newName")} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={newRename.newName} onChange={(val) => setNewRename((prev) => ({ ...prev, newName: val }))} className="flex-1" />
             </EditForm>
           )}
         </div>
