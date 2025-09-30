@@ -41,19 +41,19 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
   const tips = [
-  {
-    icon: "fa-keyboard",
-    titleKey: "help.shortcuts",
-    contentKey: "help.deleteKeyRemove",
-    color: "blue",
-  },
-  {
-    icon: "fa-save",
-    titleKey: "help.importExportWorkflow",
-    contentKey: "help.saveForNext",
-    color: "green",
-  },
-]
+    {
+      icon: "fa-keyboard",
+      titleKey: "help.shortcuts",
+      contentKey: "help.deleteKeyRemove",
+      color: "blue",
+    },
+    {
+      icon: "fa-save",
+      titleKey: "help.importExportWorkflow",
+      contentKey: "help.saveForNext",
+      color: "green",
+    },
+  ]
 
   return (
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
@@ -126,19 +126,17 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 <p className="text-gray-600">{t("help.nodeTypesDescription")}</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {Object.values(nodeConfigs)
-                  .filter((node) => node.type !== "default")
-                  .map((node) => (
-                    <div key={node.type} className="border flex items-center border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                      <div className="flex-1 flex flex-col">
-                        <h4 className="font-semibold text-gray-800">{t(node.type)}</h4>
-                        <p className="text-sm text-gray-600">{t(node.description)}</p>
-                      </div>
-                      <div className={`w-8 h-8 ml-3 rounded-md flex items-center justify-center ${node.theme.bg}`}>
-                        <i className={`${node.theme.text} ${getNodeIconClass(node.type)}`}></i>
-                      </div>
+                {Object.values(nodeConfigs).map((node) => (
+                  <div key={node.type} className="border flex items-center border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div className="flex-1 flex flex-col">
+                      <h4 className="font-semibold text-gray-800">{t(node.name)}</h4>
+                      <p className="text-sm text-gray-600">{t(node.description)}</p>
                     </div>
-                  ))}
+                    <div className={`w-8 h-8 ml-3 rounded-md flex items-center justify-center ${node.theme.bg}`}>
+                      <i className={`${node.theme.text} ${getNodeIconClass(node.type)}`}></i>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
