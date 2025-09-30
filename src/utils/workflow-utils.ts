@@ -2,18 +2,23 @@ import type { Node, Edge } from "reactflow"
 import type { NodeData, NodeType } from "../types"
 import { getNodeDefaultData } from "../config/node-config"
 
-export const connectionRules: Record<NodeType, NodeType[]> = {
-  upload: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  removeColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  renameColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  addColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  removeRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  addRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  transform: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  aggregate: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  join: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  unknown: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
-  visualize: [],
+export const notConnectionRules: Record<NodeType, NodeType[]> = {
+  upload: [],
+  removeColumn: ["upload"],
+  renameColumn: ["upload"],
+  addColumn: ["upload"],
+  removeRow: ["upload"],
+  addRow: ["upload"],
+  transform: ["upload"],
+  aggregate: ["upload"],
+  join: ["upload"],
+  unknown: [],
+  code: ["upload"],
+  visualize: ["upload", "transform", "aggregate", "join", "removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "code"],
+}
+
+export const canConnect = (sourceNodeType: NodeType, targetNodeType: NodeType): boolean => {
+  return !notConnectionRules[sourceNodeType]?.includes(targetNodeType) || false
 }
 
 export const getParentNode = (node: Node<NodeData> | string, nodes: Node<NodeData>[], edges: Edge[]): Node<NodeData> | null => {

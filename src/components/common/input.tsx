@@ -19,6 +19,7 @@ interface BaseInputProps<T extends string | number = string> {
   labelClassName?: string
   clearable?: boolean
   disabled?: boolean
+  placeholder?: string
   value?: T
   onChange?: (value: T) => void
 }
@@ -203,7 +204,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ themeConfig, label, error, c
           placeholder=""
           onChange={(e) => onChange?.(e.target.value)}
           disabled={disabled}
-          className={`${getBaseClassName(themeConfig, !!error)} resize-none pt-5 pb-1 ${disabled ? "cursor-not-allowed" : "initial:cursor-text"} ${showClearButton ? "pr-8" : ""}`}
+          className={`${getBaseClassName(themeConfig, !!error)} resize-none py-1 ${disabled ? "cursor-not-allowed" : "initial:cursor-text"} ${showClearButton ? "pr-8" : ""}`}
           onFocus={(e) => {
             setIsFocused(true)
             props.onFocus?.(e)

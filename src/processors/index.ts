@@ -9,6 +9,7 @@ import { AddColumnProcessor } from "./add-column-processor"
 import { RemoveRowsProcessor } from "./remove-rows-processor"
 import { TransformProcessor } from "./transform-processor"
 import { AggregateProcessor } from "./aggregate-processor"
+import { CodeProcessor } from "./code-processor"
 
 class DefaultProcessor<T> implements DataProcessor<T> {
   process(sourceData: CsvTable[]): CsvTable {
@@ -25,11 +26,12 @@ const PROCESSORS: Partial<Record<NodeType, DataProcessor<NodeData>>> = {
   removeRow: new RemoveRowsProcessor(),
   transform: new TransformProcessor(),
   aggregate: new AggregateProcessor(),
+  code: new CodeProcessor(),
 }
 
-export const processData = <T extends NodeData>(nodeType: NodeType, sourceData: CsvTable[], config: T): CsvTable => {
+export const processData = async <T extends NodeData>(nodeType: NodeType, sourceData: CsvTable[], config: T): Promise<CsvTable> => {
   const processor = PROCESSORS[nodeType] || new DefaultProcessor()
-  return processor.process(sourceData, config)
+  return await processor.process(sourceData, config)
 }
 
 export const getProcessor = (nodeType: NodeType) => PROCESSORS[nodeType]

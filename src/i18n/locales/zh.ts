@@ -9,6 +9,8 @@ export default {
     clear: "清除",
     clearAll: "清除所有",
     toolbox: "工具箱",
+    code: "代码",
+    lines: "行",
     dragNodesToCanvas: "将节点拖动到画布上",
     edit: "编辑",
     save: "保存",
@@ -82,6 +84,7 @@ export default {
     uploadCSVOrExcel: "请上传CSV或Excel格式的文件",
     noAvailableColumns: "没有可用的列",
     connectDataSourceFirst: "请先连接已有数据的源节点",
+    invalidCode: "代码语法无效",
   },
   nodeTypes: {
     upload: {
@@ -133,6 +136,11 @@ export default {
       name: "新增行",
       title: "新增行",
       description: "手动添加新的数据行",
+    },
+    code: {
+      name: "代码处理",
+      title: "代码处理",
+      description: "执行自定义JavaScript代码处理数据",
     },
     unknown: {
       name: "未知节点",
@@ -214,6 +222,7 @@ export default {
     noNewColumnsSet: "未设置新增列",
     noNewRowsSet: "未设置新增行数据",
     noRemoveColumnsSet: "未设置移除列",
+    noCodeSet: "未设置代码",
     needTwoDataSource: "需要连接两个数据源",
     insufficientData: "数据源数据不足",
     confirmClearWorkflow: "确定要清空工作流吗？",

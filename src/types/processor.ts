@@ -1,5 +1,5 @@
 import type { CsvTable } from "./index";
 
 export interface DataProcessor<TConfig> {
-  process(sourceData: CsvTable[], config: TConfig): CsvTable;
+  process(sourceData: CsvTable[], config: TConfig): CsvTable | Promise<CsvTable>;
 }

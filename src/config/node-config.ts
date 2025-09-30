@@ -35,6 +35,7 @@ const NodeColorTheme: Record<NodeType, Color> = {
   join: "indigo",
   removeColumn: "red",
   visualize: "pink",
+  code: "green",
   unknown: "gray",
 } as const
 
@@ -49,6 +50,7 @@ const NodeIconTheme: Record<NodeType, IconConfig> = {
   join: { primary: "fa-code-branch", secondary: "fa-link", type: "fa-solid" },
   removeColumn: { primary: "fa-trash-alt", secondary: "fa-minus-square", type: "fa-solid" },
   visualize: { primary: "fa-chart-bar", secondary: "fa-chart-line", type: "fa-solid" },
+  code: { primary: "fa-code", secondary: "fa-terminal", type: "fa-solid" },
   unknown: { primary: "fa-question-circle", secondary: "fa-unlock-alt", type: "fa-solid" },
 } as const
 
@@ -195,6 +197,21 @@ export const nodeConfigs: Record<string, NodeConfig> = {
     defaultData: {
       title: "nodeTypes.addRow.title",
       name: "nodeTypes.addRow.name",
+    },
+  },
+  code: {
+    type: "code",
+    title: "nodeTypes.code.title",
+    name: "nodeTypes.code.name",
+    description: "nodeTypes.code.description",
+    category: "dataProcessing",
+    icon: NodeIconTheme.code,
+    color: NodeColorTheme.code,
+    theme: createThemeConfig(NodeColorTheme.code),
+    defaultData: {
+      title: "nodeTypes.code.title",
+      name: "nodeTypes.code.name",
+      code: "",
     },
   },
   unknown: {

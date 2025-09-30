@@ -26,6 +26,7 @@ import type {
   RemoveRow,
   RenameColumn,
   CsvTable,
+  CodeNodeData,
 } from "../../types"
 import { formatFileSize } from "../../utils/csv-utils"
 import { getNodeThemeConfig } from "../../config/node-config"
@@ -50,13 +51,13 @@ interface NodeHandlerContext {
 
 const useNodeUpdater = (nodeId: string, nodeType: NodeType, parents: Node<NodeData, NodeType>[], onNodeUpdate: (nodeId: string, data: Partial<NodeData>) => void) => {
   return useCallback(
-    (newData: NodeData, shouldProcess: boolean = true) => {
+    async (newData: NodeData, shouldProcess: boolean = true) => {
       if (!shouldProcess) {
         onNodeUpdate(nodeId, newData)
         return
       }
       const parentDataList = parents.map((p) => p.data.data || [])
-      const resultData = processData(nodeType, parentDataList, newData as NodeData)
+      const resultData = await processData(nodeType, parentDataList, newData as NodeData)
       onNodeUpdate(nodeId, { ...newData, data: resultData })
     },
     [nodeId, nodeType, parents, onNodeUpdate]
@@ -171,6 +172,15 @@ const createNodeHandlers = (): Partial<Record<NodeType, (ctx: NodeHandlerContext
         updateNodeData({ ...selectedNode.data, chartConfig, chartData }, false)
       }
       return <Panels.visualize node={selectedNode} columns={columns} onUpdateChartConfig={handleUpdate} />
+    },
+
+    code: ({ selectedNode, parents, updateNodeData }) => {
+      const parent = parents[0]
+      if (!parent?.data?.data?.length) return <NoData />
+      const handleUpdateCode = (code: string) => {
+        updateNodeData({ ...selectedNode.data, code })
+      }
+      return <Panels.code node={selectedNode as Node<CodeNodeData, "code">} onUpdateCode={handleUpdateCode} />
     },
   }
 }

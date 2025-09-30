@@ -218,9 +218,13 @@ export interface JoinRule {
   operation: JoinOperationType
 }
 
+export interface CodeNodeData extends BaseNodeData {
+  code: string
+}
+
 export type NodeType = keyof typeof nodeConfigs
 
-export type NodeData = UploadNodeData | FilterNodeData | TransformNodeData | AggregateNodeData | VisualizeNodeData | RemoveColumnNodeData | RenameColumnNodeData | AddColumnNodeData | RemoveRowNodeData | AddRowNodeData | JoinNodeData | BaseNodeData
+export type NodeData = UploadNodeData | FilterNodeData | TransformNodeData | AggregateNodeData | VisualizeNodeData | RemoveColumnNodeData | RenameColumnNodeData | AddColumnNodeData | RemoveRowNodeData | AddRowNodeData | JoinNodeData | CodeNodeData | BaseNodeData
 
 export const FILTER_OPERATORS: Record<FilterOperatorType, string> = {
   [FilterOperator.EQ]: "filterOperators.eq",

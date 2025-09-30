@@ -15,7 +15,7 @@ import { QuickStartGuide } from "./components/help/quick-start-guide"
 import ContextMenu from "./components/common/context-menu"
 import { DropdownMenu } from "./components/common/dropdown-menu"
 import type { NodeType, NodeData } from "./types"
-import { connectionRules, createNodeData, exportWorkflow, getParentNodeCount, hasParentNode, importWorkflow, getAllChildNodes, getAllParentNodes } from "./utils/workflow-utils"
+import { createNodeData, exportWorkflow, getParentNodeCount, hasParentNode, importWorkflow, getAllChildNodes, getAllParentNodes, canConnect } from "./utils/workflow-utils"
 import { useWorkflowStore } from "./stores/workflow-store"
 import { processData } from "./processors"
 import { AlertProvider } from "./components/alert/alert-provider"
@@ -128,10 +128,6 @@ function App() {
     [edges, setEdges]
   )
 
-  const canConnect = useCallback((sourceNodeType: NodeType, targetNodeType: NodeType): boolean => {
-    return connectionRules[sourceNodeType]?.includes(targetNodeType) || false
-  }, [])
-
   const onConnect = useCallback(
     async (params: Connection) => {
       if (!params.source || !params.target) return
@@ -183,7 +179,7 @@ function App() {
       setEdges([...edges, newEdge])
       updateNode(params.target, { data: sourceNode.data.data })
     },
-    [canConnect, setEdges, nodes, edges, updateNode, t]
+    [setEdges, nodes, edges, updateNode, t]
   )
 
   const onDragStart = useCallback((event: React.DragEvent, nodeType: NodeType) => {
@@ -229,7 +225,7 @@ function App() {
   )
 
   const onNodeUpdate = useCallback(
-    (id: string, data: Partial<NodeData>) => {
+    async (id: string, data: Partial<NodeData>) => {
       const currentNodes = nodes
       const currentEdges = edges
 
@@ -268,7 +264,7 @@ function App() {
           if (!childNode) continue
           const parents = getAllParentNodes(childNode, Array.from(currentNodeMap.values()), currentEdges)
           const parentData = parents.map((p) => p.data.data || [])
-          const processedData = processData(childNode.type as NodeType, parentData, childNode.data)
+          const processedData = await processData(childNode.type as NodeType, parentData, childNode.data)
 
           currentNodeMap.set(childId, {
             ...childNode,

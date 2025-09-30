@@ -9,6 +9,8 @@ export default {
     clear: "Clear",
     clearAll: "Clear All",
     toolbox: "Toolbox",
+    code: "Code",
+    lines: "lines",
     dragNodesToCanvas: "Drag nodes to canvas",
     edit: "Edit",
     save: "Save",
@@ -82,6 +84,7 @@ export default {
     uploadCSVOrExcel: "Please upload CSV or Excel format files",
     noAvailableColumns: "No available columns",
     connectDataSourceFirst: "Please connect to a data source with existing data first",
+    invalidCode: "Invalid code syntax",
   },
   nodeTypes: {
     upload: {
@@ -133,6 +136,11 @@ export default {
       name: "Add Row",
       title: "Add Row",
       description: "Manually add new data rows",
+    },
+    code: {
+      name: "Code Processing",
+      title: "Code Processing",
+      description: "Execute custom JavaScript code to process data",
     },
     unknown: {
       name: "Unknown Node",
@@ -214,6 +222,7 @@ export default {
     noNewColumnsSet: "No new columns set",
     noNewRowsSet: "No new rows set",
     noRemoveColumnsSet: "No remove columns set",
+    noCodeSet: "No code set",
     needTwoDataSource: "Need to connect two data sources",
     insufficientData: "Insufficient data",
     confirmClearWorkflow: "Are you sure you want to clear the workflow?",

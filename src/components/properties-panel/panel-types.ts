@@ -8,6 +8,7 @@ import { TransformPanel } from "./transform-panel"
 import { AggregatePanel } from "./aggregate-panel"
 import { JoinPanel } from "./join-panel"
 import { VisualizePanel } from "./visualize-panel"
+import { CodePanel } from "./code-panel"
 
 export default {
   upload: UploadPanel,
@@ -20,4 +21,5 @@ export default {
   removeRow: RemoveRowPanel,
   addRow: AddRowPanel,
   join: JoinPanel,
+  code: CodePanel,
 }
