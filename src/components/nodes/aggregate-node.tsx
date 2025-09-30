@@ -6,7 +6,7 @@ type AggregateNodeProps = NodeProps<AggregateNodeData>
 
 export const AggregateNode = ({ data, ...attrs }: AggregateNodeProps) => {
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.aggregations?.length} emptyStateMessage="未设置聚合操作">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.aggregations?.length} emptyStateMessage="messages.noAggregationOperationsSet">
       {({ themeConfig }) => (
         <>
           {data.groupBy && (

@@ -7,7 +7,7 @@ type TransformNodeProps = NodeProps<TransformNodeData>
 
 export const TransformNode = ({ data, ...attrs }: TransformNodeProps) => {
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.transformations?.length} emptyStateMessage="未设置转换规则">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.transformations?.length} emptyStateMessage="messages.noTransformRulesSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">

@@ -18,7 +18,7 @@ export const nodeTypes = {
   removeColumn: RemoveColumnNode,
   renameColumn: RenameColumnNode,
   addColumn: AddColumnNode,
-  removeRows: RemoveRowNode,
+  removeRow: RemoveRowNode,
   addRow: AddRowNode,
   join: JoinNode,
 }

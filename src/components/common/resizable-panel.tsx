@@ -1,4 +1,3 @@
-// ResizablePanel.tsx
 import React, { useState, useRef, useEffect, useCallback } from "react"
 
 type WidthValue = number | string

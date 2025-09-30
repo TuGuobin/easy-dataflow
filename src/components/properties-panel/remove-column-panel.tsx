@@ -1,4 +1,5 @@
 import { useCallback, useMemo } from "react"
+import { useTranslation } from "react-i18next"
 import type { NodeType, RemoveColumnNodeData } from "../../types"
 import type { Node } from "reactflow"
 import { BasePanel } from "./base-panel"
@@ -11,6 +12,7 @@ interface RemoveColumnPanelProps {
 }
 
 export const RemoveColumnPanel = ({ node, columns, onUpdateColumns }: RemoveColumnPanelProps) => {
+  const { t } = useTranslation()
   const handleColumnToggle = useCallback(
     (column: string) => {
       const currentColumns = node.data.columnsToRemove || []
@@ -41,12 +43,11 @@ export const RemoveColumnPanel = ({ node, columns, onUpdateColumns }: RemoveColu
     <BasePanel node={node}>
       {({ themeConfig }) => {
         if (!columns?.length) {
-          return <NoData title="没有可用的列"></NoData>
+          return <NoData title={t('errors.noAvailableColumns')}></NoData>
         }
 
         return (
           <div className={`space-y-3 ${themeConfig.text}`}>
-            {/* 全选控制区域 */}
             <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg border border-gray-200">
               <button
                 onClick={handleToggleAll}
@@ -63,13 +64,13 @@ export const RemoveColumnPanel = ({ node, columns, onUpdateColumns }: RemoveColu
                     <div className="w-3 h-3 border-1 border-gray-400 rounded-xs" />
                   )}
                 </div>
-                <span className="font-medium">全选</span>
+                <span className="font-medium">{t('common.selectAll')}</span>
               </button>
 
               <div className="text-xs text-gray-500">
                 {selectedCount > 0 ? <span className={themeConfig.text}>{selectedCount}</span> : <span>0</span>}
                 <span className="mx-1">/</span>
-                <span>{columns.length} 列</span>
+                <span>{columns.length} {t('common.columns')}</span>
               </div>
             </div>
 

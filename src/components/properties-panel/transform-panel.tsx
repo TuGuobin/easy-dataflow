@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react"
+import { useTranslation } from "react-i18next"
 import type { Node } from "reactflow"
 import type { NodeType, TransformNodeData } from "../../types"
 import type { TransformRule, TransformOperation } from "../../utils/transform-utils"
@@ -15,6 +16,7 @@ interface TransformPanelProps {
 }
 
 export const TransformPanel = ({ node, columns, onUpdateTransformations }: TransformPanelProps) => {
+  const { t } = useTranslation()
   const [transformations, setTransformations] = useState<TransformRule[]>(node.data.transformations || [])
   const [availableColumns, setAvailableColumns] = useState<string[]>([])
   const [availableOperations, setAvailableOperations] = useState<TransformOperation[]>([])
@@ -75,7 +77,7 @@ export const TransformPanel = ({ node, columns, onUpdateTransformations }: Trans
     <BasePanel node={node}>
       {({ themeConfig }) => {
         if (!columns || columns.length === 0) {
-          return <NoData title="请先连接数据源节点" />
+          return <NoData title={t("messages.insufficientData")} />
         }
 
         return (
@@ -88,32 +90,40 @@ export const TransformPanel = ({ node, columns, onUpdateTransformations }: Trans
                     <div className="text-xs">
                       <span className={`font-medium ${themeConfig.text}`}>{transformation.column}</span>
                       <span className="text-gray-500 mx-1">→</span>
-                      <span className="text-gray-600">{getTransformOperationDisplayName(transformation.operation)}</span>
+                      <span className="text-gray-600">{t(getTransformOperationDisplayName(transformation.operation))}</span>
                     </div>
                   ),
-                  title: `转换 ${index + 1}`,
+                  title: `${t("common.rule")} ${index + 1}`,
                   onRemove: () => handleRemoveTransformation(index),
                 }))}
-                title="转换规则"
+                title={t("ui.transformRule")}
                 onClearAll={handleClearAll}
                 themeConfig={themeConfig}
               />
             )}
 
             {!isEditing ? (
-              <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text="添加转换规则" icon="fa-solid fa-plus" />
+              <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text={t("ui.addNewRule")} icon="fa-solid fa-plus" />
             ) : (
-              <EditForm title="新转换规则" onConfirm={handleAddTransformation} onCancel={handleCancelAdd} themeConfig={themeConfig} confirmDisabled={!newTransformation.column.trim()}>
+              <EditForm title={t("ui.addNewRule")} onConfirm={handleAddTransformation} onCancel={handleCancelAdd} themeConfig={themeConfig} confirmDisabled={!newTransformation.column.trim()}>
                 <div className="space-y-2">
-                  <Select label="选择列" themeConfig={themeConfig} value={newTransformation.column} onChange={(value) => setNewTransformation((prev) => ({ ...prev, column: value }))} options={availableColumns.map((col) => ({ value: col, label: col }))} />
                   <Select
-                    label="转换操作"
+                    label={t("ui.selectColumn")}
+                    labelClassName="bg-gray-50!"
                     themeConfig={themeConfig}
+                    value={newTransformation.column}
+                    onChange={(value) => setNewTransformation((prev) => ({ ...prev, column: value }))}
+                    options={availableColumns.map((col) => ({ value: col, label: col }))}
+                  />
+                  <Select
+                    label={t("ui.transformOperation")}
+                    themeConfig={themeConfig}
+                    labelClassName="bg-gray-50!"
                     value={newTransformation.operation}
                     onChange={(value) => setNewTransformation((prev) => ({ ...prev, operation: value as TransformOperation }))}
                     options={availableOperations.map((op) => ({
                       value: op,
-                      label: getTransformOperationDisplayName(op),
+                      label: t(getTransformOperationDisplayName(op)),
                     }))}
                   />
                 </div>

@@ -5,6 +5,7 @@ import { NoData } from "../properties-panel/no-data"
 import { getAllColumns } from "../../utils/data-processing-utils"
 import type { CsvTable } from "../../types"
 import { displayCsvData, getDisplayIcon } from "../../utils/csv-utils"
+import { useTranslation } from "react-i18next"
 
 type SortDirection = "asc" | "desc" | null
 
@@ -21,10 +22,11 @@ interface DataPreviewProps {
   className?: string
 }
 
-export const DataPreview = ({ data, title = "数据预览", maxHeight = "max-h-80", showCount = true, className = "" }: DataPreviewProps) => {
+export const DataPreview = ({ data, title = "ui.dataPreview", maxHeight = "max-h-80", showCount = true, className = "" }: DataPreviewProps) => {
   const [displayCount, setDisplayCount] = useState(10)
   const [sortConfigs, setSortConfigs] = useState<SortConfig[]>([])
   const observerRef = useRef<IntersectionObserver | null>(null)
+  const { t } = useTranslation()
 
   const sortedData = useMemo(() => {
     if (sortConfigs.length === 0) return data
@@ -132,13 +134,13 @@ export const DataPreview = ({ data, title = "数据预览", maxHeight = "max-h-8
 
   const downloadMenuItems: MenuItem[] = [
     {
-      label: "下载 CSV",
+      label: t("ui.downloadCSV"),
       icon: "fas fa-file-csv",
       iconClassName: "text-green-600",
       onClick: handleDownloadCSV,
     },
     {
-      label: "下载 Excel",
+      label: t("ui.downloadExcel"),
       icon: "fas fa-file-excel",
       iconClassName: "text-blue-600",
       onClick: handleDownloadExcel,
@@ -146,7 +148,7 @@ export const DataPreview = ({ data, title = "数据预览", maxHeight = "max-h-8
   ]
 
   if (!data || data.length === 0) {
-    return <NoData title="当前无数据预览" />
+    return <NoData title={t("ui.noDataPreview")} />
   }
 
   const headers = getAllColumns(data)
@@ -155,9 +157,9 @@ export const DataPreview = ({ data, title = "数据预览", maxHeight = "max-h-8
     <div className={className}>
       <div className="flex justify-between text-xs font-semibold mb-2.5 text-gray-500 uppercase tracking-wide">
         <span className="select-none">
-          {title} {showCount && `(${Math.min(displayCount, displayData.length)}/${displayData.length})`}
+          {t(title)} {showCount && `(${Math.min(displayCount, displayData.length)}/${displayData.length})`}
         </span>
-        <DropdownMenu items={downloadMenuItems} position="right" menuClassName="top-6" trigger={<i className="fas fa-download text-blue-500 hover:text-blue-600 transition-colors" title="下载数据"></i>} />
+        <DropdownMenu items={downloadMenuItems} position="right" menuClassName="top-6" trigger={<i className="fas fa-download text-blue-500 hover:text-blue-600 transition-colors" title={t("ui.downloadData")}></i>} />
       </div>
       <div className={`border border-gray-200 rounded overflow-auto ${maxHeight}`}>
         <table className="min-w-full text-xs">
@@ -211,7 +213,7 @@ export const DataPreview = ({ data, title = "数据预览", maxHeight = "max-h-8
                 <td colSpan={headers.length + 1} className="px-2 py-1.5 text-center text-gray-500">
                   <div className="flex items-center justify-center space-x-2">
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500"></div>
-                    <span>加载更多数据...</span>
+                    <span>...</span>
                   </div>
                 </td>
               </tr>

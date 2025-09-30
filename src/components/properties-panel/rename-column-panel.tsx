@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import type { NodeType, RenameColumn, RenameColumnNodeData } from "../../types"
 import type { Node } from "reactflow"
 import { BasePanel } from "./base-panel"
@@ -12,6 +13,7 @@ interface RenameColumnPanelProps {
 }
 
 export const RenameColumnPanel = ({ node, columns, onUpdateRenames }: RenameColumnPanelProps) => {
+  const { t } = useTranslation()
   const [newRename, setNewRename] = useState({ oldName: "", newName: "" })
   const [isEditing, setIsEditing] = useState(false)
 
@@ -58,20 +60,20 @@ export const RenameColumnPanel = ({ node, columns, onUpdateRenames }: RenameColu
           <RuleList
             items={(node.data.renames || []).map((rename, index) => ({
               id: index,
-              title: `重命名 ${index + 1}`,
+              title: `${t("common.rule")} ${index + 1}`,
               content: (themeConfig) => <RuleContent column={rename.oldName} operation="→" value={rename.newName} themeConfig={themeConfig} />,
               onRemove: () => handleRemoveRename(index),
             }))}
-            title="列重命名"
+            title={t("ui.renameRule")}
             themeConfig={themeConfig}
             onClearAll={handleClearAll}
           />
 
           {!isEditing ? (
-            <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} icon="fa-plus" text="添加重命名规则" className="mb-2" />
+            <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} icon="fa-plus" text={t("ui.addNewRule")} className="mb-2" />
           ) : (
             <EditForm
-              title="重命名配置"
+              title={t("ui.addNewRule")}
               onConfirm={handleAddRename}
               onCancel={() => {
                 setNewRename({ oldName: "", newName: "" })
@@ -79,17 +81,17 @@ export const RenameColumnPanel = ({ node, columns, onUpdateRenames }: RenameColu
               }}
               themeConfig={themeConfig}
               confirmDisabled={!newRename.oldName || !newRename.newName || newRename.oldName === newRename.newName}
-              confirmText="添加"
             >
               <Select
-                label="原列名"
+                label={t("ui.originalName")}
                 themeConfig={themeConfig}
                 value={newRename.oldName}
+                labelClassName="bg-gray-50!" 
                 onChange={(value) => setNewRename((prev) => ({ ...prev, oldName: value }))}
                 options={availableColumns.map((column) => ({ value: column, label: column }))}
                 className="flex-1"
               />
-              <Input label="新列名" themeConfig={themeConfig} type="text" value={newRename.newName} onChange={(e) => setNewRename((prev) => ({ ...prev, newName: e.target.value }))} className="flex-1" />
+              <Input label={t("ui.newName")} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={newRename.newName} onChange={(e) => setNewRename((prev) => ({ ...prev, newName: e.target.value }))} className="flex-1" />
             </EditForm>
           )}
         </div>

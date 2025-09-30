@@ -17,7 +17,7 @@ export default {
   removeColumn: RemoveColumnPanel,
   renameColumn: RenameColumnPanel,
   addColumn: AddColumnPanel,
-  removeRows: RemoveRowPanel,
+  removeRow: RemoveRowPanel,
   addRow: AddRowPanel,
   join: JoinPanel,
 }

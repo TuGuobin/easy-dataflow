@@ -213,47 +213,47 @@ export type NodeType = keyof typeof nodeConfigs
 export type NodeData = UploadNodeData | FilterNodeData | TransformNodeData | AggregateNodeData | VisualizeNodeData | RemoveColumnNodeData | RenameColumnNodeData | AddColumnNodeData | RemoveRowNodeData | AddRowNodeData | JoinNodeData | BaseNodeData
 
 export const FILTER_OPERATORS: Record<FilterOperatorType, string> = {
-  [FilterOperator.EQ]: "等于",
-  [FilterOperator.NEQ]: "不等于",
-  [FilterOperator.GT]: "大于",
-  [FilterOperator.LT]: "小于",
-  [FilterOperator.GTE]: "大于等于",
-  [FilterOperator.LTE]: "小于等于",
-  [FilterOperator.CONTAINS]: "包含",
-  [FilterOperator.STARTS_WITH]: "开始包含",
-  [FilterOperator.ENDS_WITH]: "结束包含",
-  [FilterOperator.EXISTS]: "存在",
-  [FilterOperator.NOT_EXISTS]: "不存在",
+  [FilterOperator.EQ]: "filterOperators.eq",
+  [FilterOperator.NEQ]: "filterOperators.neq",
+  [FilterOperator.GT]: "filterOperators.gt",
+  [FilterOperator.LT]: "filterOperators.lt",
+  [FilterOperator.GTE]: "filterOperators.gte",
+  [FilterOperator.LTE]: "filterOperators.lte",
+  [FilterOperator.CONTAINS]: "filterOperators.contains",
+  [FilterOperator.STARTS_WITH]: "filterOperators.startsWith",
+  [FilterOperator.ENDS_WITH]: "filterOperators.endsWith",
+  [FilterOperator.EXISTS]: "filterOperators.exists",
+  [FilterOperator.NOT_EXISTS]: "filterOperators.notExists",
 }
 
 export const TRANSFORM_OPERATORS: Record<TransformOperationType, string> = {
-  [TransformOperation.UPPERCASE]: "转换为大写",
-  [TransformOperation.LOWERCASE]: "转换为小写",
-  [TransformOperation.TRIM]: "去除空格",
-  [TransformOperation.ROUND]: "四舍五入",
-  [TransformOperation.ABS]: "取绝对值",
-  [TransformOperation.REPLACE]: "替换文本",
+  [TransformOperation.UPPERCASE]: "transformOperations.uppercase",
+  [TransformOperation.LOWERCASE]: "transformOperations.lowercase",
+  [TransformOperation.TRIM]: "transformOperations.trim",
+  [TransformOperation.ROUND]: "transformOperations.round",
+  [TransformOperation.ABS]: "transformOperations.abs",
+  [TransformOperation.REPLACE]: "transformOperations.replace",
 }
 
 export const AGGREGATION_OPERATORS: Record<AggregationOperationType, string> = {
-  [AggregationOperation.SUM]: "求和",
-  [AggregationOperation.AVG]: "平均值",
-  [AggregationOperation.COUNT]: "计数",
-  [AggregationOperation.MIN]: "最小值",
-  [AggregationOperation.MAX]: "最大值",
-  [AggregationOperation.UNIQUE]: "唯一值计数",
+  [AggregationOperation.SUM]: "aggregationOperations.sum",
+  [AggregationOperation.AVG]: "aggregationOperations.avg",
+  [AggregationOperation.COUNT]: "aggregationOperations.count",
+  [AggregationOperation.MIN]: "aggregationOperations.min",
+  [AggregationOperation.MAX]: "aggregationOperations.max",
+  [AggregationOperation.UNIQUE]: "aggregationOperations.unique",
 }
 
 export const JOIN_OPERATORS: Record<JoinOperationType, string> = {
-  [JoinOperation.LEFT_JOIN]: "左连接",
-  [JoinOperation.RIGHT_JOIN]: "右连接",
-  [JoinOperation.INNER_JOIN]: "内连接",
-  [JoinOperation.FULL_JOIN]: "全连接",
+  [JoinOperation.LEFT_JOIN]: "joinOperations.leftJoin",
+  [JoinOperation.RIGHT_JOIN]: "joinOperations.rightJoin",
+  [JoinOperation.INNER_JOIN]: "joinOperations.innerJoin",
+  [JoinOperation.FULL_JOIN]: "joinOperations.fullJoin",
 }
 
 export const COL_TYPES: Record<ColType, string> = {
-  [Col.STRING]: "字符串",
-  [Col.NUMBER]: "数字",
-  [Col.BOOLEAN]: "布尔值",
-  [Col.DATE]: "日期"
+  [Col.STRING]: "dataTypes.string",
+  [Col.NUMBER]: "dataTypes.number",
+  [Col.BOOLEAN]: "dataTypes.boolean",
+  [Col.DATE]: "dataTypes.date",
 }

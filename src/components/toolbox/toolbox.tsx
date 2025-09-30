@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 import type { NodeType } from "../../types"
 import { getNodeIconClass, getNodeThemeConfig, getCategoriedNodes, categoryConfig } from "../../config/node-config"
 
@@ -24,6 +25,7 @@ const ToolboxItem: React.FC<ToolboxItemProps> = ({ type, label, onDragStart }) =
       className={`group flex items-center p-2 mb-1 border rounded-md cursor-grab transition-all duration-150 active:cursor-grabbing text-xs ${theme.base} ${theme.hover} ${theme.active}`}
       onDragStart={(event) => onDragStart(event, type)}
       draggable
+      data-tauri-drag-region
       title={label}
     >
       <div className={`flex items-center justify-center w-6 h-6 rounded mr-2 ${theme.icon} transition-all duration-150 flex-shrink-0`}>
@@ -79,20 +81,21 @@ interface ToolboxProps {
 }
 
 export const Toolbox: React.FC<ToolboxProps> = ({ onDragStart }) => {
+  const { t } = useTranslation()
   const categoriedNodes = getCategoriedNodes()
   const categories = Object.entries(categoriedNodes).map(([category, nodes]) => {
     const config = categoryConfig[category as keyof typeof categoryConfig]
     if (!config) return null
-
+    
     const items = nodes.map((node) => ({
       type: node.type,
-      label: node.title,
+      label: t(node.title),
       icon: `${node.icon.type} ${node.icon.primary}`,
       themeColor: node.color,
     }))
 
     return {
-      title: config.title,
+      title: t(config.title),
       icon: config.icon,
       items,
     }

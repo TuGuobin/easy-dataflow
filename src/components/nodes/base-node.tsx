@@ -2,6 +2,7 @@ import React from "react"
 import { Handle, Position, type NodeProps } from "reactflow"
 import type { BaseNodeData, NodeType } from "../../types"
 import { getNodeThemeConfig, getNodeIconClass, getNodeSecondaryIconClass } from "../../config/node-config"
+import { useTranslation } from "react-i18next"
 
 interface EmptyStateProps {
   themeConfig: ReturnType<typeof getNodeThemeConfig>
@@ -29,6 +30,7 @@ export const BaseNode = ({ data, showEmptyState, emptyStateMessage, children, se
   const themeConfig = getNodeThemeConfig(type as NodeType)
   const iconClass = getNodeIconClass(type as NodeType)
   const secondaryIconClass = getNodeSecondaryIconClass(type as NodeType)
+  const { t } = useTranslation()
 
   return (
     <div
@@ -54,7 +56,7 @@ export const BaseNode = ({ data, showEmptyState, emptyStateMessage, children, se
         <div className={`font-medium text-sm ${themeConfig.text}`}>{data.title}</div>
       </div>
       <div className="text-xs text-gray-600">
-        {showEmptyState ? <EmptyState themeConfig={themeConfig} iconClass={secondaryIconClass} message={emptyStateMessage || ""} /> : typeof children === "function" ? children({ themeConfig, iconClass, secondaryIconClass }) : children}
+        {showEmptyState ? <EmptyState themeConfig={themeConfig} iconClass={secondaryIconClass} message={t(emptyStateMessage || "common.noData")} /> : typeof children === "function" ? children({ themeConfig, iconClass, secondaryIconClass }) : children}
       </div>
 
       <Handle

@@ -8,7 +8,7 @@ export const RemoveRowNode = ({ data, ...attrs }: RemoveRowNodeProps) => {
   const hasRules = data.removeRules && data.removeRules.length > 0
   
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!hasRules} emptyStateMessage="未设置移除条件">
+    <BaseNode {...attrs} data={data} showEmptyState={!hasRules} emptyStateMessage="messages.noRemoveConditionsSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">

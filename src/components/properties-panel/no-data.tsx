@@ -1,8 +1,11 @@
-export const NoData = ({ title = "请先连接已有数据的源节点" }: { title?: string }) => {
+import { useTranslation } from "react-i18next"
+
+export const NoData = ({ title = "errors.connectDataSourceFirst" }: { title?: string }) => {
+  const { t } = useTranslation()
   return (
     <div className="text-sm text-gray-500 bg-gray-50 p-3 rounded border border-gray-200 w-full">
       <i className="fa-solid fa-info-circle mr-2"></i>
-      {title}
+      {t(title)}
     </div>
   )
 }

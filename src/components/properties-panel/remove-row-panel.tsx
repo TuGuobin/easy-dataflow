@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import type { NodeType, RemoveRowNodeData, FilterOperatorType, RemoveRow } from "../../types"
 import type { Node } from "reactflow"
 import { BasePanel } from "./base-panel"
@@ -21,6 +22,7 @@ const defaultRule: RemoveRow = {
 }
 
 export const RemoveRowPanel = ({ node, columns, onUpdateRules }: RemoveRowPanelProps) => {
+  const { t } = useTranslation()
   const [newRule, setNewRule] = useState(defaultRule)
   const [isEditing, setIsEditing] = useState(false)
 
@@ -63,15 +65,15 @@ export const RemoveRowPanel = ({ node, columns, onUpdateRules }: RemoveRowPanelP
   const getOperatorOptions = useCallback(() => {
     return Object.entries(FILTER_OPERATORS).map(([value, label]) => ({
       value,
-      label,
+      label: t(label),
     }))
-  }, [])
+  }, [t])
 
   return (
     <BasePanel node={node}>
       {({ themeConfig }) => {
         if (!availableColumns?.length) {
-          return <NoData title="没有可用的列" />
+          return <NoData title={t("errors.noAvailableColumns")} />
         }
 
         return (
@@ -83,39 +85,39 @@ export const RemoveRowPanel = ({ node, columns, onUpdateRules }: RemoveRowPanelP
                   content: (themeConfig) => (
                     <div className="text-xs">
                       <span className={`font-medium ${themeConfig.text}`}>{rule.column}</span>
-                      <span className="text-gray-500 mx-1">{FILTER_OPERATORS[rule.operator]}</span>
+                      <span className="text-gray-500 mx-1">{t(FILTER_OPERATORS[rule.operator])}</span>
                       {!withoutInputList.includes(rule.operator) && <span className="text-gray-600">{String(rule.value)}</span>}
                     </div>
                   ),
-                  title: `条件 ${index + 1}`,
+                  title: `${t("common.condition")} ${index + 1}`,
                   onRemove: () => handleRemoveRule(index),
                 }))}
-                title="筛选条件"
+                title={t("ui.filterConditions")}
                 onClearAll={handleClearAll}
                 themeConfig={themeConfig}
               />
             )}
 
             <div className="mb-3">
-              <div className="text-xs font-medium text-gray-600 mb-2">逻辑关系:</div>
+              <div className="text-xs font-medium text-gray-600 mb-2">{t("common.logic")}</div>
               <div className="flex gap-2">
                 <button
                   onClick={() => handleLogicChange("AND")}
                   className={`px-3 py-1 text-xs rounded transition-colors ${node.data.logic === "AND" || !node.data.logic ? `${themeConfig.bgDark} text-white` : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
                 >
-                  且 (AND)
+                  {t("common.and")}
                 </button>
                 <button onClick={() => handleLogicChange("OR")} className={`px-3 py-1 text-xs rounded transition-colors ${node.data.logic === "OR" ? `${themeConfig.bgDark} text-white` : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}>
-                  或 (OR)
+                  {t("common.or")}
                 </button>
               </div>
             </div>
 
             {!isEditing ? (
-              <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text="添加移除规则" icon="fa-solid fa-plus" />
+              <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text={t("ui.addNewRule")} icon="fa-solid fa-plus" />
             ) : (
               <EditForm
-                title="移除规则配置"
+                title={t("ui.addNewRule")}
                 onConfirm={handleAddRule}
                 onCancel={() => {
                   setNewRule({
@@ -130,16 +132,27 @@ export const RemoveRowPanel = ({ node, columns, onUpdateRules }: RemoveRowPanelP
               >
                 <div className="mb-3">
                   <Select
-                    label="列名"
+                    label={t("ui.columnName")}
                     themeConfig={themeConfig}
+                    labelClassName="bg-gray-50!"
                     value={newRule.column}
                     onChange={(value) => setNewRule((prev) => ({ ...prev, column: value }))}
-                    options={availableColumns.map((column) => ({ value: column, label: column }))}
+                    options={availableColumns.map((column) => ({ value: column, label: t(column) }))}
                     className="flex-1"
                   />
-                  <Select label="操作符" themeConfig={themeConfig} value={newRule.operator} onChange={(value) => setNewRule((prev) => ({ ...prev, operator: value as FilterOperatorType }))} options={getOperatorOptions()} className="flex-1" />
+                  <Select
+                    label={t("common.operator")}
+                    labelClassName="bg-gray-50!"
+                    themeConfig={themeConfig}
+                    value={newRule.operator}
+                    onChange={(value) => setNewRule((prev) => ({ ...prev, operator: value as FilterOperatorType }))}
+                    options={getOperatorOptions()}
+                    className="flex-1"
+                  />
                   {!newRule.operator ||
-                    (!withoutInputList.includes(newRule.operator) && <Input label="值" themeConfig={themeConfig} type="text" value={String(newRule.value)} onChange={(e) => setNewRule((prev) => ({ ...prev, value: e.target.value }))} className="flex-1" />)}
+                    (!withoutInputList.includes(newRule.operator) && (
+                      <Input label={t("common.value")} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={String(newRule.value)} onChange={(e) => setNewRule((prev) => ({ ...prev, value: e.target.value }))} className="flex-1" />
+                    ))}
                 </div>
               </EditForm>
             )}

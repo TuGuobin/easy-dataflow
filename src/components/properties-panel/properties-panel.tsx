@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo } from "react"
+import { useTranslation } from "react-i18next"
 import type { Edge, Node } from "reactflow"
 import Panels from "./panel-types"
 import { NoData } from "./no-data"
@@ -24,8 +25,9 @@ import type {
   AddColumn,
   RemoveRow,
   RenameColumn,
+  CsvTable,
 } from "../../types"
-import { formatFileSize, parseCSV } from "../../utils/csv-utils"
+import { formatFileSize } from "../../utils/csv-utils"
 import { getNodeThemeConfig } from "../../config/node-config"
 import { NodeInfoPanel } from "./node-info-panel"
 import { processData } from "../../processors"
@@ -65,25 +67,16 @@ const useNodeUpdater = (nodeId: string, nodeType: NodeType, parents: Node<NodeDa
 const createNodeHandlers = (): Partial<Record<NodeType, (ctx: NodeHandlerContext) => React.ReactNode>> => {
   return {
     upload: ({ selectedNode, updateNodeData }) => {
-      const handleFileChange = (file: File) => {
-        const reader = new FileReader()
-        reader.onload = (e) => {
-          try {
-            const data = parseCSV(e.target?.result as string)
-            updateNodeData(
-              {
-                ...selectedNode.data,
-                fileName: file.name,
-                fileSize: formatFileSize(file.size),
-                data,
-              },
-              false
-            )
-          } catch (err) {
-            console.error("Failed to parse CSV", err)
-          }
-        }
-        reader.readAsText(file)
+      const handleFileChange = (data: CsvTable, file: File) => {
+        updateNodeData(
+          {
+            ...selectedNode.data,
+            fileName: file.name,
+            fileSize: formatFileSize(file.size),
+            data,
+          },
+          false
+        )
       }
 
       return <Panels.upload node={selectedNode as Node<UploadNodeData, "upload">} onFileChange={handleFileChange} />
@@ -118,14 +111,14 @@ const createNodeHandlers = (): Partial<Record<NodeType, (ctx: NodeHandlerContext
       return <Panels.addColumn node={selectedNode as Node<AddColumnNodeData, "addColumn">} onUpdateColumns={handleUpdate} />
     },
 
-    removeRows: ({ selectedNode, parents, updateNodeData }) => {
+    removeRow: ({ selectedNode, parents, updateNodeData }) => {
       const parent = parents[0]
       if (!parent?.data?.data?.length) return <NoData />
       const columns = getAllColumns(parent.data.data)
       const handleUpdate = (removeRules: Array<RemoveRow>, logic: "AND" | "OR") => {
         updateNodeData({ ...selectedNode.data, removeRules, logic })
       }
-      return <Panels.removeRows node={selectedNode as Node<RemoveRowNodeData, "removeRows">} columns={columns} onUpdateRules={handleUpdate} />
+      return <Panels.removeRow node={selectedNode as Node<RemoveRowNodeData, "removeRow">} columns={columns} onUpdateRules={handleUpdate} />
     },
 
     addRow: ({ selectedNode, parents, updateNodeData }) => {
@@ -185,6 +178,7 @@ const createNodeHandlers = (): Partial<Record<NodeType, (ctx: NodeHandlerContext
 const NODE_HANDLERS = createNodeHandlers()
 
 export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ selectedNode, onNodeUpdate, nodes, edges }) => {
+  const { t } = useTranslation()
   const nodeType = useMemo(() => selectedNode?.type as NodeType | undefined, [selectedNode])
   const themeConfig = useMemo(() => (nodeType ? getNodeThemeConfig(nodeType) : null), [nodeType])
   const csvData = useMemo(() => selectedNode?.data?.data || [], [selectedNode])
@@ -220,14 +214,14 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ selectedNode, 
   return (
     <div className="w-full h-full bg-white flex flex-col transition-all duration-500 ease-out">
       <div className="p-4 text-lg font-semibold border-b border-gray-200 relative overflow-hidden">
-        <div className={`transition-all duration-500 ease-out`}>属性面板</div>
+        <div className={`transition-all duration-500 ease-out`}>{t("propertiesPanel.title")}</div>
       </div>
 
       <div className={`flex-1 overflow-hidden transition-all duration-500 ease-out`}>
         <div className="p-4 overflow-y-auto h-full">
           <NodeInfoPanel selectedNode={selectedNode || undefined} onTitleChange={handleTitleChange} themeConfig={themeConfig!} />
           {renderNodePanel()}
-          {!!csvData.length && <DataPreview data={csvData} className="my-4" title="当前数据" />}
+          {!!csvData.length && <DataPreview data={csvData} className="my-4" />}
         </div>
       </div>
     </div>

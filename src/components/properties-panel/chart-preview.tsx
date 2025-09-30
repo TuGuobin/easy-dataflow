@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, ArcElement, Title, Tooltip, Legend, ScatterController } from "chart.js"
 import { Bar, Line, Pie, Scatter } from "react-chartjs-2"
 import type { ChartData, ChartTypeType, CsvRow } from "../../types"
@@ -17,10 +18,11 @@ interface ChartPreviewProps {
   height?: number | string
 }
 
-export const ChartPreview = ({ chartType, chartConfig, data, title = "数据图表", width = "100%", height = 300 }: ChartPreviewProps) => {
+export const ChartPreview = ({ chartType, chartConfig, data, title, width = "100%", height = 300 }: ChartPreviewProps) => {
+  const { t } = useTranslation()
   const [chartData, setChartData] = useState<ChartData | null>(null)
+  const chartTitle = title || t("common.chart")
 
-  // 准备图表数据
   useEffect(() => {
     if (data && data.length > 0 && chartType && chartConfig) {
       try {
@@ -38,8 +40,8 @@ export const ChartPreview = ({ chartType, chartConfig, data, title = "数据图�
     maintainAspectRatio: false,
     plugins: {
       title: {
-        display: !!title,
-        text: title,
+        display: !!chartTitle,
+        text: chartTitle,
         font: {
           size: 14,
           weight: "bold" as const,
@@ -61,14 +63,14 @@ export const ChartPreview = ({ chartType, chartConfig, data, title = "数据图�
               display: true,
               title: {
                 display: true,
-                text: chartData?.datasets[0]?.label || "X轴",
+                text: chartData?.datasets[0]?.label || t("common.xAxis"),
               },
             },
             y: {
               display: true,
               title: {
                 display: true,
-                text: "Y轴",
+                text: t("common.yAxis"),
               },
             },
           },
@@ -77,9 +79,9 @@ export const ChartPreview = ({ chartType, chartConfig, data, title = "数据图�
   const renderChart = () => {
     if (!chartData || !chartData.labels || chartData.labels.length === 0) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-gray-100 border border-gray-300 rounded text-gray-500">
+        <div className="w-full h-full flex items-center justify-center bg-gray-100 border border-gray-300 rounded text-gray-500 text-sm">
           <i className="fa-solid fa-info-circle"></i>
-          <span className="ml-2">暂无数据</span>
+          <span className="ml-2">{t("common.noData")}</span>
         </div>
       )
     }

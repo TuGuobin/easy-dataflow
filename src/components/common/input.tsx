@@ -62,9 +62,9 @@ export const Input: React.FC<InputProps> = ({ themeConfig, label, error, classNa
         />
         {label && (
           <label
-            className={`absolute left-2 transition-all duration-200 pointer-events-none bg-white px-1 ${shouldFloat ? "-top-2 text-xs text-gray-400" : "top-[50%] translate-y-[-50%] text-sm text-gray-500"} ${error ? "text-red-500" : ""} ${
-              labelClassName || ""
-            }`}
+            className={`absolute left-2 transition-all truncate max-w-[80%] duration-200 pointer-events-none bg-white px-1 ${shouldFloat ? "-top-2 text-xs text-gray-400" : "top-[50%] translate-y-[-50%] text-sm text-gray-500"} ${
+              error ? "text-red-500" : ""
+            } ${labelClassName || ""}`}
           >
             {label}
           </label>
@@ -188,6 +188,5 @@ const InputComponents = {
 
 export default InputComponents
 
-// Export types for external use
 export type { BaseInputProps, InputProps, SelectProps }
 export type { DropdownItem }

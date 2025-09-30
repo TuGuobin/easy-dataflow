@@ -6,7 +6,7 @@ type RenameColumnNodeProps = NodeProps<RenameColumnNodeData>
 
 export const RenameColumnNode = ({ data, ...attrs }: RenameColumnNodeProps) => {
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.renames?.length} emptyStateMessage="未设置重命名规则">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.renames?.length} emptyStateMessage="messages.noRenameRulesSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">

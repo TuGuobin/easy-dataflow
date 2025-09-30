@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import type { NodeProps } from "reactflow"
 import type { AddColumnNodeData } from "../../types"
 import { BaseNode } from "./base-node"
@@ -6,12 +7,14 @@ import { getDisplayValue } from "../../utils/csv-utils"
 type AddColumnNodeProps = NodeProps<AddColumnNodeData>
 
 export const AddColumnNode = ({ data, ...attrs }: AddColumnNodeProps) => {
+  const { t } = useTranslation()
+
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.newColumns?.length} emptyStateMessage="未设置新增列">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.newColumns?.length} emptyStateMessage="messages.noNewColumnsSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">
-            <span>列数:</span>
+            <span>{t("ui.columnCount")}:</span>
             <span className={`font-medium ${themeConfig.text}`}>{data.newColumns?.length || 0}</span>
           </div>
           {data.newColumns?.slice(0, 3).map((column, index) => (
@@ -21,7 +24,9 @@ export const AddColumnNode = ({ data, ...attrs }: AddColumnNodeProps) => {
             </div>
           ))}
           {data.newColumns?.length > 3 && (
-            <div className="text-xs text-gray-500 text-center">+{data.newColumns.length - 3} 更多</div>
+            <div className="text-xs text-gray-500 text-center">
+              +{data.newColumns.length - 3} {t("common.more")}
+            </div>
           )}
         </>
       )}

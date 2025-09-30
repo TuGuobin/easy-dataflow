@@ -7,7 +7,7 @@ type VisualizeNodeProps = NodeProps<VisualizeNodeData>
 
 export const VisualizeNode = ({ data, ...attrs }: VisualizeNodeProps) => {
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.chartConfig?.type} emptyStateMessage="未设置图表类型">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.chartConfig?.type} emptyStateMessage="messages.noChartTypeSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">

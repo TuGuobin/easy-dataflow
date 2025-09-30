@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { AlertColors } from "../../themes/color-theme"
+import { useTranslation } from "react-i18next"
 
 export type AlertType = "info" | "success" | "warning" | "error" | "confirm"
 
@@ -21,6 +22,7 @@ interface AlertPromptProps {
 
 const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) => {
   const [isAnimating, setIsAnimating] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (isOpen) {
@@ -33,7 +35,7 @@ const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) =
 
   if (!isOpen && !isAnimating) return null
 
-  const { title, message, type = "info", confirmText = "确定", cancelText = "取消", onConfirm, onCancel } = options
+  const { title, message, type = "info", confirmText = "common.ok", cancelText = "common.cancel", onConfirm, onCancel } = options
 
   const getIcon = () => {
     const iconMap = {
@@ -73,12 +75,11 @@ const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) =
   return (
     <div className={`fixed inset-0 bg-black/30 flex items-center justify-center z-50 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`} onClick={handleOverlayClick}>
       <div className={`bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300 ${isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}>
-        {/* 头部 */}
         <div className={`bg-gradient-to-r ${getHeaderColor()} text-white px-4 py-3 rounded-t-lg`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <i className={`fas ${getIcon()} text-xl mr-3`}></i>
-              <h2 className="text-lg font-bold">{title || (type === "confirm" ? "确认操作" : "提示")}</h2>
+              <h2 className="text-lg font-bold">{title || (type === "confirm" ? t("messages.confirmOperation") : t("messages.prompt"))}</h2>
             </div>
             <button onClick={handleCancel} className="text-white hover:text-gray-200 transition-colors">
               <i className="fas fa-times text-lg"></i>
@@ -93,7 +94,7 @@ const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) =
               <i className={`fas ${getIcon()} text-2xl ${getIconColor()}`}></i>
             </div>
             <div className="flex-1">
-              <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">{message}</p>
+              <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">{t(message)}</p>
             </div>
           </div>
         </div>
@@ -102,16 +103,16 @@ const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) =
         <div className="bg-gray-50 p-3 rounded-b-lg flex justify-end gap-3">
           {type === "confirm" ? (
             <>
-              <button onClick={handleCancel} className="px-6 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors">
-                {cancelText}
+              <button onClick={handleCancel} className="px-6 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg transition-colors">
+                {t(cancelText)}
               </button>
               <button onClick={handleConfirm} className={`px-6 py-2 text-white rounded-lg transition-colors ${type === "confirm" ? AlertColors.error.button : AlertColors.info.button}`}>
-                {confirmText}
+                {t(confirmText)}
               </button>
             </>
           ) : (
             <button onClick={handleConfirm} className={`px-6 py-2 ${AlertColors.info.button} text-white rounded-lg transition-colors`}>
-              {confirmText}
+              {t(confirmText)}
             </button>
           )}
         </div>

@@ -1,5 +1,18 @@
 import type { ColType, CsvData, CsvRow, CsvTable } from "../types"
 export type { CsvData, CsvRow } from "../types"
+import * as XLSX from 'xlsx'
+
+export async function parseFile(file: File): Promise<CsvRow[]> {
+  const name = file.name.toLowerCase()
+  if (name.endsWith('.csv')) {
+    const text = await file.text()
+    return parseCSV(text)
+  } else if (name.endsWith('.xlsx') || name.endsWith('.xls')) {
+    return parseExcel(file)
+  } else {
+    throw new Error('Unsupported file type')
+  }
+}
 
 function inferType(value: string): CsvData {
   if (value === "" || value.toLowerCase() === "null") {
@@ -44,6 +57,65 @@ export function parseCSV(text: string, delimiter = ","): CsvRow[] {
   }
 
   return data
+}
+
+/**
+ * 解析 Excel 文件（.xlsx / .xls）为 CsvRow[] 格式
+ * @param file 用户选择的 File 对象
+ * @returns Promise<CsvRow[]>
+ */
+export async function parseExcel(file: File): Promise<CsvRow[]> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+
+    reader.onload = (e) => {
+      try {
+        const data = new Uint8Array(e.target?.result as ArrayBuffer)
+        const workbook = XLSX.read(data, { type: 'array' })
+
+        const firstSheetName = workbook.SheetNames[0]
+        const worksheet = workbook.Sheets[firstSheetName]
+
+        const json: Record<string, string>[] = XLSX.utils.sheet_to_json(worksheet, {
+          header: 1,
+          defval: "",
+        })
+
+        if (json.length === 0) {
+          resolve([])
+          return
+        }
+
+        const headers = json[0] as unknown as string[]
+        const rows: CsvRow[] = []
+
+        for (let i = 1; i < json.length; i++) {
+          const rowArray = json[i] as unknown as string[]
+          const row: CsvRow = {}
+
+          headers.forEach((header, index) => {
+            // 确保 header 是字符串（防止数字列名如 "1", "2"）
+            const key = String(header).trim() || `col_${index}`
+            const rawValue = rowArray[index] ?? ''
+            // 使用你已有的 inferType 进行类型推断
+            row[key] = inferType(String(rawValue))
+          })
+
+          rows.push(row)
+        }
+
+        resolve(rows)
+      } catch (error) {
+        reject(error)
+      }
+    }
+
+    reader.onerror = () => {
+      reject(new Error('Failed to read file'))
+    }
+
+    reader.readAsArrayBuffer(file)
+  })
 }
 
 export function formatFileSize(size: number): string {

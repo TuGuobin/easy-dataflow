@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useTranslation } from "react-i18next"
 import { useWorkflowStore } from "../../stores/workflow-store"
 import { getThemeConfig, type Color } from "../../themes/color-theme"
 
@@ -8,6 +9,7 @@ interface QuickStartGuideProps {
 }
 
 export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, onShowHelp }) => {
+  const { t } = useTranslation()
   const { nodes } = useWorkflowStore()
   const [isVisible, setIsVisible] = useState(false)
   const [isMinimized, setIsMinimized] = useState(false)
@@ -41,15 +43,15 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
 
   const quickActions = [
     {
-      title: "📊 导入示例工作流",
-      description: "快速体验完整的数据处理流程",
+      titleKey: "help.demoWorkflow",
+      descriptionKey: "help.completeDataProcessingFlow",
       action: onStartDemo,
       color: "blue",
       icon: "fa-magic",
     },
     {
-      title: "📖 查看使用帮助",
-      description: "了解详细的使用方法和技巧",
+      titleKey: "help.usageHelp",
+      descriptionKey: "help.tipsDescription",
       action: onShowHelp,
       color: "purple",
       icon: "fa-book",
@@ -61,11 +63,11 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
       <div className={`fixed bottom-4 right-4 z-40 transition-all duration-300 ease-in-out transform origin-bottom-right ${isMinimized && !isAnimating ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}`}>
         <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3">
           <div className="flex items-center space-x-2">
-            <button onClick={handleMinimize} className="text-gray-500 hover:text-gray-700 transition-colors" title="展开">
+            <button onClick={handleMinimize} className="text-gray-500 hover:text-gray-700 transition-colors" title={t("help.maximize")}>
               <i className="fas fa-chevron-up"></i>
             </button>
-            <span className="text-sm text-gray-600">快速开始</span>
-            <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 transition-colors" title="关闭">
+            <span className="text-sm text-gray-600">{t("help.quickStartGuide")}</span>
+            <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 transition-colors" title={t("help.close")}>
               <i className="fas fa-times"></i>
             </button>
           </div>
@@ -77,13 +79,13 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-gray-800 flex items-center">
               <i className="fas fa-rocket text-blue-600 mr-2"></i>
-              快速开始
+              {t("help.quickStartGuide")}
             </h3>
             <div className="flex space-x-2">
-              <button onClick={handleMinimize} className="text-gray-400 hover:text-gray-600 transition-colors" title="最小化">
+              <button onClick={handleMinimize} className="text-gray-400 hover:text-gray-600 transition-colors" title={t("help.minimize")}>
                 <i className="fas fa-minus"></i>
               </button>
-              <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 transition-colors" title="关闭">
+              <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 transition-colors" title={t("help.close")}>
                 <i className="fas fa-times"></i>
               </button>
             </div>
@@ -98,8 +100,8 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
                     <i className={`fas ${action.icon} ${theme.text}`}></i>
                   </div>
                   <div className="flex flex-col items-start ml-3">
-                    <h4 className="text-sm font-medium text-gray-800 m-0 p-0 mb-2">{action.title}</h4>
-                    <p className="text-xs text-gray-600">{action.description}</p>
+                    <h4 className="text-sm font-medium text-gray-800 m-0 p-0 mb-2">{t(action.titleKey)}</h4>
+                    <p className="text-xs text-gray-600">{t(action.descriptionKey)}</p>
                   </div>
                 </div>
               )
@@ -107,7 +109,7 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
           </div>
 
           <div className="mt-4 pt-3 border-t border-gray-200 flex-shrink-0">
-            <p className="text-xs text-gray-500 text-center">💡 从左侧工具箱拖拽节点到画布开始创建您的工作流</p>
+            <p className="text-xs text-gray-500 text-center">💡 {t("common.dragNodesToCanvas")}</p>
           </div>
         </div>
       </div>

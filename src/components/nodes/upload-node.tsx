@@ -6,7 +6,7 @@ type UploadNodeProps = NodeProps<UploadNodeData>
 
 export const UploadNode = ({ data, ...attrs }: UploadNodeProps) => {
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.fileName} emptyStateMessage="未上传文件">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.fileName} emptyStateMessage="messages.noFileUploaded">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">

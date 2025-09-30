@@ -26,10 +26,8 @@ const CustomEdge: React.FC<EdgeProps> = ({ sourceX, sourceY, targetX, targetY, s
     curvature: 0.3,
   })
 
-  // 使用统一的主题颜色配置
   const themeConfig = getThemeConfig("blue")
 
-  // 将主题配置映射到边的颜色
   const theme = {
     stroke: themeConfig.handleBorder,
     gradientStart: themeConfig.handleBg,

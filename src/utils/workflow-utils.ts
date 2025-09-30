@@ -3,15 +3,15 @@ import type { NodeData, NodeType } from "../types"
 import { getNodeDefaultData } from "../config/node-config"
 
 export const connectionRules: Record<NodeType, NodeType[]> = {
-  upload: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  removeColumn: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  renameColumn: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  addColumn: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  removeRows: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  addRow: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  transform: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  aggregate: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
-  join: ["removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"],
+  upload: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  removeColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  renameColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  addColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  removeRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  addRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  transform: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  aggregate: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  join: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
   visualize: [],
   default: [],
 }
@@ -62,18 +62,18 @@ export const getAllChildNodes = (node: Node<NodeData> | string, nodes: Node<Node
   const nodeId = typeof node === "string" ? node : node.id
   const childNodes = getChildNodes(nodeId, nodes, edges)
   const allChildNodes: Node<NodeData>[] = []
-  
+
   for (const child of childNodes) {
     allChildNodes.push(child)
     const grandChildren = getAllChildNodes(child, nodes, edges)
     allChildNodes.push(...grandChildren)
   }
-  
+
   return allChildNodes
 }
 
 export const createNodeData = (type?: NodeType): NodeData => {
-  return getNodeDefaultData(type)
+  return { ...getNodeDefaultData(type) }
 }
 
 export const exportWorkflow = (nodes: Node[], edges: Edge[]) => {

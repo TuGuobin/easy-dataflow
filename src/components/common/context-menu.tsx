@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useWorkflowStore } from "../../stores/workflow-store"
 import { getThemeConfig } from "../../themes/color-theme"
 import { DropdownMenu, type MenuItem } from "./dropdown-menu"
@@ -15,6 +16,7 @@ interface ContextMenuProps {
 }
 
 export default function ContextMenu({ id, top, left, right, bottom, onClose, needsPositionAdjustment, type = "node" }: ContextMenuProps) {
+  const { t } = useTranslation()
   const { nodes, edges, setNodes, setEdges } = useWorkflowStore()
   const menuRef = useRef<HTMLDivElement>(null)
   const [isOpen, setIsOpen] = useState(true)
@@ -41,7 +43,7 @@ export default function ContextMenu({ id, top, left, right, bottom, onClose, nee
 
   const menuItems: MenuItem[] = [
     {
-      label: type === "node" ? "删除节点" : "删除边",
+      label: type === "node" ? t("messages.deleteNode") : t("messages.deleteEdge"),
       icon: "fas fa-trash",
       iconClassName: themeConfig.text,
       onClick: type === "node" ? deleteNode : deleteEdge,

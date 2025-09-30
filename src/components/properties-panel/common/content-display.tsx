@@ -1,4 +1,5 @@
 import React from "react"
+import { useTranslation } from "react-i18next"
 import type { ThemeConfig } from "../../../themes/color-theme"
 
 export interface ContentWithArrowProps {
@@ -9,11 +10,12 @@ export interface ContentWithArrowProps {
 }
 
 export const ContentWithArrow: React.FC<ContentWithArrowProps> = ({ items }) => {
+  const { t } = useTranslation()
   return (
     <>
       {items.map((item, index) => (
         <React.Fragment key={index}>
-          <span className={item.className || ""}>{item.text}</span>
+          <span className={item.className || ""}>{t(item.text)}</span>
           {index < items.length - 1 && <i className="fa-solid fa-arrow-right mx-2 text-gray-400"></i>}
         </React.Fragment>
       ))}

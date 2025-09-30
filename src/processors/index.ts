@@ -22,7 +22,7 @@ const PROCESSORS: Partial<Record<NodeType, DataProcessor<NodeData>>> = {
   removeColumn: new RemoveColumnProcessor(),
   renameColumn: new RenameColumnProcessor(),
   addColumn: new AddColumnProcessor(),
-  removeRows: new RemoveRowsProcessor(),
+  removeRow: new RemoveRowsProcessor(),
   transform: new TransformProcessor(),
   aggregate: new AggregateProcessor(),
 }

@@ -1,4 +1,6 @@
 import React, { useCallback, useRef, useState, useEffect } from "react"
+import { useTranslation } from "react-i18next"
+import i18n from "./i18n"
 import ReactFlow, { Background, ReactFlowProvider } from "reactflow"
 import type { Connection, Edge, Node, NodeDragHandler, NodeMouseHandler, OnEdgesChange, OnNodesChange } from "reactflow"
 import "reactflow/dist/style.css"
@@ -19,6 +21,8 @@ import { AlertProvider } from "./components/alert/alert-provider"
 import { showError, showConfirm } from "./utils/alert"
 import { generateId } from "./utils/id"
 import { ResizablePanel } from "./components/common/resizable-panel"
+import icon from "./assets/icon.svg"
+import title from "./assets/title.svg"
 
 const edgeStyle = {
   stroke: "#94a3b8",
@@ -35,12 +39,14 @@ interface ContextMenuInfo {
 }
 
 function App() {
+  const { t } = useTranslation()
   const reactFlowWrapper = useRef<HTMLDivElement>(null)
   const { nodes, edges, selectedNode, reactFlowInstance, setNodes, setEdges, updateNode, updateNodes, setSelectedNode, setReactFlowInstance, clearWorkflow } = useWorkflowStore()
   const [showDemoModal, setShowDemoModal] = useState(false)
   const [showHelpModal, setShowHelpModal] = useState(false)
   const [showWelcomeGuide, setShowWelcomeGuide] = useState(false)
   const [contextMenuInfo, setContextMenuInfo] = useState<ContextMenuInfo | null>(null)
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || "zh")
 
   useEffect(() => {
     const hasSeenWelcome = localStorage.getItem("hasSeenWelcome")
@@ -50,6 +56,17 @@ function App() {
       setShowWelcomeGuide(true)
     } else if (!hasSeenDemo) {
       setShowDemoModal(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleLanguageChange = (lng: string) => {
+      setCurrentLanguage(lng)
+    }
+
+    i18n.on("languageChanged", handleLanguageChange)
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange)
     }
   }, [])
 
@@ -121,17 +138,17 @@ function App() {
       if (!sourceNode || !targetNode) return
 
       if (sourceNode.id === targetNode.id) {
-        showError(`[${sourceNode.data.name}] 节点不能连接到其自身`)
+        showError(t("errors.nodeCannotConnectToSelf", { nodeName: sourceNode.data.name }))
         return
       }
 
       if (getAllChildNodes(params.target, nodes, edges).find((node) => node.id === params.source)) {
-        showError(`[${sourceNode.data.name}] 节点不能连接到其父节点或形成环`)
+        showError(t("errors.nodeCannotConnectToParent", { nodeName: sourceNode.data.name }))
         return
       }
 
       if (!canConnect(sourceNode.type as NodeType, targetNode.type as NodeType)) {
-        showError(`不能从 [${sourceNode.data.name}] 节点连接到 [${targetNode.data.name}] 节点`)
+        showError(t("errors.cannotConnectNodes", { sourceNode: sourceNode.data.name, targetNode: targetNode.data.name }))
         return
       }
 
@@ -141,12 +158,12 @@ function App() {
       if (targetNode.type === "join") {
         const parentCount = getParentNodeCount(params.target, edges)
         if (parentCount >= 2) {
-          showError(`[${targetNode.data.name}] 节点最多只能有 2 个父节点`)
+          showError(t("errors.joinNodeMaxTwoParents", { nodeName: targetNode.data.name }))
           return
         }
       } else {
         if (hasParentNode(params.target, edges)) {
-          showError(`[${targetNode.data.name}] 节点只能有 1 个父节点`)
+          showError(t("errors.nodeMaxOneParent", { nodeName: targetNode.data.name }))
           return
         }
       }
@@ -164,7 +181,7 @@ function App() {
       setEdges([...edges, newEdge])
       updateNode(params.target, { data: sourceNode.data.data })
     },
-    [canConnect, setEdges, nodes, edges, updateNode]
+    [canConnect, setEdges, nodes, edges, updateNode, t]
   )
 
   const onDragStart = useCallback((event: React.DragEvent, nodeType: NodeType) => {
@@ -186,7 +203,7 @@ function App() {
 
       const type = event.dataTransfer.getData("application/reactflow") as NodeType
 
-      if (!type || !["upload", "removeColumn", "renameColumn", "addColumn", "removeRows", "addRow", "transform", "aggregate", "visualize", "join"].includes(type)) {
+      if (!type || !["upload", "removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"].includes(type)) {
         return
       }
 
@@ -196,6 +213,7 @@ function App() {
       })
 
       const data = createNodeData(type)
+      data.title = t(data.title)
       const newNode: Node<NodeData, NodeType> = {
         id: `${type}-${generateId()}`,
         type,
@@ -205,13 +223,13 @@ function App() {
 
       setNodes([...nodes, newNode])
     },
-    [reactFlowWrapper, nodes, setNodes, reactFlowInstance]
+    [reactFlowWrapper, nodes, setNodes, reactFlowInstance, t]
   )
 
   const onNodeUpdate = useCallback(
     (id: string, data: Partial<NodeData>) => {
-      const currentNodes = nodes;
-      const currentEdges = edges;
+      const currentNodes = nodes
+      const currentEdges = edges
 
       const currentNodeMap = new Map<string, Node<NodeData, NodeType>>(currentNodes.map((node) => [node.id, { ...node }]))
       const targetNode = currentNodeMap.get(id)
@@ -333,7 +351,7 @@ function App() {
   )
 
   const onClearWorkflow = async () => {
-    const confirmed = await showConfirm("确定要清空工作流吗？")
+    const confirmed = await showConfirm(t("common.confirmClearWorkflow"))
     if (confirmed) {
       clearWorkflow()
     }
@@ -351,42 +369,52 @@ function App() {
     setShowDemoModal(true)
   }
 
+  const handleLanguageChange = (language: string) => {
+    i18n.changeLanguage(language)
+    setCurrentLanguage(language)
+  }
+
   return (
     <AlertProvider>
       <div className="flex flex-col h-screen w-screen">
         <div className="flex justify-between items-center p-0 h-16 bg-white border-b border-gray-200 z-10 px-5">
           <div className="flex items-center">
             <div className="text-lg font-semibold flex items-center gap-2">
-              <span>
-                <i className="fa-solid fa-code-branch text-blue-500"></i> Easy DataFlow
+              <span className="whitespace-nowrap">
+                <img src={icon} alt="logo" className="h-6 inline-block select-none mr-3" />
+                <img src={title} alt="title" className="h-8 inline-block select-none" />
               </span>
             </div>
             <div className="ml-6 px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100" onClick={handleHelpClick}>
-              <span>
-                <i className="fa-solid fa-question-circle text-gray-400"></i> 帮助
+              <span className="whitespace-nowrap">
+                <i className="fa-solid fa-question-circle text-gray-400"></i> {t("common.help")}
               </span>
             </div>
             <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-blue-50" onClick={onDemoImport}>
-              <span>
-                <i className="fa-solid fa-magic text-blue-400"></i> 示例
+              <span className="whitespace-nowrap">
+                <i className="fa-solid fa-magic text-blue-400"></i> {t("common.demo")}
+              </span>
+            </div>
+            <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100" onClick={() => handleLanguageChange(currentLanguage === "zh" ? "en" : "zh")} title={currentLanguage === "zh" ? "切换到 English" : "Switch to 中文"}>
+              <span className="whitespace-nowrap">
+                <i className="fa-solid fa-globe text-blue-500"></i> {currentLanguage === "zh" ? "EN" : "中文"}
               </span>
             </div>
           </div>
-          <div className="flex items-center"></div>
           <div className="flex items-center">
             <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-red-50" onClick={onClearWorkflow}>
-              <span>
-                <i className="fa-solid fa-trash text-red-400"></i> 清空
+              <span className="whitespace-nowrap">
+                <i className="fa-solid fa-trash text-red-400"></i> {t("common.clear")}
               </span>
             </div>
             <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-orange-50" onClick={onExportWorkflow}>
-              <span>
-                <i className="fa-solid fa-file-export text-orange-400"></i> 导出
+              <span className="whitespace-nowrap">
+                <i className="fa-solid fa-file-export text-orange-400"></i> {t("common.export")}
               </span>
             </div>
             <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-purple-50" onClick={onImportWorkflow}>
-              <span>
-                <i className="fa-solid fa-file-import text-purple-400"></i> 导入
+              <span className="whitespace-nowrap">
+                <i className="fa-solid fa-file-import text-purple-400"></i> {t("common.import")}
               </span>
             </div>
           </div>
@@ -399,9 +427,9 @@ function App() {
               <div className="px-3 py-2 bg-white border-b border-gray-200">
                 <div className="flex items-center">
                   <i className="fas fa-toolbox text-gray-600 mr-2 text-sm"></i>
-                  <span className="text-sm font-semibold text-gray-800">工具箱</span>
+                  <span className="text-sm font-semibold text-gray-800">{t("common.toolbox")}</span>
                 </div>
-                <div className="text-xs text-gray-500 mt-0.5">拖拽节点到画布</div>
+                <div className="text-xs text-gray-500 mt-0.5">{t("common.dragNodesToCanvas")}</div>
               </div>
               <Toolbox onDragStart={onDragStart} />
             </div>

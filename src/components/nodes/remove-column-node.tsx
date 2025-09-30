@@ -6,7 +6,7 @@ type RemoveColumnNodeProps = NodeProps<RemoveColumnNodeData>
 
 export const RemoveColumnNode = ({ data, ...attrs }: RemoveColumnNodeProps) => {
   return (
-    <BaseNode {...attrs} data={data} showEmptyState={!data.columnsToRemove?.length} emptyStateMessage="未设置移除列">
+    <BaseNode {...attrs} data={data} showEmptyState={!data.columnsToRemove?.length} emptyStateMessage="messages.noRemoveColumnsSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react"
+import { useTranslation } from "react-i18next"
 import type { Node } from "reactflow"
 import type { JoinNodeData, JoinRule, JoinOperationType, NodeType, NodeData } from "../../types"
 import { JOIN_OPERATORS, JoinOperation } from "../../types"
@@ -15,6 +16,7 @@ interface JoinPanelProps {
 }
 
 export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) => {
+  const { t } = useTranslation()
   const [joinRules, setJoinRules] = useState<JoinRule[]>(node.data.joinRules || [])
   const [leftColumns, setLeftColumns] = useState<string[]>([])
   const [rightColumns, setRightColumns] = useState<string[]>([])
@@ -78,14 +80,14 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
     <BasePanel node={node}>
       {({ themeConfig }) => {
         if (parents.length < 2) {
-          return <NoData title="需要连接两个数据源节点" />
+          return <NoData title={t("messages.needTwoDataSource")} />
         }
 
         const leftParent = parents[0]
         const rightParent = parents[1]
 
         if (!leftParent?.data?.data?.length || !rightParent?.data?.data?.length) {
-          return <NoData title="父节点数据不足" />
+          return <NoData title={t("messages.insufficientData")} />
         }
 
         return (
@@ -102,10 +104,10 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
                         <span className="text-gray-600">{rule.rightColumn}</span>
                       </div>
                     ),
-                    title: `连接 ${index + 1}`,
+                    title: t("propertiesPanel.join.ruleTitle", { index: index + 1 }),
                     onRemove: () => handleRemoveRule(index),
                   }))}
-                  title="连接规则"
+                  title={t("propertiesPanel.join.joinRules")}
                   onClearAll={handleClearAll}
                   themeConfig={themeConfig}
                 />
@@ -116,12 +118,12 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
                   <ActionButton
                     onClick={() => setIsEditing(true)}
                     themeConfig={themeConfig}
-                    text="添加规则"
+                    text={t("ui.addNewRule")}
                     icon="fa-solid fa-plus"
                   />
                 ) : (
                   <EditForm
-                    title="新连接规则"
+                    title={t("ui.addNewRule")}
                     onConfirm={handleAddRule}
                     onCancel={handleCancelAdd}
                     themeConfig={themeConfig}
@@ -130,7 +132,7 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
                     <div className="space-y-2">
                       <div>
                         <Select
-                          label={`${leftParent.data.title}列`}
+                          label={`${t("common.column")} [${leftParent.data.title}]`}
                           themeConfig={themeConfig}
                           value={newRule.leftColumn}
                           onChange={(value) => setNewRule((prev) => ({ ...prev, leftColumn: value }))}
@@ -140,20 +142,20 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
 
                       <div>
                         <Select
-                          label="连接操作"
+                          label={t("ui.joinOperation")}
                           themeConfig={themeConfig}
                           value={newRule.operation}
                           onChange={(value) => setNewRule((prev) => ({ ...prev, operation: value as JoinOperationType }))}
                           options={Object.entries(JOIN_OPERATORS).map(([key, label]) => ({
                             value: key,
-                            label: label,
+                            label: t(label),
                           }))}
                         />
                       </div>
 
                       <div>
                         <Select
-                          label={`${rightParent.data.title}列`}
+                          label={`${t("common.column")} [${rightParent.data.title}]`}
                           themeConfig={themeConfig}
                           value={newRule.rightColumn}
                           onChange={(value) => setNewRule((prev) => ({ ...prev, rightColumn: value }))}

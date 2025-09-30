@@ -47,7 +47,7 @@ export function addColumns(data: CsvTable, newColumns: Array<AddColumn>): CsvTab
   })
 }
 
-export function removeRows(data: CsvTable, checkAllColumns: boolean, columnsToCheck: string[] = []): CsvTable {
+export function removeRow(data: CsvTable, checkAllColumns: boolean, columnsToCheck: string[] = []): CsvTable {
   if (!data?.length) return data
 
   if (checkAllColumns) {

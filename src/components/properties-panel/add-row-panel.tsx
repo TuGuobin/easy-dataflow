@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react"
+import { useTranslation } from "react-i18next"
 import type { AddRowNodeData, NodeType } from "../../types"
 import type { Node } from "reactflow"
 import type { CsvRow } from "../../utils/csv-utils"
@@ -13,6 +14,7 @@ interface AddRowPanelProps {
 }
 
 export const AddRowPanel = ({ node, columns, onUpdateRows }: AddRowPanelProps) => {
+  const { t } = useTranslation()
   const [newRow, setNewRow] = useState<CsvRow>({})
   const [isEditing, setIsEditing] = useState(false)
 
@@ -46,7 +48,6 @@ export const AddRowPanel = ({ node, columns, onUpdateRows }: AddRowPanelProps) =
       if (value.trim() === "") {
         delete updated[column]
       } else {
-        // 尝试转换为数字
         const numValue = Number(value)
         updated[column] = !isNaN(numValue) ? numValue : value
       }
@@ -74,19 +75,19 @@ export const AddRowPanel = ({ node, columns, onUpdateRows }: AddRowPanelProps) =
                       ))}
                     </div>
                   ),
-                  title: `数据 ${index + 1}`,
+                  title: `${t("common.data")} ${index + 1}`,
                   onRemove: () => handleRemoveRow(index),
                 }))}
-                title="新增数据"
+                title={t("ui.newRowData")}
                 onClearAll={handleClearAll}
                 themeConfig={themeConfig}
               />
             )}
             {!isEditing ? (
-              <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text="添加新行" icon="fa-solid fa-plus" />
+              <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text={t("ui.addNewRow")} icon="fa-solid fa-plus" />
             ) : (
               <EditForm
-                title="新行数据"
+                title={t("ui.addNewRow")}
                 onConfirm={handleAddRow}
                 onCancel={() => {
                   setNewRow({})
@@ -97,7 +98,7 @@ export const AddRowPanel = ({ node, columns, onUpdateRows }: AddRowPanelProps) =
               >
                 <div className="mb-3">
                   {columns.map((column, index) => (
-                    <Input key={`${column}-${index}`} label={column} themeConfig={themeConfig} type="text" value={String(newRow[column] || "")} onChange={(e) => handleCellChange(column, e.target.value)} className="flex-1" />
+                    <Input key={`${column}-${index}`} label={column} labelClassName="bg-gray-50!" themeConfig={themeConfig} type="text" value={String(newRow[column] || "")} onChange={(e) => handleCellChange(column, e.target.value)} className="flex-1" />
                   ))}
                 </div>
               </EditForm>
