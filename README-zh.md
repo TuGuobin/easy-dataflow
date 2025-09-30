@@ -6,8 +6,7 @@
   <p><strong>可视化数据处理工具 - 无需编码</strong></p>
   
   <p>
-    <a href="README-zh.md">中文</a> |
-    <a href="README.md">English</a>
+    中文 | <a href="README.md">English</a>
   </p>
 </div>
 

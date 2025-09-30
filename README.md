@@ -6,8 +6,7 @@
   <p><strong>Visual data processing tool - no coding required</strong></p>
   
   <p>
-    <a href="README-zh.md">中文</a> |
-    <a href="README.md">English</a>
+    <a href="README-zh.md">中文</a> | English
   </p>
 </div>
 
