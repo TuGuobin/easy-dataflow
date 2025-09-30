@@ -49,6 +49,15 @@ src/
 └── utils/         # Utility functions
 ```
 
+## TODOs
+
+- [ ] Add more data processing nodes
+- [ ] Multi-file batch processing
+- [ ] Light/dark mode toggle
+- [ ] More chart visualizations
+- [ ] Performance optimization
+- [ ] Documentation
+
 ## Contributing
 
 If you have any questions, you can 🐛 [Submit issues](https://github.com/TuGuobin/easy-dataflow/issues) | 🔧 [Contribute](https://github.com/TuGuobin/easy-dataflow/pulls).
