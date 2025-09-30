@@ -13,6 +13,7 @@ import { HelpModal } from "./components/help/help-modal"
 import { WelcomeGuide } from "./components/help/welcome-guide"
 import { QuickStartGuide } from "./components/help/quick-start-guide"
 import ContextMenu from "./components/common/context-menu"
+import { DropdownMenu } from "./components/common/dropdown-menu"
 import type { NodeType, NodeData } from "./types"
 import { connectionRules, createNodeData, exportWorkflow, getParentNodeCount, hasParentNode, importWorkflow, getAllChildNodes, getAllParentNodes } from "./utils/workflow-utils"
 import { useWorkflowStore } from "./stores/workflow-store"
@@ -21,6 +22,7 @@ import { AlertProvider } from "./components/alert/alert-provider"
 import { showError, showConfirm } from "./utils/alert"
 import { generateId } from "./utils/id"
 import { ResizablePanel } from "./components/common/resizable-panel"
+import { NavButton } from "./components/common/nav-button"
 import icon from "./assets/icon.svg"
 import title from "./assets/title.svg"
 
@@ -350,29 +352,98 @@ function App() {
     [reactFlowWrapper]
   )
 
-  const onClearWorkflow = async () => {
+  const onClearWorkflow = useCallback(async () => {
     const confirmed = await showConfirm(t("common.confirmClearWorkflow"))
     if (confirmed) {
       clearWorkflow()
     }
-  }
+  }, [clearWorkflow, t])
 
-  const onExportWorkflow = () => {
+  const onExportWorkflow = useCallback(() => {
     exportWorkflow(nodes, edges)
-  }
+  }, [nodes, edges])
 
-  const onImportWorkflow = () => {
+  const onImportWorkflow = useCallback(() => {
     importWorkflow(setNodes, setEdges)
-  }
+  }, [setNodes, setEdges])
 
-  const onDemoImport = () => {
+  const onDemoImport = useCallback(() => {
     setShowDemoModal(true)
-  }
+  }, [setShowDemoModal])
 
-  const handleLanguageChange = (language: string) => {
-    i18n.changeLanguage(language)
-    setCurrentLanguage(language)
-  }
+  const handleLanguageChange = useCallback(
+    (language: string) => {
+      i18n.changeLanguage(language)
+      setCurrentLanguage(language)
+    },
+    [setCurrentLanguage]
+  )
+
+  const getMenuItems = useCallback(
+    (position: "left" | "middle" | "right" | "all") => {
+      const leftItems = [
+        {
+          label: t("common.help"),
+          icon: "fa-solid fa-question-circle",
+          className: "hover:bg-gray-100",
+          iconClassName: "text-gray-400",
+          onClick: handleHelpClick,
+        },
+        {
+          label: t("common.demo"),
+          icon: "fa-solid fa-magic",
+          className: "hover:bg-rose-50",
+          iconClassName: "text-rose-400",
+          onClick: onDemoImport,
+        },
+        {
+          label: currentLanguage === "zh" ? "EN" : "中文",
+          icon: "fa-solid fa-globe",
+          className: "hover:bg-blue-50",
+          iconClassName: "text-blue-400",
+          title: currentLanguage === "zh" ? "Switch to English" : "切换为中文",
+          onClick: () => handleLanguageChange(currentLanguage === "zh" ? "en" : "zh"),
+        },
+      ]
+
+      const rightItems = [
+        {
+          label: t("common.clear"),
+          icon: "fa-solid fa-trash",
+          className: "hover:bg-red-50",
+          iconClassName: "text-red-400",
+          onClick: onClearWorkflow,
+        },
+        {
+          label: t("common.export"),
+          icon: "fa-solid fa-file-export",
+          className: "hover:bg-orange-50",
+          iconClassName: "text-orange-400",
+          onClick: onExportWorkflow,
+        },
+        {
+          label: t("common.import"),
+          icon: "fa-solid fa-file-import",
+          className: "hover:bg-purple-50",
+          iconClassName: "text-purple-400",
+          onClick: onImportWorkflow,
+        },
+      ]
+
+      switch (position) {
+        case "left":
+          return leftItems
+        case "right":
+          return rightItems
+        case "middle":
+          return []
+        case "all":
+        default:
+          return [...leftItems, ...rightItems]
+      }
+    },
+    [t, currentLanguage, handleHelpClick, onDemoImport, onClearWorkflow, onExportWorkflow, onImportWorkflow, handleLanguageChange]
+  )
 
   return (
     <AlertProvider>
@@ -385,38 +456,37 @@ function App() {
                 <img src={title} alt="title" className="h-8 inline-block select-none" />
               </span>
             </div>
-            <div className="ml-6 px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100" onClick={handleHelpClick}>
-              <span className="whitespace-nowrap">
-                <i className="fa-solid fa-question-circle text-gray-400"></i> {t("common.help")}
-              </span>
-            </div>
-            <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-blue-50" onClick={onDemoImport}>
-              <span className="whitespace-nowrap">
-                <i className="fa-solid fa-magic text-blue-400"></i> {t("common.demo")}
-              </span>
-            </div>
-            <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100" onClick={() => handleLanguageChange(currentLanguage === "zh" ? "en" : "zh")} title={currentLanguage === "zh" ? "切换到 English" : "Switch to 中文"}>
-              <span className="whitespace-nowrap">
-                <i className="fa-solid fa-globe text-blue-500"></i> {currentLanguage === "zh" ? "EN" : "中文"}
-              </span>
+
+            {/* 大屏幕显示的功能按钮 */}
+            <div className="hidden md:flex items-center ml-6">
+              {getMenuItems("left").map((item, index) => (
+                <NavButton key={index} {...item}>
+                  {item.label}
+                </NavButton>
+              ))}
             </div>
           </div>
-          <div className="flex items-center">
-            <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-red-50" onClick={onClearWorkflow}>
-              <span className="whitespace-nowrap">
-                <i className="fa-solid fa-trash text-red-400"></i> {t("common.clear")}
-              </span>
-            </div>
-            <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-orange-50" onClick={onExportWorkflow}>
-              <span className="whitespace-nowrap">
-                <i className="fa-solid fa-file-export text-orange-400"></i> {t("common.export")}
-              </span>
-            </div>
-            <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-purple-50" onClick={onImportWorkflow}>
-              <span className="whitespace-nowrap">
-                <i className="fa-solid fa-file-import text-purple-400"></i> {t("common.import")}
-              </span>
-            </div>
+
+          {/* 大屏幕显示的操作按钮 */}
+          <div className="hidden md:flex items-center">
+            {getMenuItems("right").map((item, index) => (
+              <NavButton key={index} {...item}>
+                {item.label}
+              </NavButton>
+            ))}
+          </div>
+
+          {/* 小屏幕显示的三横线下拉菜单 - 所有功能整合到一起 */}
+          <div className="md:hidden flex items-center">
+            <DropdownMenu
+              position="right"
+              trigger={
+                <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100">
+                  <i className="fa-solid fa-bars text-gray-600"></i>
+                </div>
+              }
+              items={getMenuItems("all")}
+            />
           </div>
         </div>
 
