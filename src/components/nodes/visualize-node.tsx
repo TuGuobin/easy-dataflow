@@ -13,27 +13,27 @@ export const VisualizeNode = ({ data, ...attrs }: VisualizeNodeProps) => {
     <BaseNode {...attrs} data={data} showEmptyState={!data.chartConfig?.type} emptyStateMessage="messages.noChartTypeSet">
       {({ themeConfig }) => (
         <>
-          <div className="flex justify-between items-center mb-1">
+          <div className="flex justify-between items-center mb-1 gap-1">
             <span>{t("common.type")}:</span>
             <span className={`font-medium truncate max-w-20 ${themeConfig.text}`}>
               {data.chartConfig?.type ? t(getChartTypeDisplayName(data.chartConfig.type)) : t("common.notSet")}
             </span>
           </div>
           {data.chartConfig?.xAxis && (
-            <div className="flex justify-between items-center mb-1">
-              <span>{t("common.xAxis")}:</span>
+            <div className="flex justify-between items-center mb-1 gap-1">
+              <span>{t("ui.labelColumn")}:</span>
               <span className={`font-medium truncate max-w-16 ${themeConfig.text}`}>{data.chartConfig.xAxis}</span>
             </div>
           )}
           {data.chartConfig?.yAxis && (
-            <div className="flex justify-between items-center mb-1">
-              <span>{t("common.yAxis")}:</span>
+            <div className="flex justify-between items-center mb-1 gap-1">
+              <span>{t("ui.valueColumn")}:</span>
               <span className={`font-medium truncate max-w-16 ${themeConfig.text}`}>{data.chartConfig.yAxis}</span>
             </div>
           )}
           {data.chartConfig?.groupBy && (
-            <div className="flex justify-between items-center mb-1">
-              <span>{t("common.groupBy")}:</span>
+            <div className="flex justify-between items-center mb-1 gap-1">
+              <span>{t("ui.groupByColumn")}:</span>
               <span className={`font-medium truncate max-w-16 ${themeConfig.text}`}>{data.chartConfig.groupBy}</span>
             </div>
           )}

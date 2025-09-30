@@ -1,4 +1,4 @@
-import type { CsvRow, ChartConfig, ChartData, ChartTypeType } from "../types"
+import type { CsvRow, ChartConfig, ChartData, ChartTypeType, DataPoint } from "../types"
 import { ChartType, CHART_TYPE_NAMES } from "../types"
 
 // 重新导出类型以保持向后兼容性
@@ -14,11 +14,11 @@ export function getChartTypeDisplayName(type: ChartTypeType): string {
 
 /**
  * 准备图表数据
- * @param data 原始数据
- * @param config 图表配置
- * @returns 图表数据
  */
 export function prepareChartData(data: CsvRow[], config: ChartConfig): ChartData {
+  // 重置颜色索引确保每次调用颜色序列一致
+  resetColorIndex()
+
   if (!data || data.length === 0) {
     return { labels: [], datasets: [] }
   }
@@ -28,53 +28,80 @@ export function prepareChartData(data: CsvRow[], config: ChartConfig): ChartData
     case ChartType.LINE:
       return prepareBarOrLineData(data, config)
     case ChartType.PIE:
-      return preparePieData(data, config)
+    case ChartType.DOUGHNUT:
+    case ChartType.POLAR_AREA:
+      return preparePieLikeData(data, config)
+    case ChartType.RADAR:
+      return prepareRadarData(data, config)
     case ChartType.SCATTER:
       return prepareScatterData(data, config)
-    case ChartType.HISTOGRAM:
-      return prepareHistogramData(data, config)
+    case ChartType.BUBBLE:
+      return prepareBubbleData(data, config)
     default:
       return { labels: [], datasets: [] }
   }
 }
 
-/**
- * 准备柱状图或折线图数据
- */
+// === 工具函数 ===
+
+function hasField(data: CsvRow[], field?: string): boolean {
+  if (!field) return false
+  return data.some((row) => field in row)
+}
+
+function safeGetField(row: CsvRow, key: string): string | undefined {
+  return key in row ? String(row[key]) : undefined
+}
+
+function safeGetNumber(row: CsvRow, column: string): number | undefined {
+  const val = row[column]
+  if (val === null || val === undefined || val === "") return undefined
+  const num = Number(val)
+  return isNaN(num) ? undefined : num
+}
+
+// === 图表数据准备函数 ===
+
 function prepareBarOrLineData(data: CsvRow[], config: ChartConfig): ChartData {
   const { xAxis, yAxis, groupBy } = config
-  
-  if (!xAxis || !yAxis || !Object.prototype.hasOwnProperty.call(data[0], xAxis) || !Object.prototype.hasOwnProperty.call(data[0], yAxis)) {
+
+  if (!xAxis || !yAxis || !hasField(data, xAxis) || !hasField(data, yAxis)) {
     return { labels: [], datasets: [] }
   }
 
-  if (groupBy && Object.prototype.hasOwnProperty.call(data[0], groupBy)) {
-    // 分组数据
+  if (groupBy && hasField(data, groupBy)) {
     const groups = new Map<string, Map<string, number[]>>()
-    
+
     data.forEach((row) => {
-      const groupKey = String(row[groupBy])
-      const xValue = String(row[xAxis])
-      const yValue = Number(row[yAxis])
-      
+      const groupKey = safeGetField(row, groupBy)
+      const xValue = safeGetField(row, xAxis)
+      const yValue = safeGetNumber(row, yAxis)
+
+      if (groupKey === undefined || xValue === undefined || yValue === undefined) return
+
       if (!groups.has(groupKey)) {
         groups.set(groupKey, new Map())
       }
-      
-      const groupData = groups.get(groupKey)!
-      if (!groupData.has(xValue)) {
-        groupData.set(xValue, [])
+      const groupMap = groups.get(groupKey)!
+      if (!groupMap.has(xValue)) {
+        groupMap.set(xValue, [])
       }
-      
-      groupData.get(xValue)!.push(yValue)
+      groupMap.get(xValue)!.push(yValue)
     })
 
-    const labels = [...new Set(data.map((row) => String(row[xAxis])))]
-    const datasets = Array.from(groups.entries()).map(([groupName, groupData]) => ({
+    // 保持原始数据顺序（不排序）
+    const allXValues = new Set<string>()
+    data.forEach((row) => {
+      const x = safeGetField(row, xAxis)
+      if (x !== undefined) allXValues.add(x)
+    })
+    const labels = Array.from(allXValues)
+
+    const datasets = Array.from(groups.entries()).map(([groupName, groupMap]) => ({
       label: groupName,
       data: labels.map((label) => {
-        const values = groupData.get(label) || []
-        return values.length > 0 ? values.reduce((sum, val) => sum + val, 0) / values.length : 0
+        const values = groupMap.get(label) || []
+        return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0
       }),
       backgroundColor: getRandomColor(),
       borderColor: getRandomColor(),
@@ -83,55 +110,59 @@ function prepareBarOrLineData(data: CsvRow[], config: ChartConfig): ChartData {
 
     return { labels, datasets }
   } else {
-    // 简单数据
     const aggregated = new Map<string, number[]>()
-    
+
     data.forEach((row) => {
-      const xValue = String(row[xAxis])
-      const yValue = Number(row[yAxis])
-      
+      const xValue = safeGetField(row, xAxis)
+      const yValue = safeGetNumber(row, yAxis)
+      if (xValue === undefined || yValue === undefined) return
+
       if (!aggregated.has(xValue)) {
         aggregated.set(xValue, [])
       }
-      
       aggregated.get(xValue)!.push(yValue)
     })
 
     const labels = Array.from(aggregated.keys())
     const values = labels.map((label) => {
       const vals = aggregated.get(label)!
-      return vals.reduce((sum, val) => sum + val, 0) / vals.length
+      return vals.reduce((a, b) => a + b, 0) / vals.length
     })
 
     return {
       labels,
-      datasets: [{
-        label: yAxis,
-        data: values,
-        backgroundColor: getRandomColor(),
-        borderColor: getRandomColor(),
-        borderWidth: 1,
-      }],
+      datasets: [
+        {
+          label: yAxis || "值",
+          data: values,
+          backgroundColor: getRandomColor(),
+          borderColor: getRandomColor(),
+          borderWidth: 1,
+        },
+      ],
     }
   }
 }
 
-/**
- * 准备饼图数据
- */
-function preparePieData(data: CsvRow[], config: ChartConfig): ChartData {
+function preparePieLikeData(data: CsvRow[], config: ChartConfig): ChartData {
   const { groupBy, yAxis } = config
-  
-  if (!groupBy || !Object.prototype.hasOwnProperty.call(data[0], groupBy)) {
+
+  if (!groupBy || !hasField(data, groupBy)) {
     return { labels: [], datasets: [] }
   }
 
   const aggregated = new Map<string, number>()
-  
+
   data.forEach((row) => {
-    const groupKey = String(row[groupBy])
-    const value = yAxis ? Number(row[yAxis]) : 1
-    
+    const groupKey = safeGetField(row, groupBy)
+    if (groupKey === undefined) return
+
+    let value = 1
+    if (yAxis && hasField(data, yAxis)) {
+      const yVal = safeGetNumber(row, yAxis)
+      if (yVal !== undefined) value = yVal
+    }
+
     aggregated.set(groupKey, (aggregated.get(groupKey) || 0) + value)
   })
 
@@ -140,128 +171,204 @@ function preparePieData(data: CsvRow[], config: ChartConfig): ChartData {
 
   return {
     labels,
-    datasets: [{
-      label: "数据",
-      data: values,
-      backgroundColor: labels.map(() => getRandomColor()),
-      borderColor: "#fff",
-      borderWidth: 2,
-    }],
+    datasets: [
+      {
+        label: yAxis || "数据",
+        data: values,
+        backgroundColor: labels.map(() => getRandomColor()),
+        borderColor: "#fff",
+        borderWidth: 2,
+      },
+    ],
   }
 }
 
-/**
- * 准备散点图数据
- */
 function prepareScatterData(data: CsvRow[], config: ChartConfig): ChartData {
   const { xAxis, yAxis, groupBy } = config
-  
-  if (!xAxis || !yAxis || !Object.prototype.hasOwnProperty.call(data[0], xAxis) || !Object.prototype.hasOwnProperty.call(data[0], yAxis)) {
+
+  if (!xAxis || !yAxis || !hasField(data, xAxis) || !hasField(data, yAxis)) {
     return { labels: [], datasets: [] }
   }
 
-  if (groupBy && Object.prototype.hasOwnProperty.call(data[0], groupBy)) {
+  if (groupBy && hasField(data, groupBy)) {
     const groups = new Map<string, Array<{ x: number; y: number }>>()
-    
+
     data.forEach((row) => {
-      const groupKey = String(row[groupBy])
-      const xValue = Number(row[xAxis])
-      const yValue = Number(row[yAxis])
-      
+      const groupKey = safeGetField(row, groupBy)
+      const xVal = safeGetNumber(row, xAxis)
+      const yVal = safeGetNumber(row, yAxis)
+      if (groupKey === undefined || xVal === undefined || yVal === undefined) return
+
       if (!groups.has(groupKey)) {
         groups.set(groupKey, [])
       }
-      
-      groups.get(groupKey)!.push({ x: xValue, y: yValue })
+      groups.get(groupKey)!.push({ x: xVal, y: yVal })
     })
 
-    const datasets = Array.from(groups.entries()).map(([groupName, points]) => ({
-      label: groupName,
-      data: points.map((point) => point.y),
+    const datasets = Array.from(groups.entries()).map(([label, points]) => ({
+      label,
+      data: points as DataPoint[], // 类型断言确保符合 DataPoint[]
       backgroundColor: getRandomColor(),
       borderColor: getRandomColor(),
       borderWidth: 1,
     }))
 
-    return {
-      labels: data.map((row) => String(row[xAxis])),
-      datasets,
-    }
+    return { labels: [], datasets }
   } else {
+    const points: { x: number; y: number }[] = []
+    data.forEach((row) => {
+      const xVal = safeGetNumber(row, xAxis)
+      const yVal = safeGetNumber(row, yAxis)
+      if (xVal !== undefined && yVal !== undefined) {
+        points.push({ x: xVal, y: yVal })
+      }
+    })
+
     return {
-      labels: data.map((row) => String(row[xAxis])),
-      datasets: [{
-        label: yAxis,
-        data: data.map((row) => Number(row[yAxis])),
-        backgroundColor: getRandomColor(),
-        borderColor: getRandomColor(),
-        borderWidth: 1,
-      }],
+      labels: [],
+      datasets: [
+        {
+          label: yAxis || "散点",
+          data: points as DataPoint[],
+          backgroundColor: getRandomColor(),
+          borderColor: getRandomColor(),
+          borderWidth: 1,
+        },
+      ],
     }
   }
 }
 
-/**
- * 准备直方图数据
- */
-function prepareHistogramData(data: CsvRow[], config: ChartConfig): ChartData {
-  const { xAxis } = config
-  
-  if (!xAxis || !Object.prototype.hasOwnProperty.call(data[0], xAxis)) {
+function prepareBubbleData(data: CsvRow[], config: ChartConfig): ChartData {
+  const { xAxis, yAxis, groupBy } = config
+
+  if (!xAxis || !yAxis || !hasField(data, xAxis) || !hasField(data, yAxis)) {
     return { labels: [], datasets: [] }
   }
 
-  const values = data.map((row) => Number(row[xAxis])).filter((val) => !isNaN(val))
-  
-  if (values.length === 0) {
-    return { labels: [], datasets: [] }
+  // 计算y轴数据的极值
+  const yValues = data.map((row) => safeGetNumber(row, yAxis)).filter((v): v is number => v !== undefined)
+  const minY = Math.min(...yValues)
+  const maxY = Math.max(...yValues)
+  const yRange = maxY - minY || 1
+
+  const calculateRadius = (value: number): number => {
+    const baseSize = 3
+    const maxSize = 15
+
+    if (value === 0) return baseSize
+    const normalizedValue = (value - minY) / yRange
+    const scaledSize = baseSize + Math.pow(normalizedValue, 0.7) * (maxSize - baseSize)
+
+    return Math.min(Math.max(scaledSize, baseSize), maxSize)
   }
 
-  // 创建直方图分组
-  const min = Math.min(...values)
-  const max = Math.max(...values)
-  const binCount = Math.min(10, Math.ceil(Math.sqrt(values.length)))
-  const binWidth = (max - min) / binCount
+  if (groupBy && hasField(data, groupBy)) {
+    const groups = new Map<string, Array<{ x: number; y: number; r: number }>>()
 
-  const labels: string[] = []
-  const counts: number[] = []
+    data.forEach((row) => {
+      const groupKey = safeGetField(row, groupBy)
+      const xVal = safeGetNumber(row, xAxis)
+      const yVal = safeGetNumber(row, yAxis)
+      if (groupKey === undefined || xVal === undefined || yVal === undefined) return
 
-  for (let i = 0; i < binCount; i++) {
-    const binStart = min + i * binWidth
-    const binEnd = min + (i + 1) * binWidth
-    const count = values.filter((val) => val >= binStart && val < binEnd).length
-    
-    labels.push(`${binStart.toFixed(1)}-${binEnd.toFixed(1)}`)
-    counts.push(count)
-  }
+      const rVal = calculateRadius(yVal)
 
-  return {
-    labels,
-    datasets: [{
-      label: "频数",
-      data: counts,
+      if (!groups.has(groupKey)) {
+        groups.set(groupKey, [])
+      }
+      groups.get(groupKey)!.push({ x: xVal, y: yVal, r: rVal })
+    })
+
+    const datasets = Array.from(groups.entries()).map(([label, points]) => ({
+      label,
+      data: points as DataPoint[],
       backgroundColor: getRandomColor(),
       borderColor: getRandomColor(),
       borderWidth: 1,
-    }],
+    }))
+
+    return { labels: [], datasets }
+  } else {
+    const points: { x: number; y: number; r: number }[] = []
+    data.forEach((row) => {
+      const xVal = safeGetNumber(row, xAxis)
+      const yVal = safeGetNumber(row, yAxis)
+      if (xVal !== undefined && yVal !== undefined) {
+        points.push({
+          x: xVal,
+          y: yVal,
+          r: calculateRadius(yVal),
+        })
+      }
+    })
+
+    return {
+      labels: [],
+      datasets: [
+        {
+          label: yAxis || "气泡",
+          data: points as DataPoint[],
+          backgroundColor: getRandomColor(),
+          borderColor: getRandomColor(),
+          borderWidth: 1,
+        },
+      ],
+    }
   }
 }
 
-/**
- * 获取随机颜色
- */
+function prepareRadarData(data: CsvRow[], config: ChartConfig): ChartData {
+  const { groupBy, yAxis } = config
+
+  if (!groupBy || !yAxis || !hasField(data, groupBy) || !hasField(data, yAxis)) {
+    return { labels: [], datasets: [] }
+  }
+
+  const aggregated = new Map<string, number[]>()
+
+  data.forEach((row) => {
+    const label = safeGetField(row, groupBy)
+    const value = safeGetNumber(row, yAxis)
+    if (label === undefined || value === undefined) return
+
+    if (!aggregated.has(label)) {
+      aggregated.set(label, [])
+    }
+    aggregated.get(label)!.push(value)
+  })
+
+  const chartLabels = Array.from(aggregated.keys())
+  const chartData = chartLabels.map((label) => {
+    const values = aggregated.get(label)!
+    return values.reduce((a, b) => a + b, 0) / values.length
+  })
+
+  return {
+    labels: chartLabels,
+    datasets: [
+      {
+        label: yAxis || "雷达值",
+        data: chartData,
+        backgroundColor: getRandomColor() + "33",
+        borderColor: getRandomColor(),
+        borderWidth: 2,
+      },
+    ],
+  }
+}
+
+// === 颜色管理 ===
+
+let colorIndex = 0
+const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40", "#FFCD56", "#C9CBCF"]
+
 function getRandomColor(): string {
-  const colors = [
-    "#FF6384",
-    "#36A2EB",
-    "#FFCE56",
-    "#4BC0C0",
-    "#9966FF",
-    "#FF9F40",
-    "#FF6384",
-    "#C9CBCF",
-    "#4BC0C0",
-    "#FF6384",
-  ]
-  return colors[Math.floor(Math.random() * colors.length)]
+  const color = COLORS[colorIndex % COLORS.length]
+  colorIndex++
+  return color
+}
+
+function resetColorIndex(): void {
+  colorIndex = 0
 }

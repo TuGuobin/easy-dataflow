@@ -48,8 +48,11 @@ export const ChartType = {
   BAR: "bar",
   LINE: "line",
   PIE: "pie",
+  DOUGHNUT: "doughnut",
+  POLAR_AREA: "polarArea",
+  RADAR: "radar",
   SCATTER: "scatter",
-  HISTOGRAM: "histogram",
+  BUBBLE: "bubble",
 } as const
 
 export type ChartTypeType = GetType<typeof ChartType>
@@ -58,11 +61,14 @@ export type { DataProcessor } from "./processor"
 
 // 图表类型显示名称映射
 export const CHART_TYPE_NAMES: Record<ChartTypeType, string> = {
-  [ChartType.BAR]: "柱状图",
-  [ChartType.LINE]: "折线图",
-  [ChartType.PIE]: "饼图",
-  [ChartType.SCATTER]: "散点图",
-  [ChartType.HISTOGRAM]: "直方图",
+  [ChartType.BAR]: "chartTypes.bar",
+  [ChartType.LINE]: "chartTypes.line",
+  [ChartType.PIE]: "chartTypes.pie",
+  [ChartType.SCATTER]: "chartTypes.scatter",
+  [ChartType.DOUGHNUT]: "chartTypes.doughnut",
+  [ChartType.POLAR_AREA]: "chartTypes.polarArea",
+  [ChartType.RADAR]: "chartTypes.radar",
+  [ChartType.BUBBLE]: "chartTypes.bubble",
 }
 
 // 过滤条件接口
@@ -99,16 +105,22 @@ export interface ChartConfig {
   height?: number
 }
 
-// 图表数据接口
+export type DataPoint =
+  | number
+  | { x: number; y: number }
+  | { x: number; y: number; r: number }
+
+export interface ChartDataset {
+  label: string
+  data: DataPoint[]
+  backgroundColor?: string | string[]
+  borderColor?: string | string[]
+  borderWidth?: number
+}
+
 export interface ChartData {
   labels: string[]
-  datasets: Array<{
-    label: string
-    data: number[]
-    backgroundColor?: string | string[]
-    borderColor?: string | string[]
-    borderWidth?: number
-  }>
+  datasets: ChartDataset[]
 }
 
 export interface BaseNodeData {
