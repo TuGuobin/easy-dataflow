@@ -26,7 +26,7 @@ interface BaseNodeProps extends NodeProps {
   children?: React.ReactNode | ((config: { themeConfig: ReturnType<typeof getNodeThemeConfig>; iconClass: ReturnType<typeof getNodeIconClass>; secondaryIconClass: ReturnType<typeof getNodeSecondaryIconClass> }) => React.ReactNode)
 }
 
-export const BaseNode = ({ data, showEmptyState, emptyStateMessage, children, selected, type }: BaseNodeProps) => {
+export const BaseNode = ({ data, showEmptyState = true, emptyStateMessage, children, selected, type }: BaseNodeProps) => {
   const themeConfig = getNodeThemeConfig(type as NodeType)
   const iconClass = getNodeIconClass(type as NodeType)
   const secondaryIconClass = getNodeSecondaryIconClass(type as NodeType)

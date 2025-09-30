@@ -3,17 +3,17 @@ import type { NodeData, NodeType } from "../types"
 import { getNodeDefaultData } from "../config/node-config"
 
 export const connectionRules: Record<NodeType, NodeType[]> = {
-  upload: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  removeColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  renameColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  addColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  removeRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  addRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  transform: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  aggregate: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
-  join: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"],
+  upload: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  removeColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  renameColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  addColumn: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  removeRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  addRow: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  transform: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  aggregate: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  join: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
+  unknown: ["removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join", "unknown"],
   visualize: [],
-  default: [],
 }
 
 export const getParentNode = (node: Node<NodeData> | string, nodes: Node<NodeData>[], edges: Edge[]): Node<NodeData> | null => {

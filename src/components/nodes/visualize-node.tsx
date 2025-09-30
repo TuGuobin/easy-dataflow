@@ -2,35 +2,38 @@ import type { NodeProps } from "reactflow"
 import type { VisualizeNodeData } from "../../types"
 import { BaseNode } from "./base-node"
 import { getChartTypeDisplayName } from "../../utils/visualize-utils"
+import { useTranslation } from "react-i18next"
 
 type VisualizeNodeProps = NodeProps<VisualizeNodeData>
 
 export const VisualizeNode = ({ data, ...attrs }: VisualizeNodeProps) => {
+  const { t } = useTranslation()
+  
   return (
     <BaseNode {...attrs} data={data} showEmptyState={!data.chartConfig?.type} emptyStateMessage="messages.noChartTypeSet">
       {({ themeConfig }) => (
         <>
           <div className="flex justify-between items-center mb-1">
-            <span>类型:</span>
+            <span>{t("common.type")}:</span>
             <span className={`font-medium truncate max-w-20 ${themeConfig.text}`}>
-              {data.chartConfig?.type ? getChartTypeDisplayName(data.chartConfig.type) : '未设置'}
+              {data.chartConfig?.type ? t(getChartTypeDisplayName(data.chartConfig.type)) : t("common.notSet")}
             </span>
           </div>
           {data.chartConfig?.xAxis && (
             <div className="flex justify-between items-center mb-1">
-              <span>X轴:</span>
+              <span>{t("common.xAxis")}:</span>
               <span className={`font-medium truncate max-w-16 ${themeConfig.text}`}>{data.chartConfig.xAxis}</span>
             </div>
           )}
           {data.chartConfig?.yAxis && (
             <div className="flex justify-between items-center mb-1">
-              <span>Y轴:</span>
+              <span>{t("common.yAxis")}:</span>
               <span className={`font-medium truncate max-w-16 ${themeConfig.text}`}>{data.chartConfig.yAxis}</span>
             </div>
           )}
           {data.chartConfig?.groupBy && (
             <div className="flex justify-between items-center mb-1">
-              <span>分组:</span>
+              <span>{t("common.groupBy")}:</span>
               <span className={`font-medium truncate max-w-16 ${themeConfig.text}`}>{data.chartConfig.groupBy}</span>
             </div>
           )}

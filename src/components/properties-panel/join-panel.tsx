@@ -100,14 +100,14 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
                     content: (themeConfig) => (
                       <div className="text-xs">
                         <span className={`font-medium ${themeConfig.text}`}>{rule.leftColumn}</span>
-                        <span className="text-gray-500 mx-1">{JOIN_OPERATORS[rule.operation]}</span>
+                        <span className="text-gray-500 mx-1">{t(JOIN_OPERATORS[rule.operation])}</span>
                         <span className="text-gray-600">{rule.rightColumn}</span>
                       </div>
                     ),
-                    title: t("propertiesPanel.join.ruleTitle", { index: index + 1 }),
+                    title: `${t("common.rule")} ${index + 1}`,
                     onRemove: () => handleRemoveRule(index),
                   }))}
-                  title={t("propertiesPanel.join.joinRules")}
+                  title={t("ui.joinRules")}
                   onClearAll={handleClearAll}
                   themeConfig={themeConfig}
                 />
@@ -115,20 +115,9 @@ export const JoinPanel = ({ node, parents, onUpdateJoinRules }: JoinPanelProps) 
 
               <div className="mb-2">
                 {!isEditing ? (
-                  <ActionButton
-                    onClick={() => setIsEditing(true)}
-                    themeConfig={themeConfig}
-                    text={t("ui.addNewRule")}
-                    icon="fa-solid fa-plus"
-                  />
+                  <ActionButton onClick={() => setIsEditing(true)} themeConfig={themeConfig} text={t("ui.addNewRule")} icon="fa-solid fa-plus" />
                 ) : (
-                  <EditForm
-                    title={t("ui.addNewRule")}
-                    onConfirm={handleAddRule}
-                    onCancel={handleCancelAdd}
-                    themeConfig={themeConfig}
-                    confirmDisabled={!newRule.leftColumn.trim() || !newRule.rightColumn.trim()}
-                  >
+                  <EditForm title={t("ui.addNewRule")} onConfirm={handleAddRule} onCancel={handleCancelAdd} themeConfig={themeConfig} confirmDisabled={!newRule.leftColumn.trim() || !newRule.rightColumn.trim()}>
                     <div className="space-y-2">
                       <div>
                         <Select

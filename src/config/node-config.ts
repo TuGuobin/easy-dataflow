@@ -35,7 +35,7 @@ const NodeColorTheme: Record<NodeType, Color> = {
   join: "indigo",
   removeColumn: "red",
   visualize: "pink",
-  default: "gray",
+  unknown: "gray",
 } as const
 
 const NodeIconTheme: Record<NodeType, IconConfig> = {
@@ -49,7 +49,7 @@ const NodeIconTheme: Record<NodeType, IconConfig> = {
   join: { primary: "fa-code-branch", secondary: "fa-link", type: "fa-solid" },
   removeColumn: { primary: "fa-trash-alt", secondary: "fa-minus-square", type: "fa-solid" },
   visualize: { primary: "fa-chart-bar", secondary: "fa-chart-line", type: "fa-solid" },
-  default: { primary: "fa-question-circle", secondary: "fa-unlock-alt", type: "fa-solid" },
+  unknown: { primary: "fa-question-circle", secondary: "fa-unlock-alt", type: "fa-solid" },
 } as const
 
 export const nodeConfigs: Record<string, NodeConfig> = {
@@ -197,46 +197,46 @@ export const nodeConfigs: Record<string, NodeConfig> = {
       name: "nodeTypes.addRow.name",
     },
   },
-  default: {
-    type: "default",
-    title: "nodeTypes.default.title",
-    name: "nodeTypes.default.name",
-    description: "nodeTypes.default.description",
+  unknown: {
+    type: "unknown",
+    title: "nodeTypes.unknown.title",
+    name: "nodeTypes.unknown.name",
+    description: "nodeTypes.unknown.description",
     category: "other",
-    icon: NodeIconTheme.default,
-    color: NodeColorTheme.default,
-    theme: createThemeConfig(NodeColorTheme.default),
+    icon: NodeIconTheme.unknown,
+    color: NodeColorTheme.unknown,
+    theme: createThemeConfig(NodeColorTheme.unknown),
     defaultData: {
-      title: "nodeTypes.default.title",
-      name: "nodeTypes.default.name",
+      title: "nodeTypes.unknown.title",
+      name: "nodeTypes.unknown.name",
     },
   },
 }
 
 export const getNodeConfig = (type?: NodeType): NodeConfig => {
-  return nodeConfigs[type || "default"]
+  return nodeConfigs[type || "unknown"]
 }
 
 export const getNodeCategory = (type?: NodeType): string => {
-  return nodeConfigs[type || "default"].category
+  return nodeConfigs[type || "unknown"].category
 }
 
 export const getNodeIconClass = (type?: NodeType): string => {
-  const config = nodeConfigs[type || "default"]
+  const config = nodeConfigs[type || "unknown"]
   return `${config.icon.type} ${config.icon.primary}`
 }
 
 export const getNodeSecondaryIconClass = (type?: NodeType): string => {
-  const config = nodeConfigs[type || "default"]
+  const config = nodeConfigs[type || "unknown"]
   return `${config.icon.type} ${config.icon.secondary}`
 }
 
 export const getNodeThemeConfig = (type?: NodeType): ThemeConfig => {
-  return nodeConfigs[type || "default"].theme
+  return nodeConfigs[type || "unknown"].theme
 }
 
 export const getNodeDefaultData = (type?: NodeType): NodeData => {
-  return nodeConfigs[type || "default"].defaultData
+  return nodeConfigs[type || "unknown"].defaultData
 }
 
 export const getNodesByCategory = (category: string): NodeConfig[] => {

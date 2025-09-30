@@ -16,7 +16,6 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
   const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
-    // 当没有节点时显示快速开始指南
     setIsVisible(nodes.length === 0)
   }, [nodes.length])
 
@@ -99,7 +98,7 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
                   <div className={`w-8 h-8 rounded-md ${theme.bg} flex items-center justify-center`}>
                     <i className={`fas ${action.icon} ${theme.text}`}></i>
                   </div>
-                  <div className="flex flex-col items-start ml-3">
+                  <div className="flex flex-col items-start ml-3 flex-1">
                     <h4 className="text-sm font-medium text-gray-800 m-0 p-0 mb-2">{t(action.titleKey)}</h4>
                     <p className="text-xs text-gray-600">{t(action.descriptionKey)}</p>
                   </div>

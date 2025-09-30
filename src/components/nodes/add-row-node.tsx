@@ -21,6 +21,11 @@ export const AddRowNode = ({ data, ...attrs }: AddRowNodeProps) => {
               <span className={`font-medium ${themeConfig.text}`}>{Object.keys(data.newRows[0]).length}</span>
             </div>
           )}
+          {data.newRows?.length > 0 && (
+            <div className="text-xs text-gray-500 text-center">
+              {t("ui.preview")}: {JSON.stringify(data.newRows[0]).slice(0, 30)}...
+            </div>
+          )}
         </>
       )}
     </BaseNode>

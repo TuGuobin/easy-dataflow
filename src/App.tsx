@@ -86,9 +86,9 @@ function App() {
     setShowDemoModal(true)
   }
 
-  const handleHelpClick = () => {
+  const handleHelpClick = useCallback(() => {
     setShowHelpModal(true)
-  }
+  }, [])
 
   const handleHelpModalClose = () => {
     setShowHelpModal(false)
@@ -140,17 +140,17 @@ function App() {
       if (!sourceNode || !targetNode) return
 
       if (sourceNode.id === targetNode.id) {
-        showError(t("errors.nodeCannotConnectToSelf", { nodeName: sourceNode.data.name }))
+        showError(t("errors.nodeCannotConnectToSelf", { nodeName: t(sourceNode.data.name) }))
         return
       }
 
       if (getAllChildNodes(params.target, nodes, edges).find((node) => node.id === params.source)) {
-        showError(t("errors.nodeCannotConnectToParent", { nodeName: sourceNode.data.name }))
+        showError(t("errors.nodeCannotConnectToParent", { nodeName: t(sourceNode.data.name) }))
         return
       }
 
       if (!canConnect(sourceNode.type as NodeType, targetNode.type as NodeType)) {
-        showError(t("errors.cannotConnectNodes", { sourceNode: sourceNode.data.name, targetNode: targetNode.data.name }))
+        showError(t("errors.cannotConnectNodes", { sourceNode: t(sourceNode.data.name), targetNode: t(targetNode.data.name) }))
         return
       }
 
@@ -160,12 +160,12 @@ function App() {
       if (targetNode.type === "join") {
         const parentCount = getParentNodeCount(params.target, edges)
         if (parentCount >= 2) {
-          showError(t("errors.joinNodeMaxTwoParents", { nodeName: targetNode.data.name }))
+          showError(t("errors.joinNodeMaxTwoParents", { nodeName: t(targetNode.data.name) }))
           return
         }
       } else {
         if (hasParentNode(params.target, edges)) {
-          showError(t("errors.nodeMaxOneParent", { nodeName: targetNode.data.name }))
+          showError(t("errors.nodeMaxOneParent", { nodeName: t(targetNode.data.name) }))
           return
         }
       }
@@ -205,7 +205,7 @@ function App() {
 
       const type = event.dataTransfer.getData("application/reactflow") as NodeType
 
-      if (!type || !["upload", "removeColumn", "renameColumn", "addColumn", "removeRow", "addRow", "transform", "aggregate", "visualize", "join"].includes(type)) {
+      if (!type) {
         return
       }
 

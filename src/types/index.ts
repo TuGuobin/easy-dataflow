@@ -33,7 +33,6 @@ export const TransformOperation = {
 
 export type TransformOperationType = GetType<typeof TransformOperation>
 
-// 聚合操作类型
 export const AggregationOperation = {
   SUM: "sum",
   AVG: "avg",
@@ -45,7 +44,6 @@ export const AggregationOperation = {
 
 export type AggregationOperationType = GetType<typeof AggregationOperation>
 
-// 图表类型
 export const ChartType = {
   BAR: "bar",
   LINE: "line",

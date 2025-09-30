@@ -8,6 +8,7 @@ import { AddColumnNode } from "./add-column-node"
 import { RemoveRowNode } from "./remove-row-node"
 import { AddRowNode } from "./add-row-node"
 import { JoinNode } from "./join-node"
+import { BaseNode } from "./base-node"
 
 
 export const nodeTypes = {
@@ -21,4 +22,5 @@ export const nodeTypes = {
   removeRow: RemoveRowNode,
   addRow: AddRowNode,
   join: JoinNode,
+  unknown: BaseNode
 }
