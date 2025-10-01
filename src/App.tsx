@@ -24,7 +24,6 @@ import { generateId } from "./utils/id"
 import { ResizablePanel } from "./components/common/resizable-panel"
 import { NavButton } from "./components/common/nav-button"
 import icon from "./assets/icon.svg"
-import title from "./assets/title.svg"
 
 const edgeStyle = {
   stroke: "#94a3b8",
@@ -450,13 +449,12 @@ function App() {
           <div className="flex items-center">
             <div className="text-lg font-semibold flex items-center gap-2">
               <span className="whitespace-nowrap">
-                <img src={icon} alt="logo" className="h-6 inline-block select-none mr-3" />
-                <img src={title} alt="title" className="h-8 inline-block select-none" />
+                <img src={icon} alt="logo" className="h-6 inline-block select-none" />
               </span>
             </div>
 
             {/* 大屏幕显示的功能按钮 */}
-            <div className="hidden md:flex items-center ml-6">
+            <div className="hidden md:flex items-center ml-3">
               {getMenuItems("left").map((item, index) => (
                 <NavButton key={index} {...item}>
                   {item.label}
