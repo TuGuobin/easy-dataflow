@@ -377,6 +377,8 @@ function App() {
 
   const getMenuItems = useCallback(
     (position: "left" | "middle" | "right" | "all") => {
+      const isChinese = currentLanguage.startsWith("zh")
+      
       const leftItems = [
         {
           label: t("common.help"),
@@ -393,12 +395,12 @@ function App() {
           onClick: onDemoImport,
         },
         {
-          label: currentLanguage === "zh" ? "EN" : "中文",
+          label: isChinese ? "EN" : "中文",
           icon: "fa-solid fa-globe",
           className: "hover:bg-blue-50",
           iconClassName: "text-blue-400",
-          title: currentLanguage === "zh" ? "Switch to English" : "切换为中文",
-          onClick: () => handleLanguageChange(currentLanguage === "zh" ? "en" : "zh"),
+          title: isChinese ? "Switch to English" : "切换为中文",
+          onClick: () => handleLanguageChange(isChinese ? "en" : "zh"),
         },
       ]
 
