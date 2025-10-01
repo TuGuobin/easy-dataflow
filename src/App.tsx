@@ -489,7 +489,7 @@ function App() {
         {/* 主内容区 */}
         <div className="flex flex-1 overflow-hidden">
           <ResizablePanel side="right" defaultWidth={200} minWidth={150} maxWidth={250}>
-            <div className="w-full bg-gradient-to-b from-gray-50 to-white border-gray-200 flex flex-col overflow-hidden">
+            <div className="w-full h-full bg-gradient-to-b from-gray-50 to-white border-gray-200 flex flex-col overflow-hidden">
               <div className="px-3 py-2 bg-white border-b border-gray-200">
                 <div className="flex items-center">
                   <i className="fas fa-toolbox text-gray-600 mr-2 text-sm"></i>
