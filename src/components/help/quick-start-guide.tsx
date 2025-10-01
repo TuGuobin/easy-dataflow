@@ -74,8 +74,8 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
       </div>
 
       <div className={`fixed bottom-4 right-4 z-40 transition-all duration-300 ease-in-out transform origin-bottom-right ${!isMinimized && !isAnimating ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}`}>
-        <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-4 w-80 max-h-[70vh] flex flex-col">
-          <div className="flex items-center justify-between mb-4">
+        <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-2 w-80 max-h-[70vh] flex flex-col">
+          <div className="flex items-center justify-between mb-2 p-2">
             <h3 className="text-lg font-semibold text-gray-800 flex items-center">
               <i className="fas fa-rocket text-blue-600 mr-2"></i>
               {t("help.quickStartGuide")}
@@ -90,7 +90,7 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
             </div>
           </div>
 
-          <div className="space-y-3 flex-1">
+          <div className="space-y-3 flex-1 overflow-y-auto p-2">
             {quickActions.map((action, index) => {
               const theme = getActionTheme(action.color as Color)
               return (
@@ -105,10 +105,6 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onStartDemo, o
                 </div>
               )
             })}
-          </div>
-
-          <div className="mt-4 pt-3 border-t border-gray-200 flex-shrink-0">
-            <p className="text-xs text-gray-500 text-center">💡 {t("common.dragNodesToCanvas")}</p>
           </div>
         </div>
       </div>
