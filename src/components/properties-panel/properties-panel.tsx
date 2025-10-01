@@ -29,7 +29,7 @@ import type {
   CodeNodeData,
 } from "../../types"
 import { formatFileSize } from "../../utils/csv-utils"
-import { getNodeThemeConfig } from "../../config/node-config"
+import { getNodeIconClass, getNodeConfig } from "../../config/node-config"
 import { NodeInfoPanel } from "./node-info-panel"
 import { processData } from "../../processors"
 import { getAllColumns } from "../../utils/data-processing-utils"
@@ -190,7 +190,8 @@ const NODE_HANDLERS = createNodeHandlers()
 export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ selectedNode, onNodeUpdate, nodes, edges }) => {
   const { t } = useTranslation()
   const nodeType = useMemo(() => selectedNode?.type as NodeType | undefined, [selectedNode])
-  const themeConfig = useMemo(() => (nodeType ? getNodeThemeConfig(nodeType) : null), [nodeType])
+  const nodeConfig = useMemo(() => getNodeConfig(nodeType), [nodeType])
+  const themeConfig = useMemo(() => nodeConfig.theme, [nodeConfig])
   const csvData = useMemo(() => selectedNode?.data?.data || [], [selectedNode])
   const parents = useMemo(() => {
     return selectedNode ? getAllParentNodes(selectedNode, nodes, edges) : []
@@ -223,8 +224,16 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ selectedNode, 
 
   return (
     <div className="w-full h-full bg-white flex flex-col transition-all duration-500 ease-out">
-      <div className="p-4 text-lg font-semibold border-b border-gray-200 relative overflow-hidden">
-        <div className={`transition-all duration-500 ease-out`}>{t("propertiesPanel.title")}</div>
+      <div className="px-3 py-2 text-lg border-b border-gray-200 relative overflow-hidden">
+        <div className={`transition-all duration-500 ease-out flex items-center`}>
+          <div className={`flex items-center justify-center w-8 h-8 rounded mr-3 ${themeConfig.bgLight} ${themeConfig.text} font-semibold flex-shrink-0`}>
+            <i className={`text-sm ${getNodeIconClass(nodeType)}`}></i>
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-medium text-gray-800 truncate">{t(nodeConfig.title)}</div>
+            <div className="text-xs text-gray-500 truncate mt-0.5">{t(nodeConfig.description)}</div>
+          </div>
+        </div>
       </div>
 
       <div className={`flex-1 overflow-hidden transition-all duration-500 ease-out`}>
