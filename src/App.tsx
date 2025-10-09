@@ -481,6 +481,8 @@ function App() {
                   <i className="fa-solid fa-bars text-gray-600"></i>
                 </div>
               }
+              itemClassName="text-sm!"
+              menuClassName="top-10"
               items={getMenuItems("all")}
             />
           </div>

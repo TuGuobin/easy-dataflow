@@ -8,30 +8,35 @@
   src: url("/fonts/PingFangSC-Ultralight.ttf") format("truetype");
   font-weight: 100;
 }
+
 /* 苹方-简 纤细体 */
 @font-face {
   font-family: "PingFangSC";
   src: url("/fonts/PingFangSC-Thin.ttf") format("truetype");
   font-weight: 200;
 }
+
 /* 苹方-简 细体 */
 @font-face {
   font-family: "PingFangSC";
   src: url("/fonts/PingFangSC-Light.ttf") format("truetype");
   font-weight: 300;
 }
+
 /* 苹方-简 常规体 */
 @font-face {
   font-family: "PingFangSC";
   src: url("/fonts/PingFangSC-Regular.ttf") format("truetype");
   font-weight: 400;
 }
+
 /* 苹方-简 中黑体 */
 @font-face {
   font-family: "PingFangSC";
   src: url("/fonts/PingFangSC-Medium.ttf") format("truetype");
   font-weight: 500;
 }
+
 /* 苹方-简 中粗体 */
 @font-face {
   font-family: "PingFangSC";
@@ -66,12 +71,19 @@
 html,
 body {
   font-family: "PingFangSC", "Inter", sans-serif;
+  user-select: none;
+}
+
+button,
+a {
+  cursor: pointer;
 }
 
 @keyframes flow {
   0% {
     stroke-dashoffset: 0;
   }
+
   100% {
     stroke-dashoffset: -100%;
   }
