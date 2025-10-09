@@ -26,7 +26,7 @@ const CustomEdge: React.FC<EdgeProps> = ({ sourceX, sourceY, targetX, targetY, s
     curvature: 0.3,
   })
 
-  const themeConfig = getThemeConfig("blue")
+  const themeConfig = getThemeConfig("gray")
 
   const theme = {
     stroke: themeConfig.handleBorder,
