@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { nodeConfigs, getNodeIconClass } from "../../config/node-config"
 import { useTranslation } from "react-i18next"
+import { ModalOverlay } from "../common"
 
 interface HelpModalProps {
   isOpen: boolean
@@ -38,7 +39,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState<"quickstart" | "nodes" | "tips">("quickstart")
 
-  if (!isOpen) return null
+
 
   const tips = [
     {
@@ -56,8 +57,8 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
   ]
 
   return (
-    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 flex flex-col max-h-[80vh] overflow-hidden">
+    <ModalOverlay isOpen={isOpen} onClose={onClose} closeOnOverlayClick={true}>
+      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-auto flex flex-col max-h-[80vh] overflow-hidden">
         {/* 头部 */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4">
           <div className="flex items-center justify-between">
@@ -171,6 +172,6 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
       </div>
-    </div>
+    </ModalOverlay>
   )
 }

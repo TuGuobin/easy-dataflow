@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 import { useWorkflowStore } from "../../stores/workflow-store"
 import workflowData from "../../assets/workflow.json"
 import { importWorkflow } from "../../utils/workflow-utils"
+import { ModalOverlay } from "../common"
 
 interface DemoImportModalProps {
   isOpen: boolean
@@ -23,11 +24,9 @@ export const DemoImportModal: React.FC<DemoImportModalProps> = ({ isOpen, onClos
 
   const handleSkipDemo = onClose
 
-  if (!isOpen) return null
-
   return (
-    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 flex flex-col max-h-[80vh] overflow-hidden">
+    <ModalOverlay isOpen={isOpen} onClose={onClose} closeOnOverlayClick={true}>
+      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-auto flex flex-col max-h-[80vh] overflow-hidden">
         {/* 头部 */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4">
           <div className="flex items-center justify-between">
@@ -116,6 +115,6 @@ export const DemoImportModal: React.FC<DemoImportModalProps> = ({ isOpen, onClos
           </div>
         </div>
       </div>
-    </div>
+    </ModalOverlay>
   )
 }

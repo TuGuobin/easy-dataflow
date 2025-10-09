@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { getThemeConfig } from "../../themes/color-theme"
+import { ModalOverlay } from "../common"
 
 interface WelcomeGuideProps {
   isOpen: boolean
@@ -38,14 +39,6 @@ const steps = [
 export const WelcomeGuide: React.FC<WelcomeGuideProps> = ({ isOpen, onClose, onStartDemo }) => {
   const { t } = useTranslation()
   const [currentStep, setCurrentStep] = useState(0)
-  const [showWelcome, setShowWelcome] = useState(false)
-
-  useEffect(() => {
-    if (isOpen) {
-      setShowWelcome(true)
-      setCurrentStep(0)
-    }
-  }, [isOpen])
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
@@ -62,23 +55,21 @@ export const WelcomeGuide: React.FC<WelcomeGuideProps> = ({ isOpen, onClose, onS
   }
 
   const handleSkip = () => {
-    setShowWelcome(false)
     onClose()
   }
 
   const handleFinish = () => {
-    setShowWelcome(false)
     onClose()
     onStartDemo()
   }
 
-  if (!isOpen || !showWelcome) return null
+  if (!isOpen) return null
 
   const currentStepData = steps[currentStep]
 
   return (
-    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-      <div className={`bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 ${showWelcome ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}>
+    <ModalOverlay isOpen={isOpen} onClose={handleSkip} closeOnOverlayClick={true}>
+      <div className="bg-white rounded-lg shadow-2xl max-w-md w-full mx-auto">
         <div className="flex justify-center pt-6 pb-2">
           <div className="flex space-x-2">
             {steps.map((_, index) => (
@@ -123,6 +114,6 @@ export const WelcomeGuide: React.FC<WelcomeGuideProps> = ({ isOpen, onClose, onS
           </div>
         </div>
       </div>
-    </div>
+    </ModalOverlay>
   )
 }

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { AlertColors } from "../../themes/color-theme"
 import { useTranslation } from "react-i18next"
+import { ModalOverlay } from "../common"
 
 export type AlertType = "info" | "success" | "warning" | "error" | "confirm"
 
@@ -21,19 +22,7 @@ interface AlertPromptProps {
 }
 
 const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) => {
-  const [isAnimating, setIsAnimating] = useState(false)
   const { t } = useTranslation()
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsAnimating(true)
-    } else {
-      const timer = setTimeout(() => setIsAnimating(false), 300)
-      return () => clearTimeout(timer)
-    }
-  }, [isOpen])
-
-  if (!isOpen && !isAnimating) return null
 
   const { title, message, type = "info", confirmText = "common.ok", cancelText = "common.cancel", onConfirm, onCancel } = options
 
@@ -66,15 +55,9 @@ const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) =
     onClose()
   }
 
-  const handleOverlayClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      handleCancel()
-    }
-  }
-
   return (
-    <div className={`fixed inset-0 bg-black/30 flex items-center justify-center z-50 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`} onClick={handleOverlayClick}>
-      <div className={`bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300 ${isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}>
+    <ModalOverlay isOpen={isOpen} onClose={handleCancel} closeOnOverlayClick={true}>
+      <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-auto">
         <div className={`bg-gradient-to-r ${getHeaderColor()} text-white px-4 py-3 rounded-t-lg`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -117,7 +100,7 @@ const AlertPrompt: React.FC<AlertPromptProps> = ({ isOpen, onClose, options }) =
           )}
         </div>
       </div>
-    </div>
+    </ModalOverlay>
   )
 }
 
