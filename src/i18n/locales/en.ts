@@ -68,6 +68,10 @@ export default {
     skip: "Skip",
     noData: "No data available",
     more: "More",
+    status: "Status",
+    hasData: "Has Data",
+    empty: "Empty",
+    currentData: "Current Data",
   },
   errors: {
     noDataAvailable: "No data available",
@@ -142,6 +146,7 @@ export default {
       title: "Code Processing",
       description: "Execute custom JavaScript code to process data",
     },
+
     unknown: {
       name: "Unknown Node",
       title: "Unknown Node",
@@ -231,6 +236,7 @@ export default {
     confirmOperation: "Confirm Operation",
     prompt: "Prompt",
   },
+
   ui: {
     currentData: "Current Data",
     dataPreview: "Data Preview",
@@ -296,10 +302,8 @@ export default {
     releaseToUpload: "Release to upload",
     supportCSVOrExcelFormat: "Support CSV or Excel format files",
     fileInfo: "File Info",
-    fileName: "Filename",
-    fileSize: "File Size",
-    notUploaded: "Not uploaded",
-    noData: "No data",
+    loadSampleData: "Load Sample Data",
+    clearData: "Clear Data",
   },
   propertiesPanel: {
     title: "Properties",

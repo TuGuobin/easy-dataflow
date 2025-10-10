@@ -27,8 +27,9 @@ import type {
   RenameColumn,
   CsvTable,
   CodeNodeData,
+
 } from "../../types"
-import { formatFileSize } from "../../utils/csv-utils"
+
 import { getNodeIconClass, getNodeConfig } from "../../config/node-config"
 import { NodeInfoPanel } from "./node-info-panel"
 import { processData } from "../../processors"
@@ -64,16 +65,15 @@ const useNodeUpdater = (nodeId: string, nodeType: NodeType, parents: Node<NodeDa
   )
 }
 
-// 🧩 节点处理器（提取到组件外，避免闭包问题）
 const createNodeHandlers = (): Partial<Record<NodeType, (ctx: NodeHandlerContext) => React.ReactNode>> => {
   return {
     upload: ({ selectedNode, updateNodeData }) => {
-      const handleFileChange = (data: CsvTable, file: File) => {
+      const handleFileChange = (data: CsvTable, rowCount?: number, columnCount?: number) => {
         updateNodeData(
           {
             ...selectedNode.data,
-            fileName: file.name,
-            fileSize: formatFileSize(file.size),
+            rowCount: rowCount || data.length,
+            columnCount: columnCount || (data.length > 0 ? Object.keys(data[0]).length : 0),
             data,
           },
           false
@@ -82,6 +82,8 @@ const createNodeHandlers = (): Partial<Record<NodeType, (ctx: NodeHandlerContext
 
       return <Panels.upload node={selectedNode as Node<UploadNodeData, "upload">} onFileChange={handleFileChange} />
     },
+
+
 
     removeColumn: ({ selectedNode, parents, updateNodeData }) => {
       const parent = parents[0]

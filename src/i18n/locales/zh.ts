@@ -68,6 +68,10 @@ export default {
     skip: "跳过",
     noData: "暂无数据",
     more: "更多",
+    status: "状态",
+    hasData: "有数据",
+    empty: "空",
+    currentData: "当前数据",
   },
   errors: {
     noDataAvailable: "没有可用的数据",
@@ -142,6 +146,7 @@ export default {
       title: "代码处理",
       description: "执行自定义JavaScript代码处理数据",
     },
+
     unknown: {
       name: "未知节点",
       title: "未知节点",
@@ -222,15 +227,16 @@ export default {
     noNewColumnsSet: "未设置新增列",
     noNewRowsSet: "未设置新增行数据",
     noRemoveColumnsSet: "未设置移除列",
-    noCodeSet: "未设置代码",
+    noCodeSet: "没有设置代码",
     needTwoDataSource: "需要连接两个数据源",
-    insufficientData: "数据源数据不足",
-    confirmClearWorkflow: "确定要清空工作流吗？",
+    insufficientData: "数据不足",
+    confirmClearWorkflow: "确定清除当前工作流吗？",
     deleteNode: "删除节点",
     deleteEdge: "删除边",
     confirmOperation: "确认操作",
     prompt: "提示",
   },
+
   ui: {
     currentData: "当前数据",
     dataPreview: "数据预览",
@@ -296,9 +302,8 @@ export default {
     releaseToUpload: "释放文件以上传",
     supportCSVOrExcelFormat: "支持CSV或Excel格式文件",
     fileInfo: "文件信息",
-    fileName: "文件名",
-    fileSize: "文件大小",
-    notUploaded: "未上传",
+    loadSampleData: "加载示例数据",
+    clearData: "清除数据",
   },
   propertiesPanel: {
     title: "属性面板",

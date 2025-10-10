@@ -130,8 +130,8 @@ export interface BaseNodeData {
 }
 
 export interface UploadNodeData extends BaseNodeData {
-  fileName: string
-  fileSize: string
+  rowCount?: number
+  columnCount?: number
 }
 
 export interface FilterNodeData extends BaseNodeData {

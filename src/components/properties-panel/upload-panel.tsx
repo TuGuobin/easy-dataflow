@@ -8,8 +8,16 @@ import { parseFile } from "../../utils/csv-utils"
 
 interface UploadPanelProps {
   node: Node<UploadNodeData, NodeType>
-  onFileChange: (data: CsvTable, file: File) => void
+  onFileChange: (data: CsvTable, rowCount?: number, columnCount?: number) => void
 }
+
+const sampleData: CsvTable = [
+  { id: 1, name: "Sample 1", value: 100, category: "A" },
+  { id: 2, name: "Sample 2", value: 200, category: "B" },
+  { id: 3, name: "Sample 3", value: 300, category: "A" },
+  { id: 4, name: "Sample 4", value: 150, category: "C" },
+  { id: 5, name: "Sample 5", value: 250, category: "B" }
+]
 
 export const UploadPanel = ({ node, onFileChange }: UploadPanelProps) => {
   const { t } = useTranslation()
@@ -30,7 +38,9 @@ export const UploadPanel = ({ node, onFileChange }: UploadPanelProps) => {
 
       try {
         const data = await parseFile(file)
-        onFileChange(data, file)
+        const rowCount = data.length
+        const columnCount = data.length > 0 ? Object.keys(data[0]).length : 0
+        onFileChange(data, rowCount, columnCount)
       } catch (error) {
         console.error("Parse file error:", error)
         showAlert(t("errors.failedToParseFile"))
@@ -38,6 +48,16 @@ export const UploadPanel = ({ node, onFileChange }: UploadPanelProps) => {
     },
     [onFileChange, t]
   )
+
+  const handleLoadSampleData = useCallback(() => {
+    const rowCount = sampleData.length
+    const columnCount = sampleData.length > 0 ? Object.keys(sampleData[0]).length : 0
+    onFileChange(sampleData, rowCount, columnCount)
+  }, [onFileChange])
+
+  const handleClearData = useCallback(() => {
+    onFileChange([], 0, 0)
+  }, [onFileChange])
 
   const handleFileInput = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,7 +105,7 @@ export const UploadPanel = ({ node, onFileChange }: UploadPanelProps) => {
       {({ themeConfig, iconClass, secondaryIconClass }) => {
         return (
           <div className={`mb-5 ${themeConfig.text}`}>
-            <div className="mb-4">
+            <div className="mb-2">
               <div
                 className={`border-2 border-dashed rounded p-5 text-center cursor-pointer transition-all ${isDragOver ? `${themeConfig.border} ${themeConfig.bgLight}` : `${themeConfig.hoverBorder} ${themeConfig.hoverBgLight} border-gray-200`}`}
                 onClick={triggerFileInput}
@@ -102,17 +122,35 @@ export const UploadPanel = ({ node, onFileChange }: UploadPanelProps) => {
               <input type="file" ref={fileInputRef} className="hidden" accept=".csv,.xlsx,.xls,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" onChange={handleFileInput} />
             </div>
 
-            {node.data.fileSize && (
+            <div className="mb-1">
+              <button
+                onClick={handleLoadSampleData}
+                className={`w-full px-4 py-2 rounded-md text-sm font-medium transition-colors ${themeConfig.bgDark} ${themeConfig.hoverBgDark} text-white`}
+              >
+                <i className="fa fa-database mr-2"></i>
+                {t("uploadPanel.loadSampleData")}
+              </button>
+            </div>
+
+            {node.data.data && node.data.data.length > 0 && (
               <div className="mb-4">
+                <button
+                  onClick={handleClearData}
+                  className={`w-full px-4 py-2 rounded-md text-sm font-medium transition-colors bg-red-500 hover:bg-red-600 text-white`}
+                >
+                  <i className="fa fa-trash mr-2"></i>
+                  {t("uploadPanel.clearData")}
+                </button>
+              </div>
+            )}
+
+            {node.data.data && node.data.data.length > 0 && (
+              <div className="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
                 <label className="block text-xs mb-1 text-gray-500">{t("uploadPanel.fileInfo")}</label>
-                <div className="text-sm text-gray-700">
-                  {t("uploadPanel.fileName")}: {node.data.fileName || t("uploadPanel.notUploaded")}
+                <div className="flex justify-between text-sm text-gray-700">
+                  <span>{t("ui.rowCount")}: {node.data.rowCount || 0}</span>
+                  <span>{t("ui.columnCount")}: {node.data.columnCount || 0}</span>
                 </div>
-                {node.data.fileSize && (
-                  <div className="text-sm text-gray-700">
-                    {t("uploadPanel.fileSize")}: {node.data.fileSize}
-                  </div>
-                )}
               </div>
             )}
           </div>
