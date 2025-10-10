@@ -20,8 +20,8 @@ export const BasePanel = ({ node, children, className }: BasePanelProps) => {
   return (
     <div className={className}>
       <div className="text-xs font-semibold mb-2.5 text-gray-500 uppercase tracking-wide">
-        <i className={`${iconClass} ${themeConfig.text} mr-1`}></i>
-        {node ? t(node.data.name) : t('propertiesPanel.unknownNode')}
+        <i className={`fa fa-cog mr-1`}></i>
+        {t('common.settings')}
       </div>
       {typeof children === "function" ? children({ themeConfig, iconClass, secondaryIconClass, node }) : children}
     </div>

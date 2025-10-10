@@ -156,7 +156,8 @@ export const DataPreview = ({ data, title = "ui.dataPreview", maxHeight = "max-h
   return (
     <div className={className}>
       <div className="flex justify-between text-xs font-semibold mb-2.5 text-gray-500 uppercase tracking-wide">
-        <span className="select-none">
+        <span>
+          <i className="fa fa-table mr-1"></i>
           {t(title)} {showCount && `(${Math.min(displayCount, displayData.length)}/${displayData.length})`}
         </span>
         <DropdownMenu items={downloadMenuItems} position="right" menuClassName="top-6" trigger={<i className="fas fa-download text-blue-500 hover:text-blue-600 transition-colors" title={t("ui.downloadData")}></i>} />
