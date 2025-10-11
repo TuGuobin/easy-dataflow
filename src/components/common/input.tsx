@@ -37,7 +37,7 @@ interface SelectProps<T extends string | number = string> extends BaseInputProps
 }
 
 const getBaseClassName = (themeConfig: ThemeConfig, hasError: boolean = false): string => {
-  return `w-full px-3 py-2 border rounded text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 ${
+  return `w-full px-3 py-2 border rounded-md text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 ${
     hasError ? "border-red-500 focus:border-red-500 focus:ring-red-200" : `border-gray-300 focus:${themeConfig?.border} focus:ring-${themeConfig?.primary}-200`
   } hover:border-gray-400`
 }

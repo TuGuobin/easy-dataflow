@@ -10,7 +10,7 @@ interface NavButtonProps {
 }
 
 export const NavButton: React.FC<NavButtonProps> = ({ onClick, icon, children, className = "", title, iconClassName = "" }) => (
-  <div className={`px-3 py-1.5 rounded cursor-pointer transition-all ${className}`} onClick={onClick} title={title}>
+  <div className={`px-3 py-1.5 rounded-md cursor-pointer transition-all ${className}`} onClick={onClick} title={title}>
     <span className="whitespace-nowrap">
       <i className={`${icon} ${iconClassName}`}></i> {children}
     </span>

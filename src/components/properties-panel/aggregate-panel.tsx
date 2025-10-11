@@ -87,7 +87,7 @@ export const AggregatePanel = ({ node, columns, onUpdateAggregations, onUpdateGr
         return (
           <div className={`mb-5 ${themeConfig.text}`}>
             <div className="mb-6">
-              <div className="mb-4">
+              <div className="mb-2">
                 <Select label={t("ui.selectGroupByColumn")} themeConfig={themeConfig} value={groupBy} onChange={handleGroupByChange} options={columns.map((col) => ({ value: col, label: col }))} />
               </div>
               {!!aggregations?.length && (

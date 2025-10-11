@@ -15,7 +15,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({ onClick, themeConfig
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`w-full px-4 py-2 ${themeConfig.bgDark} text-white rounded ${themeConfig.hoverBgDark} ${themeConfig.activeBgDark} text-sm font-medium transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed ${className}`}
+      className={`w-full px-4 py-2 ${themeConfig.bgDark} text-white rounded-md ${themeConfig.hoverBgDark} ${themeConfig.activeBgDark} text-sm font-medium transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed ${className}`}
     >
       {icon && <i className={`fa-solid ${icon} mr-2`}></i>}
       {text}
@@ -32,7 +32,7 @@ export interface SecondaryButtonProps {
 
 export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ onClick, text, className = "", disabled = false }) => {
   return (
-    <button onClick={onClick} disabled={disabled} className={`px-3 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 text-sm font-medium transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed ${className}`}>
+    <button onClick={onClick} disabled={disabled} className={`px-3 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 text-sm font-medium transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed ${className}`}>
       {text}
     </button>
   )
@@ -49,7 +49,7 @@ export const DangerButton: React.FC<DangerButtonProps> = ({ onClick, text, class
   const sizeClass = size === "sm" ? "px-2 py-1 text-xs" : "px-3 py-2 text-sm"
 
   return (
-    <button onClick={onClick} className={`${sizeClass} bg-red-500 text-white rounded hover:bg-red-600 active:bg-red-700 transition-colors ${className}`}>
+    <button onClick={onClick} className={`${sizeClass} bg-red-500 text-white rounded-md hover:bg-red-600 active:bg-red-700 transition-colors ${className}`}>
       {text}
     </button>
   )

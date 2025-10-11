@@ -27,7 +27,7 @@ export const RuleList: React.FC<RuleListProps> = ({ items, title, themeConfig, o
       <div className="flex justify-between items-center mb-2">
         <div className="text-xs font-medium text-gray-600">{t(title)}</div>
         {onClearAll && (
-          <button onClick={onClearAll} className="px-2 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 active:bg-red-700 transition-colors">
+          <button onClick={onClearAll} className="px-2 py-1 text-xs bg-red-500 text-white rounded-md hover:bg-red-600 active:bg-red-700 transition-colors">
             {t('common.clearAll')}
           </button>
         )}
@@ -35,7 +35,7 @@ export const RuleList: React.FC<RuleListProps> = ({ items, title, themeConfig, o
 
       <div className="space-y-2">
         {items.map((item) => (
-          <div key={item.id} className="p-2 pl-3 border border-gray-200 rounded bg-white">
+          <div key={item.id} className="p-2 pl-3 border border-gray-200 rounded-md bg-white">
             <div className="flex justify-between items-center mb-1">
               <span className="text-xs font-medium text-gray-600">{t(item.title)}</span>
               <button onClick={() => item.onRemove(item.id)} className="text-xs text-red-500 hover:text-red-600 active:text-red-700 transition-colors cursor-pointer">

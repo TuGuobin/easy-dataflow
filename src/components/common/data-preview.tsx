@@ -162,7 +162,7 @@ export const DataPreview = ({ data, title = "ui.dataPreview", maxHeight = "max-h
         </span>
         <DropdownMenu items={downloadMenuItems} position="right" menuClassName="top-6" trigger={<i className="fas fa-download text-blue-500 hover:text-blue-600 transition-colors" title={t("ui.downloadData")}></i>} />
       </div>
-      <div className={`border border-gray-200 rounded overflow-auto ${maxHeight}`}>
+      <div className={`border border-gray-200 rounded-md overflow-auto ${maxHeight}`}>
         <table className="min-w-full text-xs">
           <thead className="bg-gray-50 sticky top-0 z-20">
             <tr>

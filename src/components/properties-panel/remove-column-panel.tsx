@@ -87,7 +87,7 @@ export const RemoveColumnPanel = ({ node, columns, onUpdateColumns }: RemoveColu
                     }`}
                   >
                     <span className="text-sm font-medium truncate pr-2">{column}</span>
-                    <div className={`flex items-center justify-center w-4 h-4 rounded border transition-all duration-200 ${isSelected ? `${themeConfig.border} bg-white` : "border-gray-300 bg-gray-50 group-hover:border-gray-400"}`}>
+                    <div className={`flex items-center justify-center w-4 h-4 rounded-md border transition-all duration-200 ${isSelected ? `${themeConfig.border} bg-white` : "border-gray-300 bg-gray-50 group-hover:border-gray-400"}`}>
                       {isSelected ? <i className={`text-xs fa-solid fa-check ${themeConfig.text}`} /> : <div className="w-1.5 h-1.5 bg-gray-400 rounded-full group-hover:bg-gray-500 transition-colors" />}
                     </div>
                   </div>

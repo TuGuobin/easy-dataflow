@@ -103,11 +103,11 @@ export const RemoveRowPanel = ({ node, columns, onUpdateRules }: RemoveRowPanelP
               <div className="flex gap-2">
                 <button
                   onClick={() => handleLogicChange("AND")}
-                  className={`px-3 py-1 text-xs rounded transition-colors ${node.data.logic === "AND" || !node.data.logic ? `${themeConfig.bgDark} text-white` : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                  className={`px-3 py-1 text-xs rounded-md transition-colors ${node.data.logic === "AND" || !node.data.logic ? `${themeConfig.bgDark} text-white` : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
                 >
                   {t("common.and")}
                 </button>
-                <button onClick={() => handleLogicChange("OR")} className={`px-3 py-1 text-xs rounded transition-colors ${node.data.logic === "OR" ? `${themeConfig.bgDark} text-white` : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}>
+                <button onClick={() => handleLogicChange("OR")} className={`px-3 py-1 text-xs rounded-md transition-colors ${node.data.logic === "OR" ? `${themeConfig.bgDark} text-white` : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}>
                   {t("common.or")}
                 </button>
               </div>

@@ -21,10 +21,10 @@ export const EditForm: React.FC<EditFormProps> = ({ title, children, onConfirm, 
       <div className="space-y-2">{children}</div>
 
       <div className="flex gap-2 mt-3">
-        <button onClick={onConfirm} disabled={confirmDisabled} className={`flex-1 px-3 py-2 ${themeConfig.bgDark} text-white rounded ${themeConfig.hoverBgDark} text-sm font-medium transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed`}>
+        <button onClick={onConfirm} disabled={confirmDisabled} className={`flex-1 px-3 py-2 ${themeConfig.bgDark} text-white rounded-md ${themeConfig.hoverBgDark} text-sm font-medium transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed`}>
           {t(confirmText)}
         </button>
-        <button onClick={onCancel} className="flex-1 px-3 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 text-sm font-medium transition-colors">
+        <button onClick={onCancel} className="flex-1 px-3 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 text-sm font-medium transition-colors">
           {t(cancelText)}
         </button>
       </div>

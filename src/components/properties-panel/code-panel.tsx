@@ -81,12 +81,12 @@ export const CodePanel = ({ node, onUpdateCode }: CodePanelProps) => {
       {({ themeConfig }) => (
         <div className={`mb-5 ${themeConfig.text}`}>
           <div className="mb-4">
-            <div className="border rounded border-gray-200 bg-white overflow-hidden">
+            <div className="border rounded-md border-gray-200 bg-white overflow-hidden">
               <MonacoEditor value={code} onChange={handleCodeChange} language="javascript" theme="vs" height="400px" className="w-full" />
             </div>
 
             {error && (
-              <div className="mt-2 text-xs text-red-400 bg-red-50 p-2 rounded border border-red-500">
+              <div className="mt-2 text-xs text-red-400 bg-red-50 p-2 rounded-md border border-red-500">
                 <div className="flex items-center">
                   <i className="fas fa-exclamation-triangle mr-2"></i>
                   <span>

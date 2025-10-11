@@ -477,7 +477,7 @@ function App() {
             <DropdownMenu
               position="right"
               trigger={
-                <div className="px-3 py-1.5 rounded cursor-pointer transition-all hover:bg-gray-100">
+                <div className="px-3 py-1.5 rounded-md cursor-pointer transition-all hover:bg-gray-100">
                   <i className="fa-solid fa-bars text-gray-600"></i>
                 </div>
               }

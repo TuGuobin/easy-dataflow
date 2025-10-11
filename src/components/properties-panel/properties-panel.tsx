@@ -228,7 +228,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ selectedNode, 
     <div className="w-full h-full bg-white flex flex-col transition-all duration-500 ease-out">
       <div className="px-3 py-2 text-lg border-b border-gray-200 relative overflow-hidden">
         <div className={`transition-all duration-500 ease-out flex items-center`}>
-          <div className={`flex items-center justify-center w-8 h-8 rounded mr-3 ${themeConfig.bgLight} ${themeConfig.text} font-semibold flex-shrink-0`}>
+          <div className={`flex items-center justify-center w-8 h-8 rounded-md mr-3 ${themeConfig.bgLight} ${themeConfig.text} font-semibold flex-shrink-0`}>
             <i className={`text-sm ${getNodeIconClass(nodeType)}`}></i>
           </div>
           <div className="flex-1 min-w-0">

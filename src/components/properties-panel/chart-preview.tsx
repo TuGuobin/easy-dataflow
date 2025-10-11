@@ -163,7 +163,7 @@ export const ChartPreview = ({ chartType, chartConfig, data, title, width = "100
   const renderChart = () => {
     if (error) {
       return (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded text-red-600 text-sm p-4 text-center">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-md text-red-600 text-sm p-4 text-center">
           <i className="fa-solid fa-triangle-exclamation text-xl mb-2"></i>
           <span>{error}</span>
         </div>
@@ -172,7 +172,7 @@ export const ChartPreview = ({ chartType, chartConfig, data, title, width = "100
 
     if (!chartData || !chartData.datasets.length) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-gray-50 border border-gray-200 rounded text-gray-500 text-sm">
+        <div className="w-full h-full flex items-center justify-center bg-gray-50 border border-gray-200 rounded-md text-gray-500 text-sm">
           <i className="fa-solid fa-info-circle mr-2"></i>
           <span>{t("common.noData")}</span>
         </div>
@@ -205,7 +205,7 @@ export const ChartPreview = ({ chartType, chartConfig, data, title, width = "100
 
   return (
     <div
-      className="chart-preview flex items-center justify-center border border-gray-200 rounded bg-white p-2"
+      className="chart-preview flex items-center justify-center border border-gray-200 rounded-md bg-white p-2"
       style={{
         width: typeof width === "number" ? `${width}px` : width,
         height: typeof height === "number" ? `${height}px` : height,

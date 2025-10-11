@@ -107,7 +107,7 @@ export const UploadPanel = ({ node, onFileChange }: UploadPanelProps) => {
           <div className={`mb-5 ${themeConfig.text}`}>
             <div className="mb-2">
               <div
-                className={`border-2 border-dashed rounded p-5 text-center cursor-pointer transition-all ${isDragOver ? `${themeConfig.border} ${themeConfig.bgLight}` : `${themeConfig.hoverBorder} ${themeConfig.hoverBgLight} border-gray-200`}`}
+                className={`border-2 border-dashed rounded-md p-5 text-center cursor-pointer transition-all ${isDragOver ? `${themeConfig.border} ${themeConfig.bgLight}` : `${themeConfig.hoverBorder} ${themeConfig.hoverBgLight} border-gray-200`}`}
                 onClick={triggerFileInput}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
